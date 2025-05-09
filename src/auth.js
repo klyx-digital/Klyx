@@ -26,7 +26,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
         const validated = LoginSchema.safeParse(credentials);
         if (!validated.success) {
-          console.log("Validation échouée", credentials);
           return null;
         }
 
@@ -37,8 +36,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
         const isValid = await bcrypt.compare(password, user.password);
         if (!isValid) return null;
-
-        console.log("authorize appelé avec", credentials);
 
         return { id: user.id, email: user.email, name: user.name };
       },
