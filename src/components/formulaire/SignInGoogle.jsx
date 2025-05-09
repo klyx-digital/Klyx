@@ -4,12 +4,12 @@ import Image from "next/image";
 import { signIn } from "next-auth/react";
 import { Button } from "../ui/button";
 
-export function SignInGoogle() {
+export function SignInGoogle({ label }) {
   return (
     <Button
       className="flex justify-center items-center"
       color="white"
-      onClick={() => signIn("google")}
+      onClick={() => signIn("google", { redirectTo: "/dashboard" })}
     >
       <Image
         src="/icones/BtnGoogle.svg"
@@ -17,7 +17,7 @@ export function SignInGoogle() {
         width={30}
         alt="logo google"
       />
-      Se connecter avec Google
+      {label}
     </Button>
   );
 }
