@@ -1,7 +1,7 @@
-export default function Page() {
+export default async function dashboardPage() {
   return (
-    <div>
-      <h1>Voici dashboard</h1>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold">Bienvenue sur ton Dashboard</h1>
     </div>
   );
 }
