@@ -72,11 +72,11 @@ export default async function DashboardLayout({ children }) {
                   <DropdownLabel>Paramètres</DropdownLabel>
                 </DropdownItem>
                 <DropdownDivider />
-                <DropdownItem href="/dashboard/privacy-policy">
+                <DropdownItem href="/privacy-policy">
                   <ShieldCheckIcon />
                   <DropdownLabel>Politique de confidentialité</DropdownLabel>
                 </DropdownItem>
-                <DropdownItem href="/dashboard/support">
+                <DropdownItem href="/support">
                   <LightBulbIcon />
                   <DropdownLabel>Support</DropdownLabel>
                 </DropdownItem>
@@ -112,14 +112,10 @@ export default async function DashboardLayout({ children }) {
                 <MegaphoneIcon />
                 <SidebarLabel>Publicités</SidebarLabel>
               </SidebarItem>
-              <SidebarItem href="/dashboard/blog">
-                <Square2StackIcon />
-                <SidebarLabel>Blog</SidebarLabel>
-              </SidebarItem>
             </SidebarSection>
             <SidebarSpacer />
             <SidebarSection>
-              <SidebarItem href="/dashboard/support">
+              <SidebarItem href="/support">
                 <QuestionMarkCircleIcon />
                 <SidebarLabel>Support</SidebarLabel>
               </SidebarItem>
@@ -147,7 +143,7 @@ export default async function DashboardLayout({ children }) {
                   <Cog8ToothIcon />
                   <DropdownLabel>Paramètres</DropdownLabel>
                 </DropdownItem>
-                <DropdownItem href="/dashboard/billing">
+                <DropdownItem href="/billing">
                   <CreditCardIcon />
                   <DropdownLabel>Facturation</DropdownLabel>
                 </DropdownItem>
@@ -155,10 +151,6 @@ export default async function DashboardLayout({ children }) {
                 <DropdownItem href="/privacy-policy">
                   <ShieldCheckIcon />
                   <DropdownLabel>Politique de confidentialité</DropdownLabel>
-                </DropdownItem>
-                <DropdownItem href="/share-feedback">
-                  <LightBulbIcon />
-                  <DropdownLabel>Partage de feedback</DropdownLabel>
                 </DropdownItem>
                 <DropdownDivider />
                 <SignOut />
