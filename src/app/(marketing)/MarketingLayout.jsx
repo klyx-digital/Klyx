@@ -1,4 +1,5 @@
-import { Avatar } from "@/components/ui/avatar";
+"use client";
+
 import {
   Dropdown,
   DropdownButton,
@@ -22,8 +23,12 @@ import {
   SidebarItem,
   SidebarLabel,
   SidebarSection,
+  SidebarDivider,
+  SidebarSpacer,
 } from "@/components/ui/sidebar";
 import { StackedLayout } from "@/components/ui/stacked-layout";
+import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 
 const navItems = [
   { label: "Accueil", url: "/" },
@@ -34,6 +39,7 @@ const navItems = [
 ];
 
 export function MarketingLayout({ children }) {
+  const pathname = usePathname();
   return (
     <StackedLayout
       navbar={
@@ -46,12 +52,22 @@ export function MarketingLayout({ children }) {
           <NavbarDivider className="max-lg:hidden" />
           <NavbarSection className="max-lg:hidden">
             {navItems.map(({ label, url }) => (
-              <NavbarItem key={label} href={url}>
+              <NavbarItem key={label} href={url} current={pathname === url}>
                 {label}
               </NavbarItem>
             ))}
           </NavbarSection>
           <NavbarSpacer />
+          <NavbarDivider />
+          <NavbarSection className="max-lg:hidden">
+            <NavbarItem href="/login">Connexion</NavbarItem>
+            <NavbarItem
+              href="/register"
+              className="bg-black rounded-xs text-white"
+            >
+              <span className="text-white">Inscription</span>
+            </NavbarItem>
+          </NavbarSection>
         </Navbar>
       }
       sidebar={
@@ -66,10 +82,18 @@ export function MarketingLayout({ children }) {
           <SidebarBody>
             <SidebarSection>
               {navItems.map(({ label, url }) => (
-                <SidebarItem key={label} href={url}>
+                <SidebarItem key={label} href={url} current={pathname === url}>
                   {label}
                 </SidebarItem>
               ))}
+            </SidebarSection>
+            <SidebarSpacer />
+            <SidebarDivider />
+            <SidebarSection>
+              <SidebarItem href="/login">Connexion</SidebarItem>
+              <SidebarItem href="/register" className="bg-black rounded-xs">
+                <span className="text-white">Inscription</span>
+              </SidebarItem>
             </SidebarSection>
           </SidebarBody>
         </Sidebar>
