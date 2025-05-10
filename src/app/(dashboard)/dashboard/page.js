@@ -9,10 +9,10 @@ export default async function dashboardPage() {
       <Heading>Bonjour , {session?.user?.name}</Heading>
       <Subheading>Voici votre espace personnel</Subheading>
       <div className="mt-4 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
-        <Stat title="Visiteurs" value="542" change="+4.5%" />
-        <Stat title="Score SEO" value="$455" change="-0.5%" />
-        <Stat title="Conversions" value="37" change="+4.5%" />
-        <Stat title="Revenus" value="823,067" change="+21.2%" />
+        <Stat title="Visiteurs" value="12 450" change="+7,8%" />
+        <Stat title="Score SEO" value="84 / 100" change="+1,2 pt" />
+        <Stat title="Conversions" value="268" change="+6,1%" />
+        <Stat title="Revenus" value="18 734 €" change="+9,4%" />
       </div>
     </>
   );
