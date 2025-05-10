@@ -20,34 +20,29 @@ import {
   SidebarBody,
   SidebarFooter,
   SidebarHeader,
-  SidebarHeading,
-  SidebarItem,
   SidebarLabel,
   SidebarSection,
   SidebarSpacer,
+  SidebarItem,
 } from "@/components/ui/sidebar";
 import { SidebarLayout } from "@/components/ui/sidebar-layout";
 import {
-  ArrowRightStartOnRectangleIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
   Cog8ToothIcon,
   LightBulbIcon,
-  PlusIcon,
   ShieldCheckIcon,
   UserIcon,
+  ChevronUpIcon,
 } from "@heroicons/react/16/solid";
 import {
-  Cog6ToothIcon,
+  CreditCardIcon,
   HomeIcon,
-  InboxIcon,
-  MagnifyingGlassIcon,
   MegaphoneIcon,
   QuestionMarkCircleIcon,
   SparklesIcon,
   Square2StackIcon,
-  TicketIcon,
+  PencilSquareIcon,
 } from "@heroicons/react/20/solid";
+import { SignOut } from "@/components/formulaire/SignOut";
 
 export default async function DashboardLayout({ children }) {
   const session = await auth();
@@ -59,39 +54,34 @@ export default async function DashboardLayout({ children }) {
         <Navbar>
           <NavbarSpacer />
           <NavbarSection>
-            <NavbarItem href="/search" aria-label="Search">
-              <MagnifyingGlassIcon />
-            </NavbarItem>
-            <NavbarItem href="/inbox" aria-label="Inbox">
-              <InboxIcon />
-            </NavbarItem>
             <Dropdown>
               <DropdownButton as={NavbarItem}>
                 <Avatar src="" square />
               </DropdownButton>
               <DropdownMenu className="min-w-64" anchor="bottom end">
-                <DropdownItem href="/my-profile">
+                <DropdownItem href="/dashboard/settings">
                   <UserIcon />
-                  <DropdownLabel>My profile</DropdownLabel>
+                  <DropdownLabel>Mon profil</DropdownLabel>
                 </DropdownItem>
-                <DropdownItem href="/settings">
+                <DropdownItem href="/dashboard/billing">
+                  <CreditCardIcon />
+                  <DropdownLabel>Facturation</DropdownLabel>
+                </DropdownItem>
+                <DropdownItem href="/dashboard/settings">
                   <Cog8ToothIcon />
-                  <DropdownLabel>Settings</DropdownLabel>
+                  <DropdownLabel>Paramètres</DropdownLabel>
                 </DropdownItem>
                 <DropdownDivider />
-                <DropdownItem href="/privacy-policy">
+                <DropdownItem href="/dashboard/privacy-policy">
                   <ShieldCheckIcon />
-                  <DropdownLabel>Privacy policy</DropdownLabel>
+                  <DropdownLabel>Politique de confidentialité</DropdownLabel>
                 </DropdownItem>
-                <DropdownItem href="/share-feedback">
+                <DropdownItem href="/dashboard/support">
                   <LightBulbIcon />
-                  <DropdownLabel>Share feedback</DropdownLabel>
+                  <DropdownLabel>Support</DropdownLabel>
                 </DropdownItem>
                 <DropdownDivider />
-                <DropdownItem href="/logout">
-                  <ArrowRightStartOnRectangleIcon />
-                  <DropdownLabel>Sign out</DropdownLabel>
-                </DropdownItem>
+                <SignOut />
               </DropdownMenu>
             </Dropdown>
           </NavbarSection>
@@ -100,134 +90,78 @@ export default async function DashboardLayout({ children }) {
       sidebar={
         <Sidebar>
           <SidebarHeader>
-            <Dropdown>
-              <DropdownButton as={SidebarItem} className="lg:mb-2.5">
-                <Avatar src="" />
-                <SidebarLabel>Tailwind Labs</SidebarLabel>
-                <ChevronDownIcon />
-              </DropdownButton>
-              <DropdownMenu
-                className="min-w-80 lg:min-w-64"
-                anchor="bottom start"
-              >
-                <DropdownItem href="/teams/1/settings">
-                  <Cog8ToothIcon />
-                  <DropdownLabel>Settings</DropdownLabel>
-                </DropdownItem>
-                <DropdownDivider />
-                <DropdownItem href="/teams/1">
-                  <Avatar slot="icon" src="" />
-                  <DropdownLabel>Tailwind Labs</DropdownLabel>
-                </DropdownItem>
-                <DropdownItem href="/teams/2">
-                  <Avatar
-                    slot="icon"
-                    initials="WC"
-                    className="bg-purple-500 text-white"
-                  />
-                  <DropdownLabel>Workcation</DropdownLabel>
-                </DropdownItem>
-                <DropdownDivider />
-                <DropdownItem href="/teams/create">
-                  <PlusIcon />
-                  <DropdownLabel>New team&hellip;</DropdownLabel>
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-            <SidebarSection className="max-lg:hidden">
-              <SidebarItem href="/search">
-                <MagnifyingGlassIcon />
-                <SidebarLabel>Search</SidebarLabel>
-              </SidebarItem>
-              <SidebarItem href="/inbox">
-                <InboxIcon />
-                <SidebarLabel>Inbox</SidebarLabel>
-              </SidebarItem>
-            </SidebarSection>
+            <SidebarLabel className="text-xl font-semibold px-4 py-2">
+              KLYX
+            </SidebarLabel>
           </SidebarHeader>
           <SidebarBody>
             <SidebarSection>
-              <SidebarItem href="/">
+              <SidebarItem href="/dashboard">
                 <HomeIcon />
-                <SidebarLabel>Home</SidebarLabel>
+                <SidebarLabel>Tableau de bord</SidebarLabel>
               </SidebarItem>
-              <SidebarItem href="/events">
-                <Square2StackIcon />
-                <SidebarLabel>Events</SidebarLabel>
+              <SidebarItem href="/dashboard/page">
+                <PencilSquareIcon />
+                <SidebarLabel>Pages</SidebarLabel>
               </SidebarItem>
-              <SidebarItem href="/orders">
-                <TicketIcon />
-                <SidebarLabel>Orders</SidebarLabel>
+              <SidebarItem href="/dashboard/seo">
+                <SparklesIcon />
+                <SidebarLabel>SEO & Trafic</SidebarLabel>
               </SidebarItem>
-              <SidebarItem href="/settings">
-                <Cog6ToothIcon />
-                <SidebarLabel>Settings</SidebarLabel>
-              </SidebarItem>
-              <SidebarItem href="/broadcasts">
+              <SidebarItem href="/dashboard/ads">
                 <MegaphoneIcon />
-                <SidebarLabel>Broadcasts</SidebarLabel>
+                <SidebarLabel>Publicités</SidebarLabel>
               </SidebarItem>
-            </SidebarSection>
-            <SidebarSection className="max-lg:hidden">
-              <SidebarHeading>Upcoming Events</SidebarHeading>
-              <SidebarItem href="/events/1">
-                Bear Hug: Live in Concert
+              <SidebarItem href="/dashboard/blog">
+                <Square2StackIcon />
+                <SidebarLabel>Blog</SidebarLabel>
               </SidebarItem>
-              <SidebarItem href="/events/2">Viking People</SidebarItem>
-              <SidebarItem href="/events/3">Six Fingers — DJ Set</SidebarItem>
-              <SidebarItem href="/events/4">We All Look The Same</SidebarItem>
             </SidebarSection>
             <SidebarSpacer />
             <SidebarSection>
-              <SidebarItem href="/support">
+              <SidebarItem href="/dashboard/support">
                 <QuestionMarkCircleIcon />
                 <SidebarLabel>Support</SidebarLabel>
-              </SidebarItem>
-              <SidebarItem href="/changelog">
-                <SparklesIcon />
-                <SidebarLabel>Changelog</SidebarLabel>
               </SidebarItem>
             </SidebarSection>
           </SidebarBody>
           <SidebarFooter className="max-lg:hidden">
             <Dropdown>
               <DropdownButton as={SidebarItem}>
-                <span className="flex min-w-0 items-center gap-3">
-                  <Avatar src="" className="size-10" square alt="" />
-                  <span className="min-w-0">
-                    <span className="block truncate text-sm/5 font-medium text-zinc-950 dark:text-white">
-                      Erica
-                    </span>
-                    <span className="block truncate text-xs/5 font-normal text-zinc-500 dark:text-zinc-400">
-                      erica@example.com
-                    </span>
-                  </span>
+                <span className="flex flex-col items-start px-4 pb-4">
+                  <p className="text-sm font-medium text-zinc-950 dark:text-white">
+                    {session?.user?.name || "Utilisateur"}
+                  </p>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                    {session?.user?.email || "email inconnu"}
+                  </p>
                 </span>
                 <ChevronUpIcon />
               </DropdownButton>
               <DropdownMenu className="min-w-64" anchor="top start">
                 <DropdownItem href="/my-profile">
                   <UserIcon />
-                  <DropdownLabel>My profile</DropdownLabel>
+                  <DropdownLabel>Mon profil</DropdownLabel>
                 </DropdownItem>
                 <DropdownItem href="/settings">
                   <Cog8ToothIcon />
-                  <DropdownLabel>Settings</DropdownLabel>
+                  <DropdownLabel>Paramètres</DropdownLabel>
+                </DropdownItem>
+                <DropdownItem href="/dashboard/billing">
+                  <CreditCardIcon />
+                  <DropdownLabel>Facturation</DropdownLabel>
                 </DropdownItem>
                 <DropdownDivider />
                 <DropdownItem href="/privacy-policy">
                   <ShieldCheckIcon />
-                  <DropdownLabel>Privacy policy</DropdownLabel>
+                  <DropdownLabel>Politique de confidentialité</DropdownLabel>
                 </DropdownItem>
                 <DropdownItem href="/share-feedback">
                   <LightBulbIcon />
-                  <DropdownLabel>Share feedback</DropdownLabel>
+                  <DropdownLabel>Partage de feedback</DropdownLabel>
                 </DropdownItem>
                 <DropdownDivider />
-                <DropdownItem href="/logout">
-                  <ArrowRightStartOnRectangleIcon />
-                  <DropdownLabel>Sign out</DropdownLabel>
-                </DropdownItem>
+                <SignOut />
               </DropdownMenu>
             </Dropdown>
           </SidebarFooter>
