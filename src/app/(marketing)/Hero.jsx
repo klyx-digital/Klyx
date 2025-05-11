@@ -44,15 +44,19 @@ export default function Hero() {
             </div>
           </div>
           <h1 className="mt-10 text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
-            Un site ultra-rapide, 100% personnalisé, conçu pour attirer plus de
-            clients.
+            Votre site web sur-mesure, pensé pour convertir.
           </h1>
           <p className="mt-8 text-lg text-gray-500 sm:text-xl">
-            Attirez plus de clients grâce à un site ultra‑rapide, 100%
-            personnalisé et optimisé SEO dès le premier pixel.
+            Démarquez-vous avec un site ultra-rapide, sécurisé et 100%
+            personnalisé, conçu pour attirer plus de clients et booster votre
+            visibilité.
           </p>
-          <p className="mt-4 text-lg text-gray-500 sm:text-xl">
-            À partir de <strong>79€/mois</strong>&nbsp;
+          <p className="mt-2 text-gray-500">
+            <span className="font-semibold text-blue-700">
+              À partir de 99€/mois
+            </span>{" "}
+            - tout compris : hébergement, maintenance, SEO et accompagnement
+            humain.
           </p>
           <div className="mt-10 flex items-center gap-x-6">
             <Button href="/register" color="blue">

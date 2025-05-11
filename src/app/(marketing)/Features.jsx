@@ -21,7 +21,7 @@ const features = [
   {
     name: "Référencement (SEO) optimisé dès le départ",
     description:
-      "Votre visibilité sur Google est assurée grâce à un référencement technique et éditorial intégré dès la mise en ligne. Attirez plus de clients sans effort supplémentaire.",
+      "Votre visibilité est assurée grâce à un référencement technique et éditorial intégré dès la mise en ligne. Attirez plus de clients sans effort supplémentaire.",
     icon: GlobeAltIcon,
   },
   {
@@ -34,7 +34,7 @@ const features = [
 
 export function Features() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-gray-200 rounded-2xl py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base/7 font-semibold text-blue-600">

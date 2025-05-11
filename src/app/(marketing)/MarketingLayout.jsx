@@ -27,7 +27,6 @@ import {
   SidebarSpacer,
 } from "@/components/ui/sidebar";
 import { StackedLayout } from "@/components/ui/stacked-layout";
-import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 
 const navItems = [
