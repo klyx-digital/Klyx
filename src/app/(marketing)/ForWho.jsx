@@ -6,13 +6,14 @@ export function ForWho() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">
-            Un accompagnement complet, humain et moderne pour votre réussite
-            digitale
+            Un accompagnement sur-mesure, humain et innovant
           </h2>
           <p className="mt-6 text-base/7 text-gray-600">
-            Quel que soit votre projet, nous adaptons nos solutions à vos
-            besoins, votre budget et vos ambitions. Notre mission : rendre le
-            web accessible, performant et rentable pour tous les entrepreneurs.
+            Chez Klyx, chaque projet est unique. Nous adaptons nos solutions à
+            vos besoins, à votre budget et à vos ambitions, pour rendre le web
+            accessible, performant et rentable à tous les entrepreneurs. Notre
+            mission : transformer vos idées en une présence digitale qui vous
+            ressemble et qui fait grandir votre activité
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto px-4">
@@ -30,7 +31,7 @@ export function ForWho() {
             </div>
             <div className="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/40 to-transparent">
               <h3 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">
-                Artisans, indépendants et freelances
+                Artisans, indépendants & freelances{" "}
               </h3>
               <p className="text-white/95 text-lg drop-shadow-md">
                 Valorisez votre savoir-faire et attirez de nouveaux clients

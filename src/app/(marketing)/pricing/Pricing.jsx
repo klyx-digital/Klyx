@@ -4,109 +4,133 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 
 const tiers = [
   {
-    name: "Starter",
-    description: "Everything you need to get started.",
-    priceMonthly: "$19",
+    name: "Essentiel",
+    description:
+      "Le point de départ idéal pour les indépendants et petites entreprises qui veulent être visibles rapidement.",
+    priceMonthly: "99",
     href: "#",
     highlights: [
-      { description: "Custom domains" },
-      { description: "Edge content delivery" },
-      { description: "Advanced analytics" },
-      { description: "Quarterly workshops", disabled: true },
-      { description: "Single sign-on (SSO)", disabled: true },
-      { description: "Priority phone support", disabled: true },
+      { description: "Site 100% sur-mesure (jusqu'à 5 pages)" },
+      { description: "SEO & référencement local inclus" },
+      { description: "Design moderne et responsive" },
+      { description: "Hébergement & nom de domaine offert la 1ère année" },
+      { description: "Maintenance et mises à jour" },
+      { description: "2 modifications incluses/mois" },
+      { description: "Blog intégré", disabled: true },
+      { description: "E-commerce", disabled: true },
     ],
   },
   {
-    name: "Growth",
-    description: "All the extras for your growing team.",
-    priceMonthly: "$49",
+    name: "Pro",
+    description:
+      "Pour les entreprises qui veulent un site plus complet, un meilleur SEO et un blog intégré.",
+    priceMonthly: "179",
     href: "#",
     highlights: [
-      { description: "Custom domains" },
-      { description: "Edge content delivery" },
-      { description: "Advanced analytics" },
-      { description: "Quarterly workshops" },
-      { description: "Single sign-on (SSO)", disabled: true },
-      { description: "Priority phone support", disabled: true },
+      { description: "Site avancé (jusqu'à 12 pages)" },
+      { description: "SEO avancé & référencement priorisé" },
+      { description: "Blog intégré" },
+      { description: "Formulaires de contact avancés" },
+      { description: "Hébergement sécurisé & mises à jour automatiques" },
+      { description: "6 modifications incluses/mois" },
+      { description: "E-commerce", disabled: true },
     ],
   },
   {
-    name: "Scale",
-    description: "Added flexibility at scale.",
-    priceMonthly: "$99",
+    name: "Premium",
+    description:
+      "La solution sans limite pour les marques ambitieuses : e‑commerce, performances, et accompagnement expert.",
+    priceMonthly: "299",
     href: "#",
     highlights: [
-      { description: "Custom domains" },
-      { description: "Edge content delivery" },
-      { description: "Advanced analytics" },
-      { description: "Quarterly workshops" },
-      { description: "Single sign-on (SSO)" },
-      { description: "Priority phone support" },
+      { description: "Site sur-mesure, pages illimitées" },
+      { description: "E-commerce complet" },
+      { description: "SEO expert & audit SEO mensuel" },
+      { description: "Hébergement premium (haute performance)" },
+      { description: "Modifications illimitées incluses" },
+      { description: "Rapports mensuels de performances" },
+      { description: "Développement spécifique sur devis", disabled: true },
     ],
   },
 ];
+
 const sections = [
   {
-    name: "Features",
+    name: "Fonctionnalités principales",
     features: [
       {
-        name: "Edge content delivery",
-        tiers: { Starter: true, Growth: true, Scale: true },
+        name: "Site 100% sur-mesure",
+        tiers: { Essentiel: true, Pro: true, Premium: true },
       },
       {
-        name: "Custom domains",
-        tiers: { Starter: "1", Growth: "3", Scale: "Unlimited" },
+        name: "Nombre de pages incluses",
+        tiers: { Essentiel: "5", Pro: "12", Premium: "Illimité" },
       },
       {
-        name: "Team members",
-        tiers: { Starter: "3", Growth: "20", Scale: "Unlimited" },
+        name: "SEO & Référencement local",
+        tiers: {
+          Essentiel: true,
+          Pro: true,
+          Premium: true,
+        },
       },
       {
-        name: "Single sign-on (SSO)",
-        tiers: { Starter: false, Growth: false, Scale: true },
+        name: "Blog intégré",
+        tiers: { Essentiel: false, Pro: true, Premium: true },
+      },
+      {
+        name: "E-commerce",
+        tiers: { Essentiel: false, Pro: false, Premium: true },
+      },
+      {
+        name: "Formulaires avancés",
+        tiers: { Essentiel: false, Pro: true, Premium: true },
       },
     ],
   },
   {
-    name: "Reporting",
+    name: "Gestion & accompagnement",
     features: [
       {
-        name: "Advanced analytics",
-        tiers: { Starter: true, Growth: true, Scale: true },
+        name: "Modifications incluses/mois",
+        tiers: { Essentiel: "2", Pro: "6", Premium: "Illimité" },
       },
       {
-        name: "Basic reports",
-        tiers: { Starter: false, Growth: true, Scale: true },
+        name: "Hébergement & nom de domaine",
+        tiers: { Essentiel: true, Pro: true, Premium: true },
       },
       {
-        name: "Professional reports",
-        tiers: { Starter: false, Growth: false, Scale: true },
+        name: "Maintenance & mises à jour",
+        tiers: { Essentiel: true, Pro: true, Premium: true },
       },
       {
-        name: "Custom report builder",
-        tiers: { Starter: false, Growth: false, Scale: true },
+        name: "Rapports de performance",
+        tiers: { Essentiel: true, Pro: true, Premium: true },
+      },
+      {
+        name: "Support prioritaire",
+        tiers: { Essentiel: false, Pro: false, Premium: true },
       },
     ],
   },
   {
-    name: "Support",
+    name: "Limites & extras",
     features: [
       {
-        name: "24/7 online support",
-        tiers: { Starter: true, Growth: true, Scale: true },
+        name: "Pages supplémentaires",
+        tiers: { Essentiel: "80 €/page", Pro: "80 €/page", Premium: "Inclus" },
       },
       {
-        name: "Quarterly workshops",
-        tiers: { Starter: false, Growth: true, Scale: true },
+        name: "Modifications supplémentaires",
+        tiers: {
+          Essentiel: "40 €/modif.",
+          Pro: "35 €/modif.",
+          Premium: "Inclus",
+        },
       },
       {
-        name: "Priority phone support",
-        tiers: { Starter: false, Growth: false, Scale: true },
-      },
-      {
-        name: "1:1 onboarding tour",
-        tiers: { Starter: false, Growth: false, Scale: true },
+        name: "Développement spécifique",
+        tiers: { Essentiel: false, Pro: false, Premium: "Sur devis" },
       },
     ],
   },
@@ -117,15 +141,15 @@ export function Pricing() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-4xl px-6 max-lg:text-center lg:max-w-7xl lg:px-8">
         <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-950 sm:text-6xl lg:text-pretty">
-          Pricing that grows with your team size
+          Choisissez la formule adaptée à votre ambition.
         </h1>
         <p className="mt-6 max-w-2xl text-lg font-medium text-pretty text-gray-600 max-lg:mx-auto sm:text-xl/8">
-          Choose an affordable plan that’s packed with the best features for
-          engaging your audience, creating customer loyalty, and driving sales.
+          Tous nos plans incluent la création d’un site web 100% sur-mesure,
+          optimisé SEO, hébergé et maintenu par nos soins.
         </p>
       </div>
       <div className="relative pt-16 sm:pt-24">
-        <div className="absolute inset-x-0 top-48 bottom-0 bg-[radial-gradient(circle_at_center_center,#7775D6,#592E71,#030712_70%)] lg:bg-[radial-gradient(circle_at_center_150%,#7775D6,#592E71,#030712_70%)]" />
+        <div className="absolute inset-x-0 top-48 bottom-0 bg-[radial-gradient(circle_at_center_center,#3b82f6,#1e40af,#030712_70%)] lg:bg-[radial-gradient(circle_at_center_150%,#3b82f6,#1e40af,#030712_70%)]" />
         <div className="relative mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
             {tiers.map((tier) => (
@@ -135,7 +159,7 @@ export function Pricing() {
               >
                 <div className="grid grid-cols-1 rounded-[2rem] p-2 shadow-md shadow-black/5">
                   <div className="rounded-3xl bg-white p-10 pb-9 shadow-2xl ring-1 ring-black/5">
-                    <h2 className="text-sm font-semibold text-indigo-600">
+                    <h2 className="text-sm font-semibold text-blue-600">
                       {tier.name} <span className="sr-only">plan</span>
                     </h2>
                     <p className="mt-2 text-sm/6 text-pretty text-gray-600">
@@ -146,22 +170,22 @@ export function Pricing() {
                         {tier.priceMonthly}
                       </div>
                       <div className="text-sm text-gray-600">
-                        <p>USD</p>
-                        <p>per month</p>
+                        <p>€</p>
+                        <p>par mois</p>
                       </div>
                     </div>
                     <div className="mt-8">
                       <a
                         href={tier.href}
-                        aria-label={`Start a free trial on the ${tier.name} plan`}
-                        className="inline-block rounded-md bg-indigo-600 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                        aria-label={`Démarrer avec l'offre ${tier.name}`}
+                        className="inline-block rounded-md bg-blue-600 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                       >
-                        Start a free trial
+                        Démarrer
                       </a>
                     </div>
                     <div className="mt-8">
                       <h3 className="text-sm/6 font-medium text-gray-950">
-                        Start selling with:
+                        Inclus dans cette offre&nbsp;:
                       </h3>
                       <ul className="mt-3 space-y-3">
                         {tier.highlights.map((highlight) => (
@@ -189,33 +213,7 @@ export function Pricing() {
               </div>
             ))}
           </div>
-          <div className="flex justify-between py-16 opacity-60 max-sm:mx-auto max-sm:max-w-md max-sm:flex-wrap max-sm:justify-evenly max-sm:gap-x-4 max-sm:gap-y-4 sm:py-24">
-            <img
-              alt="Transistor"
-              src="https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-white.svg"
-              className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
-            />
-            <img
-              alt="Laravel"
-              src="https://tailwindcss.com/plus-assets/img/logos/158x48/laravel-logo-white.svg"
-              className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
-            />
-            <img
-              alt="Tuple"
-              src="https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-white.svg"
-              className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
-            />
-            <img
-              alt="SavvyCal"
-              src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-white.svg"
-              className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
-            />
-            <img
-              alt="Statamic"
-              src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-white.svg"
-              className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
-            />
-          </div>
+          <div className="flex justify-between py-16 opacity-60 max-sm:mx-auto max-sm:max-w-md max-sm:flex-wrap max-sm:justify-evenly max-sm:gap-x-4 max-sm:gap-y-4 "></div>
         </div>
       </div>
       <div className="mx-auto max-w-2xl px-6 pt-16 sm:pt-24 lg:max-w-7xl lg:px-8">
@@ -232,7 +230,7 @@ export function Pricing() {
               <td className="p-0" />
               {tiers.map((tier) => (
                 <th key={tier.name} scope="col" className="p-0">
-                  <div className="text-sm font-semibold text-indigo-600">
+                  <div className="text-sm font-semibold text-blue-600">
                     {tier.name} <span className="sr-only">plan</span>
                   </div>
                 </th>
@@ -247,7 +245,7 @@ export function Pricing() {
                     aria-label={`Get started with the ${tier.name} plan`}
                     className="inline-block rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50"
                   >
-                    Get started
+                    Démarrer
                   </a>
                 </td>
               ))}
@@ -319,7 +317,7 @@ export function Pricing() {
             {tiers.map((tier) => (
               <Tab
                 key={tier.name}
-                className="w-1/3 border-b border-gray-100 py-4 text-base/8 font-medium text-indigo-600 data-selected:border-indigo-600 [&:not([data-focus])]:focus:outline-hidden"
+                className="w-1/3 border-b border-gray-100 py-4 text-base/8 font-medium text-blue-600 data-selected:border-blue-600 [&:not([data-focus])]:focus:outline-hidden"
               >
                 {tier.name}
               </Tab>

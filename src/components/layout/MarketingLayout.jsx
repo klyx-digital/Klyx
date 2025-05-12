@@ -34,7 +34,6 @@ const navItems = [
   { label: "Offres & Tarifs", url: "/pricing" },
   { label: "Pourquoi Klyx ?", url: "/why-klyx" },
   { label: "Blog", url: "/blog" },
-  { label: "Contact", url: "/contact" },
 ];
 
 export function MarketingLayout({ children }) {
