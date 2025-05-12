@@ -11,27 +11,32 @@ import deploy from "../../../public/Deploie.jpg";
 
 const features = [
   {
-    title: "Échange & définition de vos besoins",
+    title: "Quiz & définition de vos besoins",
     description:
-      "Nous commençons par un entretien pour comprendre votre activité, vos objectifs et vos attentes. Ensemble, nous définissons le site idéal pour votre entreprise.",
+      "Répondez à un court questionnaire interactif : en quelques minutes, vous nous partagez vos objectifs, vos attentes et l’univers de votre activité. Ce brief sur-mesure nous permet de cerner parfaitement votre projet.",
     image: meet,
   },
   {
-    title: "Création & personnalisation",
+    title: "Conception collaborative & ajustements",
     description:
-      "Nous concevons et développons un site sur-mesure, moderne et performant, à votre image. Vous suivez l’avancée du projet et validez chaque étape.",
+      "Nous créons votre site à partir de vos réponses, en tenant compte de chaque détail. Vous suivez l’avancée du projet, visualisez le rendu, et demandez facilement des modifications ",
     image: code,
   },
   {
-    title: "Mise en ligne & accompagnement",
+    title: "Validation & mise en ligne",
     description:
-      "Votre site est mis en ligne, optimisé pour Google et sécurisé. Nous restons à vos côtés pour la maintenance, les évolutions et répondre à toutes vos questions.",
+      "Dès que vous validez le résultat final, nous mettons votre site en ligne, optimisé pour le SEO, sécurisé et prêt à accueillir vos clients. Notre équipe reste à vos côtés pour la maintenance, les évolutions et toutes vos questions.",
     image: deploy,
   },
 ];
 
 export function Etape() {
-  let [tabOrientation, setTabOrientation] = useState("horizontal");
+  const [tabOrientation, setTabOrientation] = useState("horizontal");
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const handleTabChange = (index) => {
+    setSelectedIndex(index);
+  };
 
   useEffect(() => {
     let lgMediaQuery = window.matchMedia("(min-width: 1024px)");
@@ -69,6 +74,8 @@ export function Etape() {
           </p>
         </div>
         <TabGroup
+          selectedIndex={selectedIndex}
+          onChange={handleTabChange}
           className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
           vertical={tabOrientation === "vertical"}
         >
@@ -80,16 +87,26 @@ export function Etape() {
                     <div
                       key={feature.title}
                       className={clsx(
-                        "group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6",
+                        "group relative rounded-full pl-12 pr-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 lg:pl-16 transition-all duration-200",
                         selectedIndex === featureIndex
                           ? "bg-white lg:bg-white/10 lg:ring-1 lg:ring-white/10 lg:ring-inset"
                           : "hover:bg-white/10 lg:hover:bg-white/5"
                       )}
                     >
-                      <h3>
+                      <div
+                        className={clsx(
+                          "absolute left-4 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full font-bold text-sm lg:left-6",
+                          selectedIndex === featureIndex
+                            ? "bg-blue-600 text-white"
+                            : "bg-white/20 text-white"
+                        )}
+                      >
+                        {features.indexOf(feature) + 1}
+                      </div>
+                      <h3 className="relative">
                         <Tab
                           className={clsx(
-                            "font-display text-lg data-selected:not-data-focus:outline-hidden",
+                            "font-display text-lg data-selected:not-data-focus:outline-hidden text-left hover:cursor-pointer",
                             selectedIndex === featureIndex
                               ? "text-blue-600 lg:text-white"
                               : "text-blue-100 hover:text-white lg:text-white"
@@ -122,7 +139,10 @@ export function Etape() {
                         {feature.description}
                       </p>
                     </div>
-                    <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[57.8125rem]">
+                    <div className="relative mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-2xl shadow-blue-900/30 sm:w-auto lg:mt-0 lg:w-[57.8125rem] transition-all duration-300 hover:shadow-blue-900/40 hover:-translate-y-1">
+                      <div className="absolute top-4 left-4 z-10 bg-blue-600 text-white font-bold px-3 py-1 rounded-full text-sm">
+                        Étape {features.indexOf(feature) + 1}
+                      </div>
                       <Image
                         className="w-full"
                         src={feature.image}

@@ -44,7 +44,7 @@ import {
 import { SignOut } from "@/components/formulaire/SignOut";
 import { usePathname } from "next/navigation";
 
-export function ApplicationLayout({ children, session }) {
+export function DashboardLayout({ children, session }) {
   let pathname = usePathname();
   return (
     <SidebarLayout
