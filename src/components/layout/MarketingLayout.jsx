@@ -31,7 +31,7 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { label: "Accueil", url: "/" },
-  { label: "Offres & Tarifs", url: "/pricing" },
+  { label: "Tarifs", url: "/pricing" },
   { label: "Pourquoi Klyx ?", url: "/why-klyx" },
   { label: "Blog", url: "/blog" },
 ];

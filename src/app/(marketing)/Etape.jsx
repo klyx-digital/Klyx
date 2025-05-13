@@ -13,19 +13,19 @@ const features = [
   {
     title: "Quiz & définition de vos besoins",
     description:
-      "Répondez à un court questionnaire interactif : en quelques minutes, vous nous partagez vos objectifs, vos attentes et l’univers de votre activité. Ce brief sur-mesure nous permet de cerner parfaitement votre projet.",
+      "Répondez à un questionnaire interactif pour partager vos objectifs et attentes. Ce brief personnalisé nous permet de cerner parfaitement votre projet.",
     image: meet,
   },
   {
     title: "Conception collaborative & ajustements",
     description:
-      "Nous créons votre site à partir de vos réponses, en tenant compte de chaque détail. Vous suivez l’avancée du projet, visualisez le rendu, et demandez facilement des modifications ",
+      "Nous créons votre site sur-mesure, en tenant compte de chaque détail. Vous suivez l’avancée du projet, visualisez le rendu, et demandez facilement des modifications.",
     image: code,
   },
   {
     title: "Validation & mise en ligne",
     description:
-      "Dès que vous validez le résultat final, nous mettons votre site en ligne, optimisé pour le SEO, sécurisé et prêt à accueillir vos clients. Notre équipe reste à vos côtés pour la maintenance, les évolutions et toutes vos questions.",
+      "Dès que vous validez le résultat, nous mettons votre site en ligne, optimisé pour le SEO, sécurisé et prêt à accueillir vos clients. Notre équipe reste à vos côtés pour la maintenance et les évolutions.",
     image: deploy,
   },
 ];
@@ -57,7 +57,7 @@ export function Etape() {
     <section
       id="features"
       aria-label="Features for running your books"
-      className="relative overflow-hidden bg-blue-600 rounded-t-2xl pt-20 pb-20 sm:py-32"
+      className="relative overflow-hidden bg-blue-600 rounded-2xl pt-20 pb-20 sm:py-32"
     >
       <div className="relative p-4">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">

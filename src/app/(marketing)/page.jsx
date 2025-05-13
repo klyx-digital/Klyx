@@ -4,6 +4,7 @@ import { ForWho } from "./ForWho";
 import { Statistique } from "./Statistique";
 import { PourquoiKlyxPreview } from "./PourquoiKlyxPreview";
 import { Etape } from "./Etape";
+import { CTA } from "./CTA";
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
       <PourquoiKlyxPreview />
       <ForWho />
       <Etape />
+      <CTA />
     </main>
   );
 }

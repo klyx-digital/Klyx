@@ -37,13 +37,14 @@ export function HeroWhy() {
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
                   <h1 className="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
-                    Le meilleur du web sur-mesure, sans compromis.{" "}
+                    Le choix du web sur-mesure, sans compromis{" "}
                   </h1>
                   <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
-                    Découvrez en un coup d’œil pourquoi Klyx est la solution
-                    idéale pour un site professionnel, performant et évolutif,
-                    là où le No-Code et les agences classiques atteignent leurs
-                    limites.
+                    Faites le choix de la performance, de la liberté et de la
+                    tranquillité d’esprit. Découvrez pourquoi Klyx est la
+                    solution idéale pour un site professionnel, évolutif et
+                    vraiment adapté à votre entreprise – là où les plateformes
+                    No-Code et les agences classiques montrent leurs limites.
                   </p>
                 </div>
                 <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">

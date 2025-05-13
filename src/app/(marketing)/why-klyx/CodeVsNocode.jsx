@@ -74,18 +74,13 @@ const rows = [
 export function CodeVsNocode() {
   return (
     <div className="px-6">
-      <h2 className="text-2xl font-semibold tracking-tight text-pretty text-gray-900">
-        Comparez et choisissez la solution qui fera vraiment la différence pour
-        votre entreprise
+      <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 max-w-3xl">
+        Comparez, décidez, avancez
       </h2>
       <p className="mt-2 text-gray-500 max-w-3xl">
-        Face à la multitude d’offres web, il est parfois difficile de s’y
-        retrouver. Ce tableau comparatif vous permet de visualiser en un coup
-        d’œil les forces et limites de chaque solution : Klyx, plateformes
-        No-Code et agences web classiques. Découvrez pourquoi Klyx se démarque
-        sur les critères qui comptent vraiment : performance, personnalisation,
-        simplicité, évolutivité et accompagnement humain. Faites le choix
-        éclairé qui propulsera votre activité.
+        Dans la jungle des solutions web, il est difficile de s’y retrouver. Ce
+        tableau vous offre une vision claire des points forts et des limites de
+        chaque option.
       </p>
       <div className="mt-10 ">
         <Table

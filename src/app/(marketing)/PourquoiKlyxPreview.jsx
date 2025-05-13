@@ -10,10 +10,10 @@ export function PourquoiKlyxPreview() {
             performante
           </h2>
           <p className="mt-6 text-base/7 text-gray-200">
-            Chez Klyx, nous ne nous contentons pas de livrer un site : nous vous
+            Chez Klyx, nous ne livrons pas simplement un site. Nous vous
             accompagnons à chaque étape pour garantir votre sérénité, la
             performance de votre présence en ligne et la croissance de votre
-            activité. Découvrez ce qui fait notre force :
+            activité.
           </p>
         </div>
       </div>
@@ -27,11 +27,8 @@ export function PourquoiKlyxPreview() {
               height={200}
             />
           </div>
-          <span className="text-base/7 font-semibold text-blue-600">
+          <h3 className="text-base/7 font-semibold text-blue-600">
             Un site qui vous ressemble, pensé pour durer
-          </span>
-          <h3 className="text-xl font-semibold tracking-tight text-pretty sm:text-2xl">
-            Création sur-mesure
           </h3>
           <p className="text-center">
             Votre site est unique, conçu à votre image et développé avec les
@@ -49,11 +46,8 @@ export function PourquoiKlyxPreview() {
               height={200}
             />
           </div>
-          <span className="text-base/7 font-semibold text-blue-600">
+          <h3 className="text-base/7 font-semibold text-blue-600">
             Un accompagnement humain, à chaque instant{" "}
-          </span>
-          <h3 className="text-xl font-semibold tracking-tight text-pretty sm:text-2xl">
-            Support dédié & réactif{" "}
           </h3>
           <p className="text-center">
             Vous n’êtes jamais seul. Notre équipe est disponible, à l’écoute et
@@ -70,16 +64,13 @@ export function PourquoiKlyxPreview() {
               height={200}
             />
           </div>
-          <span className="text-base/7 font-semibold text-blue-600">
-            La technique, c’est notre métier
-          </span>
-          <h3 className="text-xl font-semibold tracking-tight text-pretty sm:text-2xl">
-            Hébergement & gestion intégrale{" "}
+          <h3 className="text-base/7 font-semibold text-blue-600">
+            Technique et gestion intégrale
           </h3>
           <p className="text-center">
-            Nous prenons en charge l’hébergement, le nom de domaine et toute la
-            gestion technique. Votre site reste rapide, sécurisé et accessible,
-            sans que vous ayez à vous en soucier.
+            Hébergement, nom de domaine, maintenance : tout est géré par nos
+            soins. Votre site reste rapide, sécurisé et accessible, sans effort
+            de votre part.
           </p>
         </div>
         <div className="flex flex-col items-center justify-center space-y-2">
@@ -91,16 +82,12 @@ export function PourquoiKlyxPreview() {
               height={200}
             />
           </div>
-          <span className="text-base/7 font-semibold text-blue-600">
-            Vos données, notre priorité
-          </span>
-          <h3 className="text-xl font-semibold tracking-tight text-pretty sm:text-2xl">
-            Sécurité & conformité{" "}
+          <h3 className="text-base/7 font-semibold text-blue-600">
+            Sécurité & conformité
           </h3>
           <p className="text-center">
-            La confidentialité et la protection de vos données - et celles de
-            vos clients - sont assurées selon les meilleures pratiques du web.
-            Naviguez l’esprit tranquille, tout est sous contrôle.
+            La confidentialité et la protection de vos données – et celles de
+            vos clients – sont assurées selon les meilleures pratiques du web.
           </p>
         </div>
       </div>

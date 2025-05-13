@@ -80,12 +80,12 @@ export function List() {
   return (
     <section className="bg-gray-100 py-20 px-6 mt-12 rounded-2xl">
       <div className="mx-auto max-w-5xl text-center">
-        <h2 className="text-3xl font-bold text-gray-900 sm:text-5xl">
-          Pourquoi choisir Klyx ?
+        <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 ">
+          Les avantages Klyx, là où ça fait la différence{" "}
         </h2>
         <p className="mt-4 text-lg text-gray-600">
-          Dans un monde digital exigeant, Klyx vous apporte la performance, la
-          simplicité et l’accompagnement que votre entreprise mérite.
+          Klyx se démarque là où ça compte vraiment : personnalisation,
+          rapidité, visibilité, simplicité et accompagnement humain.
         </p>
       </div>
 

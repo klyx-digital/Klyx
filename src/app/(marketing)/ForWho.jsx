@@ -6,7 +6,7 @@ export function ForWho() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">
-            Un accompagnement sur-mesure, humain et innovant
+            Klyx s’adapte à tous les profils
           </h2>
           <p className="mt-6 text-base/7 text-gray-600">
             Chez Klyx, chaque projet est unique. Nous adaptons nos solutions à

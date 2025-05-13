@@ -4,8 +4,7 @@ export function Statistique() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-            Votre site web : la clé de la crédibilité et de la croissance en
-            2025{" "}
+            Votre site web : la clé de votre crédibilité et de votre croissance
           </h2>
           <p className="mt-6 text-base/7 text-gray-600">
             En 2025, avoir un site internet ne relève plus du choix, mais de
