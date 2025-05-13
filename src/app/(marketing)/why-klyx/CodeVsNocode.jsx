@@ -87,8 +87,11 @@ export function CodeVsNocode() {
         simplicité, évolutivité et accompagnement humain. Faites le choix
         éclairé qui propulsera votre activité.
       </p>
-      <div className=" mt-10 ring-1 ring-gray-300 sm:rounded-lg">
-        <Table className="[--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]">
+      <div className="mt-10 ">
+        <Table
+          striped
+          className="[--gutter:--spacing(6)] sm:[--gutter:--spacing(8)]"
+        >
           <TableHead>
             <TableRow>
               <TableHeader>Critères Clés</TableHeader>

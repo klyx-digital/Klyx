@@ -1,26 +1,11 @@
 const navigation = {
-  solutions: [
-    { name: "Marketing", href: "#" },
-    { name: "Analytics", href: "#" },
-    { name: "Automation", href: "#" },
-    { name: "Commerce", href: "#" },
-    { name: "Insights", href: "#" },
-  ],
-  support: [
-    { name: "Submit ticket", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Guides", href: "#" },
-  ],
-  company: [
+  main: [
     { name: "About", href: "#" },
     { name: "Blog", href: "#" },
     { name: "Jobs", href: "#" },
     { name: "Press", href: "#" },
-  ],
-  legal: [
-    { name: "Terms of service", href: "#" },
-    { name: "Privacy policy", href: "#" },
-    { name: "License", href: "#" },
+    { name: "Accessibility", href: "#" },
+    { name: "Partners", href: "#" },
   ],
   social: [
     {
@@ -87,122 +72,72 @@ const navigation = {
   ],
 };
 
-export default function Example() {
+export function Footer() {
   return (
     <footer className="bg-gray-900">
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base/7 font-semibold text-indigo-400">
-            Get started
-          </h2>
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
-            Boost your productivity. Start using our app today.
-          </p>
-          <p className="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-gray-400">
-            Incididunt sint fugiat pariatur cupidatat consectetur sit cillum
-            anim id veniam aliqua proident excepteur commodo do ea.
-          </p>
-          <div className="mt-8 flex justify-center">
+      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+        <nav
+          aria-label="Footer"
+          className="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6"
+        >
+          {navigation.main.map((item) => (
             <a
-              href="#"
-              className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+              key={item.name}
+              href={item.href}
+              className="text-gray-400 hover:text-white"
             >
-              Get started
+              {item.name}
             </a>
-          </div>
+          ))}
+        </nav>
+        <div className="mt-16 flex justify-center gap-x-10">
+          {navigation.social.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-gray-400 hover:text-gray-300"
+            >
+              <span className="sr-only">{item.name}</span>
+              <item.icon aria-hidden="true" className="size-6" />
+            </a>
+          ))}
         </div>
-        <div className="mt-24 border-t border-white/10 pt-12 xl:grid xl:grid-cols-3 xl:gap-8">
-          <img
-            alt="Company name"
-            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-            className="h-9"
-          />
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm/6 font-semibold text-white">
-                  Solutions
-                </h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.solutions.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm/6 text-gray-400 hover:text-white"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-white">Support</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.support.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm/6 text-gray-400 hover:text-white"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm/6 font-semibold text-white">Company</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.company.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm/6 text-gray-400 hover:text-white"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-white">Legal</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.legal.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm/6 text-gray-400 hover:text-white"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
+          <div>
+            <h3 className="text-sm/6 font-semibold text-white">
+              Subscribe to our newsletter
+            </h3>
+            <p className="mt-2 text-sm/6 text-gray-300">
+              The latest news, articles, and resources, sent to your inbox
+              weekly.
+            </p>
           </div>
-        </div>
-        <div className="mt-12 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
-          <div className="flex gap-x-6 md:order-2">
-            {navigation.social.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-400 hover:text-gray-300"
+          <form className="mt-6 sm:flex sm:max-w-md lg:mt-0">
+            <label htmlFor="email-address" className="sr-only">
+              Email address
+            </label>
+            <input
+              id="email-address"
+              name="email-address"
+              type="email"
+              required
+              placeholder="Enter your email"
+              autoComplete="email"
+              className="w-full min-w-0 rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 sm:w-56 sm:text-sm/6"
+            />
+            <div className="mt-4 sm:mt-0 sm:ml-4 sm:shrink-0">
+              <button
+                type="submit"
+                className="flex w-full items-center justify-center rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
               >
-                <span className="sr-only">{item.name}</span>
-                <item.icon aria-hidden="true" className="size-6" />
-              </a>
-            ))}
-          </div>
-          <p className="mt-8 text-sm/6 text-gray-400 md:order-1 md:mt-0">
-            &copy; 2024 Your Company, Inc. All rights reserved.
-          </p>
+                Subscribe
+              </button>
+            </div>
+          </form>
         </div>
+        <p className="mt-10 text-center text-sm/6 text-gray-400">
+          &copy; 2024 Your Company, Inc. All rights reserved.
+        </p>
       </div>
     </footer>
   );

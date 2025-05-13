@@ -57,7 +57,7 @@ export function Etape() {
     <section
       id="features"
       aria-label="Features for running your books"
-      className="relative overflow-hidden bg-blue-600 rounded-2xl pt-20 pb-28 sm:py-32"
+      className="relative overflow-hidden bg-blue-600 rounded-t-2xl pt-20 pb-20 sm:py-32"
     >
       <div className="relative p-4">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
