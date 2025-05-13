@@ -8,6 +8,7 @@ import {
   DropdownLabel,
   DropdownMenu,
 } from "@/components/ui/dropdown";
+import { Cog8ToothIcon, ChevronDownIcon } from "@heroicons/react/16/solid";
 import {
   Navbar,
   NavbarDivider,
@@ -33,7 +34,6 @@ const navItems = [
   { label: "Accueil", url: "/" },
   { label: "Tarifs", url: "/pricing" },
   { label: "Pourquoi Klyx ?", url: "/why-klyx" },
-  { label: "Blog", url: "/blog" },
 ];
 
 export function MarketingLayout({ children }) {
@@ -54,6 +54,30 @@ export function MarketingLayout({ children }) {
                 {label}
               </NavbarItem>
             ))}
+            <Dropdown>
+              <DropdownButton plain>
+                Blog
+                <ChevronDownIcon />
+              </DropdownButton>
+              <DropdownMenu className="min-w-48">
+                <DropdownItem href="/blog">Tous les articles</DropdownItem>
+                <DropdownItem href="/blog/seo">
+                  Gagner en visibilité (SEO)
+                </DropdownItem>
+                <DropdownItem href="/blog/performance">
+                  Améliorer la performance
+                </DropdownItem>
+                <DropdownItem href="/blog/conversions">
+                  Booster les conversions (E-commerce)
+                </DropdownItem>
+                <DropdownItem href="/blog/efficace">
+                  Créer un site efficace
+                </DropdownItem>
+                <DropdownItem href="/blog/ux">
+                  Optimiser l’expérience utilisateur
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
           </NavbarSection>
           <NavbarSpacer />
           <NavbarDivider />
@@ -84,6 +108,7 @@ export function MarketingLayout({ children }) {
                   {label}
                 </SidebarItem>
               ))}
+              <SidebarItem href="/blog">Blog</SidebarItem>
             </SidebarSection>
             <SidebarSpacer />
             <SidebarDivider />
