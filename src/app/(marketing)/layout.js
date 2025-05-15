@@ -3,11 +3,11 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function Layout({ children }) {
   return (
-    <>
+    <section>
       <MarketingLayout>
         {children}
         <Footer />
       </MarketingLayout>
-    </>
+    </section>
   );
 }

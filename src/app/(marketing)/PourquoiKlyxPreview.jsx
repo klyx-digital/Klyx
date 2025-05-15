@@ -17,7 +17,7 @@ export function PourquoiKlyxPreview() {
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-12 p-4 space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-12 px-6 space-y-6">
         <div className="flex flex-col items-center justify-center space-y-2">
           <div className="bg-white rounded-full">
             <Image
@@ -30,7 +30,7 @@ export function PourquoiKlyxPreview() {
           <h3 className="text-base/7 font-semibold text-blue-600">
             Un site qui vous ressemble, pensé pour durer
           </h3>
-          <p className="text-center">
+          <p className="text-left sm:text-center">
             Votre site est unique, conçu à votre image et développé avec les
             technologies les plus modernes (Next.js, React, Tailwind CSS…). Fini
             les templates impersonnels : vous bénéficiez d’une solution
@@ -49,7 +49,7 @@ export function PourquoiKlyxPreview() {
           <h3 className="text-base/7 font-semibold text-blue-600">
             Un accompagnement humain, à chaque instant{" "}
           </h3>
-          <p className="text-center">
+          <p className="text-left sm:text-center">
             Vous n’êtes jamais seul. Notre équipe est disponible, à l’écoute et
             vous guide à chaque étape. Nous répondons à toutes vos questions et
             faisons évoluer votre site selon vos ambitions.
@@ -67,7 +67,7 @@ export function PourquoiKlyxPreview() {
           <h3 className="text-base/7 font-semibold text-blue-600">
             Technique et gestion intégrale
           </h3>
-          <p className="text-center">
+          <p className="text-left sm:text-center">
             Hébergement, nom de domaine, maintenance : tout est géré par nos
             soins. Votre site reste rapide, sécurisé et accessible, sans effort
             de votre part.
@@ -85,7 +85,7 @@ export function PourquoiKlyxPreview() {
           <h3 className="text-base/7 font-semibold text-blue-600">
             Sécurité & conformité
           </h3>
-          <p className="text-center">
+          <p className="text-left sm:text-center">
             La confidentialité et la protection de vos données – et celles de
             vos clients – sont assurées selon les meilleures pratiques du web.
           </p>

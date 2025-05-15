@@ -4,10 +4,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
 
 export function Collapse() {
   return (
-    <div className="bg-black rounded-t-2xl">
+    <section className="bg-black rounded-t-2xl">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:pt-32 lg:px-8 lg:py-40">
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
@@ -16,20 +17,20 @@ export function Collapse() {
             </h2>
             <p className="mt-4 text-base/7 text-white">
               Une question ? Notre équipe vous répond rapidement{" "}
-              <a
+              <Link
                 href="/contact"
                 className="font-semibold text-blue-600 hover:text-blue-500"
               >
                 Contactez-nous
-              </a>
+              </Link>
               .
             </p>
           </div>
           <div className="mt-10 lg:col-span-7 lg:mt-0 text-white space-y-10">
             {/* À propos de Klyx */}
-            <h3 className="text-lg font-medium text-gray-400">
+            <h2 className="text-lg font-medium text-gray-400">
               À propos de Klyx
-            </h3>
+            </h2>
             <Accordion type="single" className="w-full" collapsible>
               <AccordionItem value="about-1">
                 <AccordionTrigger>Qu’est-ce que Klyx ?</AccordionTrigger>
@@ -253,6 +254,6 @@ export function Collapse() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

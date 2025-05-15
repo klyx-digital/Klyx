@@ -1,12 +1,9 @@
-import {
-  BuildingOffice2Icon,
-  EnvelopeIcon,
-  PhoneIcon,
-} from "@heroicons/react/24/outline";
+import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 export default function ContactPage() {
   return (
-    <div className="relative isolate bg-white">
+    <main className="relative isolate bg-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
         <div className="relative px-6 pt-24 pb-20 sm:pt-32 lg:static lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
@@ -39,9 +36,9 @@ export default function ContactPage() {
                 />
               </svg>
             </div>
-            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+            <h1 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
               Contactez Klyx{" "}
-            </h2>
+            </h1>
             <p className="mt-6 text-lg/8 text-gray-600">
               Une question, un projet ou simplement envie d’échanger ? L’équipe
               Klyx vous répond rapidement et vous accompagne à chaque étape de
@@ -59,9 +56,9 @@ export default function ContactPage() {
                   />
                 </dt>
                 <dd>
-                  <a href="tel:+0611235190" className="hover:text-gray-900">
+                  <Link href="tel:+0611235190" className="hover:text-gray-900">
                     06 11 23 51 90
-                  </a>
+                  </Link>
                 </dd>
               </div>
               <div className="flex gap-x-4">
@@ -73,12 +70,12 @@ export default function ContactPage() {
                   />
                 </dt>
                 <dd>
-                  <a
+                  <Link
                     href="mailto:mr.conte@icloud.com"
                     className="hover:text-gray-900"
                   >
                     mr.conte@icloud.com
-                  </a>
+                  </Link>
                 </dd>
               </div>
             </dl>
@@ -188,6 +185,6 @@ export default function ContactPage() {
           </div>
         </form>
       </div>
-    </div>
+    </main>
   );
 }

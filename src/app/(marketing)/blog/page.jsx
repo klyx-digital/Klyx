@@ -1,79 +1,64 @@
-const posts = [
-  {
-    id: 1,
-    title: "Boost your conversion rate",
-    href: "#",
-    description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
-    date: "Mar 16, 2020",
-    datetime: "2020-03-16",
-    author: {
-      name: "Michael Foster",
-      imageUrl:
-        "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-  },
-  // More posts...
-];
+import Link from "next/link";
+import { getPosts } from "@/lib/content";
 
-export default function Example() {
+export default async function Page() {
+  const posts = await getPosts();
+
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-white py-12 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
+          <h1 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
             Le blog Klyx
-          </h2>
+          </h1>
           <p className="mt-2 text-lg/8 text-gray-600">
             Des conseils concrets, des analyses et des astuces pour booster
             votre visibilité, améliorer la performance de votre site et
             transformer votre présence digitale en véritable levier de
-            croissance.{" "}
+            croissance.
           </p>
         </div>
-        <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {posts.map((post) => (
             <article
               key={post.id}
-              className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-80"
+              className="flex flex-col items-start justify-between"
             >
-              <img
-                alt=""
-                src={post.imageUrl}
-                className="absolute inset-0 -z-10 size-full object-cover"
-              />
-              <div className="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40" />
-              <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-gray-900/10 ring-inset" />
-
-              <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
-                <time dateTime={post.datetime} className="mr-8">
-                  {post.date}
-                </time>
-                <div className="-ml-4 flex items-center gap-x-4">
-                  <svg
-                    viewBox="0 0 2 2"
-                    className="-ml-0.5 size-0.5 flex-none fill-white/50"
+              <div className="relative w-full hover:scale-105 transition-all duration-300">
+                <Link href={`/blog/${post.slug}`}>
+                  <img
+                    alt={post.title}
+                    src={post.imageUrl}
+                    className="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-2/1 lg:aspect-3/2"
+                  />
+                </Link>
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-gray-900/10 ring-inset pointer-events-none" />
+              </div>
+              <div className="max-w-xl">
+                <div className="mt-8 flex items-center gap-x-4 text-xs">
+                  <time dateTime={post.datetime} className="text-gray-500">
+                    {post.date}
+                  </time>
+                  {/* lien categorie */}
+                  <Link
+                    href={`/blog/${post.category}`}
+                    className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                   >
-                    <circle r={1} cx={1} cy={1} />
-                  </svg>
-                  <div className="flex gap-x-2.5">
-                    <img
-                      alt=""
-                      src={post.author.imageUrl}
-                      className="size-6 flex-none rounded-full bg-white/10"
-                    />
-                    {post.author.name}
-                  </div>
+                    {post.category}
+                  </Link>
+                </div>
+                <div className="group relative">
+                  <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                    <Link href={`/blog/${post.slug}`}>
+                      <span className="absolute inset-0" />
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">
+                    {post.description}
+                  </p>
                 </div>
               </div>
-              <h3 className="mt-3 text-lg/6 font-semibold text-white">
-                <a href={post.href}>
-                  <span className="absolute inset-0" />
-                  {post.title}
-                </a>
-              </h3>
             </article>
           ))}
         </div>

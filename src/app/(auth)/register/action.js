@@ -10,7 +10,7 @@ const RegisterSchema = z.object({
   password: z.string().min(6, "Mot de passe trop court"),
 });
 
-export async function registerUser(prevState, formData) {
+export async function RegisterUser(prevState, formData) {
   const rawData = {
     name: formData.get("name"),
     email: formData.get("email"),

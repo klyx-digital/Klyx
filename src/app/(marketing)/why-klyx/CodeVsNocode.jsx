@@ -73,7 +73,7 @@ const rows = [
 
 export function CodeVsNocode() {
   return (
-    <div className="px-6">
+    <section className="px-6 pb-8">
       <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 max-w-3xl">
         Comparez, décidez, avancez
       </h2>
@@ -107,6 +107,6 @@ export function CodeVsNocode() {
           </TableBody>
         </Table>
       </div>
-    </div>
+    </section>
   );
 }

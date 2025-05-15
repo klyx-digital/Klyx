@@ -3,12 +3,10 @@
 import {
   Dropdown,
   DropdownButton,
-  DropdownDivider,
   DropdownItem,
-  DropdownLabel,
   DropdownMenu,
 } from "@/components/ui/dropdown";
-import { Cog8ToothIcon, ChevronDownIcon } from "@heroicons/react/16/solid";
+import { ChevronDownIcon } from "@heroicons/react/16/solid";
 import {
   Navbar,
   NavbarDivider,
@@ -29,9 +27,9 @@ import {
 } from "@/components/ui/sidebar";
 import { StackedLayout } from "@/components/ui/stacked-layout";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const navItems = [
-  { label: "Accueil", url: "/" },
   { label: "Tarifs", url: "/pricing" },
   { label: "Pourquoi Klyx ?", url: "/why-klyx" },
 ];
@@ -44,10 +42,13 @@ export function MarketingLayout({ children }) {
         <Navbar>
           <Dropdown>
             <DropdownButton as={NavbarItem} className="max-lg:hidden">
-              <NavbarLabel>KLYX</NavbarLabel>
+              <Link href="/">
+                <NavbarLabel className="font-bold text-xl">KLYX</NavbarLabel>
+              </Link>
             </DropdownButton>
           </Dropdown>
           <NavbarDivider className="max-lg:hidden" />
+          <NavbarSpacer />
           <NavbarSection className="max-lg:hidden">
             {navItems.map(({ label, url }) => (
               <NavbarItem key={label} href={url} current={pathname === url}>
@@ -97,7 +98,11 @@ export function MarketingLayout({ children }) {
           <SidebarHeader>
             <Dropdown>
               <DropdownButton as={SidebarItem} className="lg:mb-2.5">
-                <SidebarLabel>KLYX</SidebarLabel>
+                <Link href="/">
+                  <SidebarLabel className="font-bold text-xl">
+                    KLYX
+                  </SidebarLabel>
+                </Link>
               </DropdownButton>
             </Dropdown>
           </SidebarHeader>
@@ -108,7 +113,9 @@ export function MarketingLayout({ children }) {
                   {label}
                 </SidebarItem>
               ))}
-              <SidebarItem href="/blog">Blog</SidebarItem>
+              <SidebarItem href="/blog" current={pathname.startsWith("/blog")}>
+                Blog
+              </SidebarItem>
             </SidebarSection>
             <SidebarSpacer />
             <SidebarDivider />

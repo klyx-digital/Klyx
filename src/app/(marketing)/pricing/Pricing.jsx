@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { CheckIcon, MinusIcon, PlusIcon } from "@heroicons/react/16/solid";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
+import Link from "next/link";
 
 const tiers = [
   {
@@ -32,7 +33,7 @@ const tiers = [
       { description: "Blog intégré" },
       { description: "Formulaires de contact avancés" },
       { description: "Hébergement sécurisé & mises à jour automatiques" },
-      { description: "6 modifications incluses/mois" },
+      { description: "5 modifications incluses/mois" },
       { description: "E-commerce", disabled: true },
     ],
   },
@@ -47,7 +48,7 @@ const tiers = [
       { description: "E-commerce complet" },
       { description: "SEO expert & audit SEO mensuel" },
       { description: "Hébergement premium (haute performance)" },
-      { description: "Modifications illimitées incluses" },
+      { description: "8 modifications incluses/mois" },
       { description: "Rapports mensuels de performances" },
       { description: "Développement spécifique sur devis", disabled: true },
     ],
@@ -93,7 +94,7 @@ const sections = [
     features: [
       {
         name: "Modifications incluses/mois",
-        tiers: { Essentiel: "2", Pro: "6", Premium: "Illimité" },
+        tiers: { Essentiel: "2", Pro: "5", Premium: "8" },
       },
       {
         name: "Hébergement & nom de domaine",
@@ -125,7 +126,7 @@ const sections = [
         tiers: {
           Essentiel: "40 €/modif.",
           Pro: "35 €/modif.",
-          Premium: "Inclus",
+          Premium: "30 €/modif.",
         },
       },
       {
@@ -138,7 +139,7 @@ const sections = [
 
 export function Pricing() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-white py-6 sm:py-12">
       <div className="mx-auto max-w-4xl px-6 max-lg:text-center lg:max-w-7xl lg:px-8">
         <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-950 sm:text-6xl lg:text-pretty">
           Choisissez la formule adaptée à votre ambition.
@@ -175,14 +176,41 @@ export function Pricing() {
                       </div>
                     </div>
                     <div className="mt-8">
-                      <a
-                        href={tier.href}
-                        aria-label={`Démarrer avec l'offre ${tier.name}`}
-                        className="inline-block rounded-md bg-blue-600 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                      >
-                        Démarrer
-                      </a>
+                      {tier.name === "Essentiel" && (
+                        <>
+                          <Link
+                            href="/register?plan=Essentiel"
+                            aria-label="Créer mon site Essentiel avec Klyx"
+                            className="inline-block rounded-md bg-blue-600 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                          >
+                            Créer mon site Essentiel
+                          </Link>
+                        </>
+                      )}
+                      {tier.name === "Pro" && (
+                        <>
+                          <Link
+                            href="/register?plan=Pro"
+                            aria-label="Passer à l'offre Pro"
+                            className="inline-block rounded-md bg-blue-600 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                          >
+                            Créer mon site Pro
+                          </Link>
+                        </>
+                      )}
+                      {tier.name === "Premium" && (
+                        <>
+                          <Link
+                            href="/contact?plan=Premium"
+                            aria-label="Être recontacté pour l'offre Premium"
+                            className="inline-block rounded-md bg-blue-600 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                          >
+                            Créer mon site Premium
+                          </Link>
+                        </>
+                      )}
                     </div>
+
                     <div className="mt-8">
                       <h3 className="text-sm/6 font-medium text-gray-950">
                         Inclus dans cette offre&nbsp;:
@@ -240,13 +268,13 @@ export function Pricing() {
               <th className="p-0" />
               {tiers.map((tier) => (
                 <td key={tier.name} className="px-0 pt-3 pb-0">
-                  <a
+                  <Link
                     href={tier.href}
                     aria-label={`Get started with the ${tier.name} plan`}
                     className="inline-block rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50"
                   >
                     Démarrer
-                  </a>
+                  </Link>
                 </td>
               ))}
             </tr>
@@ -326,12 +354,12 @@ export function Pricing() {
           <TabPanels as={Fragment}>
             {tiers.map((tier) => (
               <TabPanel key={tier.name}>
-                <a
+                <Link
                   href={tier.href}
                   className="mt-8 block rounded-md bg-white px-3.5 py-2.5 text-center text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50"
                 >
-                  Get started
-                </a>
+                  Créer mon site {tier.name}
+                </Link>
                 {sections.map((section) => (
                   <Fragment key={section.name}>
                     <div className="-mx-6 mt-10 rounded-lg bg-gray-50 px-6 py-3 text-sm/6 font-semibold text-gray-950 group-first-of-type:mt-5">
@@ -383,6 +411,12 @@ export function Pricing() {
           </TabPanels>
         </TabGroup>
       </div>
+      <p className="mt-4 text-sm text-gray-500 max-w-3xl mx-auto text-center px-6">
+        <strong className="text-black">À savoir :</strong> Les modifications
+        incluses concernent les textes, images ou ajustements mineurs de design.
+        Les modifications non utilisées ne sont pas reportables. Les évolutions
+        structurelles ou ajouts de fonctionnalités sont facturés sur devis.
+      </p>
     </div>
   );
 }

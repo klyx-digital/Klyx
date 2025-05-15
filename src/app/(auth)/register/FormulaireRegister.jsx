@@ -7,7 +7,7 @@ import { Heading } from "@/components/ui/heading";
 import { Input } from "@/components/ui/input";
 import { Strong, Text, TextLink } from "@/components/ui/text";
 import { useActionState, useState, useEffect } from "react";
-import { registerUser } from "./action";
+import { RegisterUser } from "./action";
 import {
   Dialog,
   DialogActions,
@@ -23,7 +23,7 @@ export function FormulaireRegister() {
   };
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [state, formAction, isPending] = useActionState(
-    registerUser,
+    RegisterUser,
     initialState
   );
 
