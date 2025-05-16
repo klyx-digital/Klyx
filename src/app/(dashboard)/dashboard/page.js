@@ -1,6 +1,6 @@
 import { Heading, Subheading } from "@/components/ui/heading";
 import { auth } from "@/auth";
-import { Stat } from "../../../components/Stat";
+import { Stat } from "../../../components/dashboard/Stat";
 
 export default async function dashboardPage() {
   const session = await auth();

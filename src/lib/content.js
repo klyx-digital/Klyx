@@ -43,16 +43,7 @@ export async function getPostBySlug(slug) {
     const fileContent = await fs.readFile(filePath, "utf-8");
     const { data, content } = matter(fileContent);
 
-    return {
-      id: slug,
-      slug,
-      title: data.title,
-      date: data.date,
-      description: data.description,
-      imageUrl: data.imageUrl,
-      category: data.category,
-      content,
-    };
+    return { content, metadata: data };
   } catch (error) {
     return null;
   }
