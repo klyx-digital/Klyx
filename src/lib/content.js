@@ -18,13 +18,8 @@ export async function getPosts() {
           const { data } = matter(fileContent);
 
           return {
-            id: slug,
             slug,
-            title: data.title,
-            date: data.date,
-            description: data.description,
-            imageUrl: data.imageUrl,
-            category: data.category,
+            ...data,
           };
         } catch (error) {
           return null;
