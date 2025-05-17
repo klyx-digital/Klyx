@@ -76,7 +76,7 @@ export default async function PostPage({ params }) {
   };
 
   return (
-    <main>
+    <main className="mx-auto max-w-4xl">
       {/* Add JSON-LD */}
       <script
         type="application/ld+json"

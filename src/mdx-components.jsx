@@ -4,7 +4,7 @@ export function useMDXComponents(components) {
   return {
     h1: ({ children, ...props }) => (
       <h1
-        className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-12 mt-16 leading-tight"
+        className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-12 mt-16 leading-tight text-center"
         {...props}
       >
         {children}
@@ -12,7 +12,7 @@ export function useMDXComponents(components) {
     ),
     h2: ({ children, ...props }) => (
       <h2
-        className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-800 dark:text-gray-100 mt-12 mb-8 leading-relaxed"
+        className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-800 dark:text-gray-100 mt-12 mb-8 leading-relaxed text-center"
         {...props}
       >
         {children}
