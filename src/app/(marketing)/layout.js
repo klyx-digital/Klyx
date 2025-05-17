@@ -5,7 +5,7 @@ export default function Layout({ children }) {
   return (
     <section>
       <MarketingLayout>
-        {children}
+        <main>{children}</main>
         <Footer />
       </MarketingLayout>
     </section>

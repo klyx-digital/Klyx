@@ -1,9 +1,67 @@
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Contact – Klyx Digital",
+  description:
+    "Besoin d’aide ou d’un devis ? Contactez Klyx par mail, téléphone ou via notre formulaire !",
+  alternates: {
+    canonical: "https://klyxdigital.fr/contact",
+  },
+  openGraph: {
+    title: "Contactez Klyx Digital",
+    description:
+      "Prenez contact avec notre équipe pour votre site sur-mesure : mail, téléphone ou formulaire.",
+    url: "https://klyxdigital.fr/contact",
+    siteName: "Klyx Digital",
+    images: [
+      {
+        url: "https://klyxdigital.fr/og/contact.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contactez Klyx Digital",
+    description:
+      "Formulaire, email ou téléphone : choisissez votre canal pour parler de votre projet web sur-mesure.",
+    images: ["https://klyxdigital.fr/og/contact.png"],
+  },
+};
+
 export default function ContactPage() {
   return (
     <main className="relative isolate bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Klyx Digital",
+            url: "https://klyxdigital.fr",
+            logo: "https://klyxdigital.fr/logo.png",
+            contactPoint: [
+              {
+                "@type": "ContactPoint",
+                telephone: "+33611235190",
+                contactType: "customer service",
+                availableLanguage: ["French"],
+              },
+              {
+                "@type": "ContactPoint",
+                email: "mr.conte@icloud.com",
+                contactType: "customer service",
+                availableLanguage: ["French"],
+              },
+            ],
+          }),
+        }}
+      />
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
         <div className="relative px-6 pt-24 pb-20 sm:pt-32 lg:static lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">

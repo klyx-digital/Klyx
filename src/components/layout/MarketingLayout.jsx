@@ -62,19 +62,19 @@ export function MarketingLayout({ children }) {
               </DropdownButton>
               <DropdownMenu className="min-w-48">
                 <DropdownItem href="/blog">Tous les articles</DropdownItem>
-                <DropdownItem href={`/blog/categories/seo`}>
+                <DropdownItem href={`/blog?category=seo`}>
                   Gagner en visibilité (SEO)
                 </DropdownItem>
-                <DropdownItem href={`/blog/categories/performance`}>
+                <DropdownItem href={`/blog?category=performance`}>
                   Améliorer la performance
                 </DropdownItem>
-                <DropdownItem href={`/blog/categories/conversions`}>
+                <DropdownItem href={`/blog?category=conversions`}>
                   Booster les conversions (E-commerce)
                 </DropdownItem>
-                <DropdownItem href={`/blog/categories/efficace`}>
+                <DropdownItem href={`/blog?category=efficace`}>
                   Créer un site efficace
                 </DropdownItem>
-                <DropdownItem href={`/blog/categories/ux`}>
+                <DropdownItem href={`/blog?category=ux`}>
                   Optimiser l’expérience utilisateur
                 </DropdownItem>
               </DropdownMenu>

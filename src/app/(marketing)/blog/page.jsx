@@ -1,20 +1,25 @@
 import Link from "next/link";
 import { Categories } from "./Categories";
+import { Pagination } from "./Pagination";
 import { Badge } from "@/components/ui/badge";
-import { getPosts, getCategories } from "@/lib/content";
+import { getPosts } from "@/lib/content";
 import { Select } from "@/components/ui/select";
 import { Divider } from "@/components/ui/divider";
 
 export const metadata = {
-  title: "Blog",
+  title: "Blog Klyx",
   description:
     "Des conseils concrets, des analyses et des astuces pour booster votre visibilité, améliorer la performance de votre site et transformer votre présence digitale en véritable levier de croissance.",
 };
 
-export default async function Page({ params }) {
+export default async function Page({ searchParams }) {
   const posts = await getPosts();
 
-  const { category } = await params;
+  const { page: pageParam, category } = await searchParams;
+  const page =
+    typeof pageParam === "string" && parseInt(pageParam) > 0
+      ? parseInt(pageParam)
+      : 1;
   const filteredPosts = category
     ? posts.filter((post) => post.category === category)
     : posts;
@@ -59,7 +64,7 @@ export default async function Page({ params }) {
                     {post.date}
                   </time>
                   <Link
-                    href={`/blog/categories/${post.category}`}
+                    href={`/blog?category=${post.category}`}
                     className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                   >
                     {post.category}
@@ -80,6 +85,7 @@ export default async function Page({ params }) {
             </article>
           ))}
         </div>
+        <Pagination page={page} category={category} />
       </div>
     </div>
   );

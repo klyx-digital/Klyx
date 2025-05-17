@@ -71,7 +71,7 @@ export default function Hero() {
           <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
             <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-gray-900/10 ring-inset lg:-m-4 lg:rounded-2xl lg:p-4">
               <Image
-                alt="App screenshot"
+                alt="Capture du dashboard Klyx montrant les statistiques de trafic"
                 src="/KlyxCaptureEcran.png"
                 width={2432}
                 height={1442}

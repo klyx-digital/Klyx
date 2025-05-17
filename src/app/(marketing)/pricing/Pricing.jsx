@@ -273,7 +273,7 @@ export function Pricing() {
                     aria-label={`Get started with the ${tier.name} plan`}
                     className="inline-block rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50"
                   >
-                    Démarrer
+                    Créer mon site
                   </Link>
                 </td>
               ))}
