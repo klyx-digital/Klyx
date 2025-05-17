@@ -76,14 +76,14 @@ export default async function PostPage({ params }) {
   };
 
   return (
-    <main className="mx-auto max-w-4xl">
+    <main>
       {/* Add JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 lg:max-w-7xl lg:px-8">
-        <article className="prose prose-slate mx-auto ">
+      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:max-w-7xl lg:px-8">
+        <article className="prose prose-slate mx-auto max-w-4xl">
           <Post />
         </article>
         <ShareButtons title={currentPost.title} url={canonicalUrl} />
