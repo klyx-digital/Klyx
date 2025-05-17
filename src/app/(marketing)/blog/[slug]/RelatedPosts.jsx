@@ -20,10 +20,10 @@ export function RelatedPosts({ posts }) {
                   {post.date}
                 </time>
                 <a
-                  href={post.category.href}
+                  href={`/blog?category=${post.category}`}
                   className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                 >
-                  {post.category.title}
+                  {post.category}
                 </a>
               </div>
               <div className="group relative">

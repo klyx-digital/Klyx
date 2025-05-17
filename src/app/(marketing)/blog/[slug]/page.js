@@ -11,19 +11,12 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const posts = await getPosts();
-  try {
-    const { slug } = await params;
-    const post = posts.find((post) => post.slug === slug);
-    return {
-      title: post.title,
-      description: post.description,
-    };
-  } catch (error) {
-    return {
-      title: "Article introuvable",
-      description: "Cet article n'existe pas ou a été supprimé.",
-    };
-  }
+  const { slug } = await params;
+  const post = posts.find((post) => post.slug === slug);
+  return {
+    title: post.title,
+    description: post.description,
+  };
 }
 
 export default async function PostPage({ params }) {
