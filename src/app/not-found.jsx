@@ -1,9 +1,10 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import {
-  BookmarkSquareIcon,
   BookOpenIcon,
-  QueueListIcon,
+  CurrencyEuroIcon,
+  InformationCircleIcon,
   RssIcon,
+  EnvelopeIcon,
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
 
@@ -11,32 +12,38 @@ const links = [
   {
     name: "Documentation",
     href: "#",
-    description: "Learn how to integrate our tools with your app.",
+    description: "Accédez à notre guide complet pour bien démarrer avec Klyx.",
     icon: BookOpenIcon,
   },
   {
-    name: "API Reference",
-    href: "#",
-    description: "A complete API reference for our libraries.",
-    icon: QueueListIcon,
+    name: "Tarifs",
+    href: "/pricing",
+    description: "Découvrez nos formules transparentes, sans frais cachés.",
+    icon: CurrencyEuroIcon,
   },
   {
-    name: "Guides",
-    href: "#",
-    description: "Installation guides that cover popular setups.",
-    icon: BookmarkSquareIcon,
+    name: "Pourquoi Klyx ?",
+    href: "/why-klyx",
+    description: "Découvrez les avantages de Klyx pour votre activité.",
+    icon: InformationCircleIcon,
   },
   {
     name: "Blog",
-    href: "#",
-    description: "Read our latest news and articles.",
+    href: "/blog",
+    description: "Nos conseils, études de cas et actualités du web.",
     icon: RssIcon,
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+    description: "Parlez-nous de votre projet ou posez-nous vos questions.",
+    icon: EnvelopeIcon,
   },
 ];
 const social = [
   {
     name: "X",
-    href: "#",
+    href: "https://x.com/klyx_digital",
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
@@ -45,7 +52,7 @@ const social = [
   },
   {
     name: "GitHub",
-    href: "#",
+    href: "https://github.com/klyx-digital",
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -58,7 +65,7 @@ const social = [
   },
   {
     name: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/klyx_digital/",
     icon: (props) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -76,21 +83,22 @@ export default function NotFound() {
     <div className="bg-white">
       <main className="mx-auto w-full max-w-7xl px-6 pt-10 pb-16 sm:pb-24 lg:px-8">
         <img
-          alt="Your Company"
+          alt="Klyx"
           src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
           className="mx-auto h-10 w-auto sm:h-12"
         />
         <div className="mx-auto mt-20 max-w-2xl text-center sm:mt-24">
-          <p className="text-base/8 font-semibold text-indigo-600">404</p>
+          <p className="text-base/8 font-semibold text-blue-600">404</p>
           <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
-            This page does not exist
+            Oups ! Page introuvable{" "}
           </h1>
           <p className="mt-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-            Sorry, we couldn’t find the page you’re looking for.
+            Nous sommes désolés, mais la page que vous cherchez n'a pas été
+            trouvée.
           </p>
         </div>
         <div className="mx-auto mt-16 flow-root max-w-lg sm:mt-20">
-          <h2 className="sr-only">Popular pages</h2>
+          <h2 className="sr-only">Pages populaires</h2>
           <ul
             role="list"
             className="-mt-6 divide-y divide-gray-900/5 border-b border-gray-900/5"
@@ -100,7 +108,7 @@ export default function NotFound() {
                 <div className="flex size-10 flex-none items-center justify-center rounded-lg shadow-xs ring-1 ring-gray-900/10">
                   <link.icon
                     aria-hidden="true"
-                    className="size-6 text-indigo-600"
+                    className="size-6 text-blue-600"
                   />
                 </div>
                 <div className="flex-auto">
@@ -124,8 +132,11 @@ export default function NotFound() {
             ))}
           </ul>
           <div className="mt-10 flex justify-center">
-            <Link href="#" className="text-sm/6 font-semibold text-indigo-600">
-              <span aria-hidden="true">&larr;</span> Back to home
+            <Link
+              href="/"
+              className="text-sm/6 font-semibold text-blue-600 hover:text-blue-800 hover:underline "
+            >
+              <span aria-hidden="true">&larr;</span> Retour à l'accueil
             </Link>
           </div>
         </div>
@@ -133,7 +144,7 @@ export default function NotFound() {
       <footer className="border-t border-gray-100 py-6 sm:py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 sm:flex-row lg:px-8">
           <p className="text-sm/7 text-gray-400">
-            &copy; Your Company, Inc. All rights reserved.
+            &copy; 2025 Klyx – Tous droits réservés.
           </p>
           <div className="hidden sm:block sm:h-7 sm:w-px sm:flex-none sm:bg-gray-200" />
           <div className="flex gap-x-4">
