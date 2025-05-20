@@ -35,16 +35,17 @@ enum SubscriptionStatus {
 // ---------- MODELS -----------
 
 model User {
-  id            String          @id @default(cuid())
-  name          String?
-  email         String          @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
-  password      String?
-  Authenticator Authenticator[]
-  subscription  Subscription?   @relation("UserSubscription")
+  id             String          @id @default(cuid())
+  name           String?
+  email          String          @unique
+  emailVerified  DateTime?
+  image          String?
+  accounts       Account[]
+  sessions       Session[]
+  password       String?
+  Authenticator  Authenticator[]
+  subscription   Subscription?   @relation("UserSubscription")
+  questionnaires Questionnaire[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -116,4 +117,30 @@ model Subscription {
   updatedAt            DateTime           @updatedAt
 
   user User @relation("UserSubscription", fields: [userId], references: [id])
+}
+
+model Questionnaire {
+  id                 String   @id @default(cuid())
+  /**
+   * --- données du brief ---
+   */
+  nameEntreprise     String?
+  objectifSite       String
+  cible              String?
+  concurrents        String?
+  identiteVisuelle   String
+  textes             String
+  fonctionnalites    String[] @default([])
+  inspiration        String?
+  nomDeDomaine       String
+  email              String   @db.VarChar(255)
+  autresInformations String?
+
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email]) // rapidité pour la jointure
 }

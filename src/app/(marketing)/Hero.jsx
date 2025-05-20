@@ -43,23 +43,24 @@ export default function Hero() {
               </span>
             </div>
           </div>
-          <h1 className="mt-10 text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
-            Votre site web sur-mesure, pensé pour convertir.
+          <h1 className="mt-10 text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-6xl">
+            Votre site web idéal, sans la complexité. Sur-mesure, clé en main,
+            résultats garantis.
           </h1>
           <p className="mt-8 text-lg text-gray-500 sm:text-xl">
-            Démarquez-vous avec un site ultra-rapide, sécurisé et 100%
-            personnalisé, conçu pour attirer plus de clients et booster votre
-            visibilité.
+            Envie d'un site web professionnel et performant sans vous soucier de
+            la technique ? Klyx vous offre une solution 100% personnalisée,
+            rapide et sécurisée, avec tout inclus pour une visibilité maximale.
           </p>
           <p className="mt-2 text-gray-500">
             <span className="font-semibold text-blue-700">
               À partir de 99€/mois
             </span>{" "}
-            - tout compris : hébergement, maintenance, SEO et accompagnement
-            humain.
+            hébergement, maintenance, SEO et accompagnement : on s'occupe de
+            tout !
           </p>
           <div className="mt-10 flex items-center gap-x-6">
-            <Button href="/register" color="blue">
+            <Button href="/questionnaire" color="blue">
               Créer mon site maintenant
             </Button>
             <Button href="/pricing" plain>

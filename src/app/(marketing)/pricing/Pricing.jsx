@@ -9,7 +9,7 @@ const tiers = [
     description:
       "Le point de départ idéal pour les indépendants et petites entreprises qui veulent être visibles rapidement.",
     priceMonthly: "99",
-    href: "#",
+    href: "/questionnaire",
     highlights: [
       { description: "Site 100% sur-mesure (jusqu'à 5 pages)" },
       { description: "SEO & référencement local inclus" },
@@ -26,7 +26,7 @@ const tiers = [
     description:
       "Pour les entreprises qui veulent un site plus complet, un meilleur SEO et un blog intégré.",
     priceMonthly: "179",
-    href: "#",
+    href: "/questionnaire",
     highlights: [
       { description: "Site avancé (jusqu'à 12 pages)" },
       { description: "SEO avancé & référencement priorisé" },
@@ -42,7 +42,7 @@ const tiers = [
     description:
       "La solution sans limite pour les marques ambitieuses : e‑commerce, performances, et accompagnement expert.",
     priceMonthly: "299",
-    href: "#",
+    href: "/questionnaire",
     highlights: [
       { description: "Site sur-mesure, pages illimitées" },
       { description: "E-commerce complet" },
@@ -179,7 +179,7 @@ export function Pricing() {
                       {tier.name === "Essentiel" && (
                         <>
                           <Link
-                            href="/register?plan=Essentiel"
+                            href="/questionnaire"
                             aria-label="Créer mon site Essentiel avec Klyx"
                             className="inline-block rounded-md bg-blue-600 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                           >
@@ -190,7 +190,7 @@ export function Pricing() {
                       {tier.name === "Pro" && (
                         <>
                           <Link
-                            href="/register?plan=Pro"
+                            href="/questionnaire"
                             aria-label="Passer à l'offre Pro"
                             className="inline-block rounded-md bg-blue-600 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                           >
@@ -201,7 +201,7 @@ export function Pricing() {
                       {tier.name === "Premium" && (
                         <>
                           <Link
-                            href="/contact?plan=Premium"
+                            href="/questionnaire"
                             aria-label="Être recontacté pour l'offre Premium"
                             className="inline-block rounded-md bg-blue-600 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                           >
@@ -273,7 +273,9 @@ export function Pricing() {
                     aria-label={`Get started with the ${tier.name} plan`}
                     className="inline-block rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50"
                   >
-                    Créer mon site
+                    {tier.name === "Essentiel" && "Démarrer mon site"}
+                    {tier.name === "Pro" && "Lancer mon site sur-mesure"}
+                    {tier.name === "Premium" && "Obtenir mon site Premium"}
                   </Link>
                 </td>
               ))}
