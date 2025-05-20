@@ -39,5 +39,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
+  events: {
+    async createUser({ user }) {
+      await prisma.questionnaire.updateMany({
+        where: { email: user.email, userId: null },
+        data: { userId: user.id },
+      });
+    },
+  },
   pages: { signIn: "/login" },
 });

@@ -2,6 +2,7 @@
 
 import prisma from "@/lib/prisma";
 import { z } from "zod";
+import { auth } from "@/auth";
 
 const QuestionnaireSchema = z.object({
   nameEntreprise: z.string().optional(),
@@ -13,48 +14,41 @@ const QuestionnaireSchema = z.object({
   fonctionnalites: z.array(z.string()).default([]),
   inspiration: z.string().optional(),
   nomDeDomaine: z.enum(["yes", "no"]),
-  email: z.string().email("Email invalide"),
+  email: z.string().email(),
   autresInformations: z.string().optional(),
 });
 
-export async function actionQuestionnaire(prevState, formData) {
-  const result = QuestionnaireSchema.safeParse(formData);
-  if (!result.success) {
-    return {
-      errors: result.error.flatten().fieldErrors,
-      message: null,
-    };
+export async function actionQuestionnaire(prev, formData) {
+  /* 1. convertir formData */
+  const dataObject = Object.fromEntries(formData.entries());
+  console.log("dataObject", dataObject);
+  const payload = {
+    ...dataObject,
+    fonctionnalites: formData.getAll("fonctionnalites"), // tableau réel
+  };
+
+  console.log("payload", payload);
+
+  /* 2. valider */
+  const parsed = QuestionnaireSchema.safeParse(payload);
+  if (!parsed.success) {
+    return { errors: parsed.error.flatten().fieldErrors, message: null };
   }
-  const {
-    nameEntreprise,
-    objectifSite,
-    cible,
-    concurrents,
-    identiteVisuelle,
-    textes,
-    fonctionnalites,
-    inspiration,
-    nomDeDomaine,
-    email,
-    autresInformations,
-  } = result.data;
-  const questionnaire = await prisma.questionnaire.create({
+
+  console.log("parsed", parsed);
+
+  /* 3. lier à l’utilisateur connecté (si existe) */
+  const session = await auth();
+  console.log("session", session);
+
+  await prisma.questionnaire.create({
     data: {
-      nameEntreprise,
-      objectifSite,
-      cible,
-      concurrents,
-      identiteVisuelle,
-      textes,
-      fonctionnalites,
-      inspiration,
-      nomDeDomaine,
-      email,
-      autresInformations,
+      ...parsed.data,
+      userId: session?.user?.id ?? null,
     },
   });
-  return {
-    errors: {},
-    message: "Questionnaire créé avec succès",
-  };
+
+  console.log("Questionnaire enregistré !");
+
+  return { success: true, message: "Questionnaire enregistré !" };
 }

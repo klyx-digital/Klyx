@@ -133,7 +133,7 @@ model Questionnaire {
   fonctionnalites    String[] @default([])
   inspiration        String?
   nomDeDomaine       String
-  email              String   @db.VarChar(255)
+  email              String
   autresInformations String?
 
   userId String?
@@ -142,5 +142,6 @@ model Questionnaire {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@index([email]) // rapidité pour la jointure
+  @@index([email])
+  @@index([userId])
 }

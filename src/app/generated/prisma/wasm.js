@@ -184,6 +184,24 @@ exports.Prisma.SubscriptionScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.QuestionnaireScalarFieldEnum = {
+  id: 'id',
+  nameEntreprise: 'nameEntreprise',
+  objectifSite: 'objectifSite',
+  cible: 'cible',
+  concurrents: 'concurrents',
+  identiteVisuelle: 'identiteVisuelle',
+  textes: 'textes',
+  fonctionnalites: 'fonctionnalites',
+  inspiration: 'inspiration',
+  nomDeDomaine: 'nomDeDomaine',
+  email: 'email',
+  autresInformations: 'autresInformations',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -220,7 +238,8 @@ exports.Prisma.ModelName = {
   Session: 'Session',
   VerificationToken: 'VerificationToken',
   Authenticator: 'Authenticator',
-  Subscription: 'Subscription'
+  Subscription: 'Subscription',
+  Questionnaire: 'Questionnaire'
 };
 
 /**

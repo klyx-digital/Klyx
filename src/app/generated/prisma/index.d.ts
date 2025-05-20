@@ -43,6 +43,11 @@ export type Authenticator = $Result.DefaultSelection<Prisma.$AuthenticatorPayloa
  * 
  */
 export type Subscription = $Result.DefaultSelection<Prisma.$SubscriptionPayload>
+/**
+ * Model Questionnaire
+ * 
+ */
+export type Questionnaire = $Result.DefaultSelection<Prisma.$QuestionnairePayload>
 
 /**
  * Enums
@@ -263,6 +268,16 @@ export class PrismaClient<
     * ```
     */
   get subscription(): Prisma.SubscriptionDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.questionnaire`: Exposes CRUD operations for the **Questionnaire** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Questionnaires
+    * const questionnaires = await prisma.questionnaire.findMany()
+    * ```
+    */
+  get questionnaire(): Prisma.QuestionnaireDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -708,7 +723,8 @@ export namespace Prisma {
     Session: 'Session',
     VerificationToken: 'VerificationToken',
     Authenticator: 'Authenticator',
-    Subscription: 'Subscription'
+    Subscription: 'Subscription',
+    Questionnaire: 'Questionnaire'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -727,7 +743,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "account" | "session" | "verificationToken" | "authenticator" | "subscription"
+      modelProps: "user" | "account" | "session" | "verificationToken" | "authenticator" | "subscription" | "questionnaire"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1175,6 +1191,80 @@ export namespace Prisma {
           }
         }
       }
+      Questionnaire: {
+        payload: Prisma.$QuestionnairePayload<ExtArgs>
+        fields: Prisma.QuestionnaireFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.QuestionnaireFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuestionnairePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.QuestionnaireFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuestionnairePayload>
+          }
+          findFirst: {
+            args: Prisma.QuestionnaireFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuestionnairePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.QuestionnaireFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuestionnairePayload>
+          }
+          findMany: {
+            args: Prisma.QuestionnaireFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuestionnairePayload>[]
+          }
+          create: {
+            args: Prisma.QuestionnaireCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuestionnairePayload>
+          }
+          createMany: {
+            args: Prisma.QuestionnaireCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.QuestionnaireCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuestionnairePayload>[]
+          }
+          delete: {
+            args: Prisma.QuestionnaireDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuestionnairePayload>
+          }
+          update: {
+            args: Prisma.QuestionnaireUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuestionnairePayload>
+          }
+          deleteMany: {
+            args: Prisma.QuestionnaireDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.QuestionnaireUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.QuestionnaireUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuestionnairePayload>[]
+          }
+          upsert: {
+            args: Prisma.QuestionnaireUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$QuestionnairePayload>
+          }
+          aggregate: {
+            args: Prisma.QuestionnaireAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateQuestionnaire>
+          }
+          groupBy: {
+            args: Prisma.QuestionnaireGroupByArgs<ExtArgs>
+            result: $Utils.Optional<QuestionnaireGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.QuestionnaireCountArgs<ExtArgs>
+            result: $Utils.Optional<QuestionnaireCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1265,6 +1355,7 @@ export namespace Prisma {
     verificationToken?: VerificationTokenOmit
     authenticator?: AuthenticatorOmit
     subscription?: SubscriptionOmit
+    questionnaire?: QuestionnaireOmit
   }
 
   /* Types for Logging */
@@ -1362,12 +1453,14 @@ export namespace Prisma {
     accounts: number
     sessions: number
     Authenticator: number
+    questionnaires: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     accounts?: boolean | UserCountOutputTypeCountAccountsArgs
     sessions?: boolean | UserCountOutputTypeCountSessionsArgs
     Authenticator?: boolean | UserCountOutputTypeCountAuthenticatorArgs
+    questionnaires?: boolean | UserCountOutputTypeCountQuestionnairesArgs
   }
 
   // Custom InputTypes
@@ -1400,6 +1493,13 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountAuthenticatorArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: AuthenticatorWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountQuestionnairesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: QuestionnaireWhereInput
   }
 
 
@@ -1599,6 +1699,7 @@ export namespace Prisma {
     sessions?: boolean | User$sessionsArgs<ExtArgs>
     Authenticator?: boolean | User$AuthenticatorArgs<ExtArgs>
     subscription?: boolean | User$subscriptionArgs<ExtArgs>
+    questionnaires?: boolean | User$questionnairesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -1641,6 +1742,7 @@ export namespace Prisma {
     sessions?: boolean | User$sessionsArgs<ExtArgs>
     Authenticator?: boolean | User$AuthenticatorArgs<ExtArgs>
     subscription?: boolean | User$subscriptionArgs<ExtArgs>
+    questionnaires?: boolean | User$questionnairesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1653,6 +1755,7 @@ export namespace Prisma {
       sessions: Prisma.$SessionPayload<ExtArgs>[]
       Authenticator: Prisma.$AuthenticatorPayload<ExtArgs>[]
       subscription: Prisma.$SubscriptionPayload<ExtArgs> | null
+      questionnaires: Prisma.$QuestionnairePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -2061,6 +2164,7 @@ export namespace Prisma {
     sessions<T extends User$sessionsArgs<ExtArgs> = {}>(args?: Subset<T, User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     Authenticator<T extends User$AuthenticatorArgs<ExtArgs> = {}>(args?: Subset<T, User$AuthenticatorArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AuthenticatorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     subscription<T extends User$subscriptionArgs<ExtArgs> = {}>(args?: Subset<T, User$subscriptionArgs<ExtArgs>>): Prisma__SubscriptionClient<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    questionnaires<T extends User$questionnairesArgs<ExtArgs> = {}>(args?: Subset<T, User$questionnairesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2574,6 +2678,30 @@ export namespace Prisma {
      */
     include?: SubscriptionInclude<ExtArgs> | null
     where?: SubscriptionWhereInput
+  }
+
+  /**
+   * User.questionnaires
+   */
+  export type User$questionnairesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Questionnaire
+     */
+    select?: QuestionnaireSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Questionnaire
+     */
+    omit?: QuestionnaireOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: QuestionnaireInclude<ExtArgs> | null
+    where?: QuestionnaireWhereInput
+    orderBy?: QuestionnaireOrderByWithRelationInput | QuestionnaireOrderByWithRelationInput[]
+    cursor?: QuestionnaireWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: QuestionnaireScalarFieldEnum | QuestionnaireScalarFieldEnum[]
   }
 
   /**
@@ -8060,6 +8188,1213 @@ export namespace Prisma {
 
 
   /**
+   * Model Questionnaire
+   */
+
+  export type AggregateQuestionnaire = {
+    _count: QuestionnaireCountAggregateOutputType | null
+    _min: QuestionnaireMinAggregateOutputType | null
+    _max: QuestionnaireMaxAggregateOutputType | null
+  }
+
+  export type QuestionnaireMinAggregateOutputType = {
+    id: string | null
+    nameEntreprise: string | null
+    objectifSite: string | null
+    cible: string | null
+    concurrents: string | null
+    identiteVisuelle: string | null
+    textes: string | null
+    inspiration: string | null
+    nomDeDomaine: string | null
+    email: string | null
+    autresInformations: string | null
+    userId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type QuestionnaireMaxAggregateOutputType = {
+    id: string | null
+    nameEntreprise: string | null
+    objectifSite: string | null
+    cible: string | null
+    concurrents: string | null
+    identiteVisuelle: string | null
+    textes: string | null
+    inspiration: string | null
+    nomDeDomaine: string | null
+    email: string | null
+    autresInformations: string | null
+    userId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type QuestionnaireCountAggregateOutputType = {
+    id: number
+    nameEntreprise: number
+    objectifSite: number
+    cible: number
+    concurrents: number
+    identiteVisuelle: number
+    textes: number
+    fonctionnalites: number
+    inspiration: number
+    nomDeDomaine: number
+    email: number
+    autresInformations: number
+    userId: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type QuestionnaireMinAggregateInputType = {
+    id?: true
+    nameEntreprise?: true
+    objectifSite?: true
+    cible?: true
+    concurrents?: true
+    identiteVisuelle?: true
+    textes?: true
+    inspiration?: true
+    nomDeDomaine?: true
+    email?: true
+    autresInformations?: true
+    userId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type QuestionnaireMaxAggregateInputType = {
+    id?: true
+    nameEntreprise?: true
+    objectifSite?: true
+    cible?: true
+    concurrents?: true
+    identiteVisuelle?: true
+    textes?: true
+    inspiration?: true
+    nomDeDomaine?: true
+    email?: true
+    autresInformations?: true
+    userId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type QuestionnaireCountAggregateInputType = {
+    id?: true
+    nameEntreprise?: true
+    objectifSite?: true
+    cible?: true
+    concurrents?: true
+    identiteVisuelle?: true
+    textes?: true
+    fonctionnalites?: true
+    inspiration?: true
+    nomDeDomaine?: true
+    email?: true
+    autresInformations?: true
+    userId?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type QuestionnaireAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Questionnaire to aggregate.
+     */
+    where?: QuestionnaireWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Questionnaires to fetch.
+     */
+    orderBy?: QuestionnaireOrderByWithRelationInput | QuestionnaireOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: QuestionnaireWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Questionnaires from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Questionnaires.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Questionnaires
+    **/
+    _count?: true | QuestionnaireCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: QuestionnaireMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: QuestionnaireMaxAggregateInputType
+  }
+
+  export type GetQuestionnaireAggregateType<T extends QuestionnaireAggregateArgs> = {
+        [P in keyof T & keyof AggregateQuestionnaire]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateQuestionnaire[P]>
+      : GetScalarType<T[P], AggregateQuestionnaire[P]>
+  }
+
+
+
+
+  export type QuestionnaireGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: QuestionnaireWhereInput
+    orderBy?: QuestionnaireOrderByWithAggregationInput | QuestionnaireOrderByWithAggregationInput[]
+    by: QuestionnaireScalarFieldEnum[] | QuestionnaireScalarFieldEnum
+    having?: QuestionnaireScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: QuestionnaireCountAggregateInputType | true
+    _min?: QuestionnaireMinAggregateInputType
+    _max?: QuestionnaireMaxAggregateInputType
+  }
+
+  export type QuestionnaireGroupByOutputType = {
+    id: string
+    nameEntreprise: string | null
+    objectifSite: string
+    cible: string | null
+    concurrents: string | null
+    identiteVisuelle: string
+    textes: string
+    fonctionnalites: string[]
+    inspiration: string | null
+    nomDeDomaine: string
+    email: string
+    autresInformations: string | null
+    userId: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: QuestionnaireCountAggregateOutputType | null
+    _min: QuestionnaireMinAggregateOutputType | null
+    _max: QuestionnaireMaxAggregateOutputType | null
+  }
+
+  type GetQuestionnaireGroupByPayload<T extends QuestionnaireGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<QuestionnaireGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof QuestionnaireGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], QuestionnaireGroupByOutputType[P]>
+            : GetScalarType<T[P], QuestionnaireGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type QuestionnaireSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    nameEntreprise?: boolean
+    objectifSite?: boolean
+    cible?: boolean
+    concurrents?: boolean
+    identiteVisuelle?: boolean
+    textes?: boolean
+    fonctionnalites?: boolean
+    inspiration?: boolean
+    nomDeDomaine?: boolean
+    email?: boolean
+    autresInformations?: boolean
+    userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    user?: boolean | Questionnaire$userArgs<ExtArgs>
+  }, ExtArgs["result"]["questionnaire"]>
+
+  export type QuestionnaireSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    nameEntreprise?: boolean
+    objectifSite?: boolean
+    cible?: boolean
+    concurrents?: boolean
+    identiteVisuelle?: boolean
+    textes?: boolean
+    fonctionnalites?: boolean
+    inspiration?: boolean
+    nomDeDomaine?: boolean
+    email?: boolean
+    autresInformations?: boolean
+    userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    user?: boolean | Questionnaire$userArgs<ExtArgs>
+  }, ExtArgs["result"]["questionnaire"]>
+
+  export type QuestionnaireSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    nameEntreprise?: boolean
+    objectifSite?: boolean
+    cible?: boolean
+    concurrents?: boolean
+    identiteVisuelle?: boolean
+    textes?: boolean
+    fonctionnalites?: boolean
+    inspiration?: boolean
+    nomDeDomaine?: boolean
+    email?: boolean
+    autresInformations?: boolean
+    userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    user?: boolean | Questionnaire$userArgs<ExtArgs>
+  }, ExtArgs["result"]["questionnaire"]>
+
+  export type QuestionnaireSelectScalar = {
+    id?: boolean
+    nameEntreprise?: boolean
+    objectifSite?: boolean
+    cible?: boolean
+    concurrents?: boolean
+    identiteVisuelle?: boolean
+    textes?: boolean
+    fonctionnalites?: boolean
+    inspiration?: boolean
+    nomDeDomaine?: boolean
+    email?: boolean
+    autresInformations?: boolean
+    userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type QuestionnaireOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nameEntreprise" | "objectifSite" | "cible" | "concurrents" | "identiteVisuelle" | "textes" | "fonctionnalites" | "inspiration" | "nomDeDomaine" | "email" | "autresInformations" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["questionnaire"]>
+  export type QuestionnaireInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | Questionnaire$userArgs<ExtArgs>
+  }
+  export type QuestionnaireIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | Questionnaire$userArgs<ExtArgs>
+  }
+  export type QuestionnaireIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | Questionnaire$userArgs<ExtArgs>
+  }
+
+  export type $QuestionnairePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Questionnaire"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      /**
+       * *
+       *    * --- données du brief ---
+       */
+      nameEntreprise: string | null
+      objectifSite: string
+      cible: string | null
+      concurrents: string | null
+      identiteVisuelle: string
+      textes: string
+      fonctionnalites: string[]
+      inspiration: string | null
+      nomDeDomaine: string
+      email: string
+      autresInformations: string | null
+      userId: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["questionnaire"]>
+    composites: {}
+  }
+
+  type QuestionnaireGetPayload<S extends boolean | null | undefined | QuestionnaireDefaultArgs> = $Result.GetResult<Prisma.$QuestionnairePayload, S>
+
+  type QuestionnaireCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<QuestionnaireFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: QuestionnaireCountAggregateInputType | true
+    }
+
+  export interface QuestionnaireDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Questionnaire'], meta: { name: 'Questionnaire' } }
+    /**
+     * Find zero or one Questionnaire that matches the filter.
+     * @param {QuestionnaireFindUniqueArgs} args - Arguments to find a Questionnaire
+     * @example
+     * // Get one Questionnaire
+     * const questionnaire = await prisma.questionnaire.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends QuestionnaireFindUniqueArgs>(args: SelectSubset<T, QuestionnaireFindUniqueArgs<ExtArgs>>): Prisma__QuestionnaireClient<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Questionnaire that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {QuestionnaireFindUniqueOrThrowArgs} args - Arguments to find a Questionnaire
+     * @example
+     * // Get one Questionnaire
+     * const questionnaire = await prisma.questionnaire.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends QuestionnaireFindUniqueOrThrowArgs>(args: SelectSubset<T, QuestionnaireFindUniqueOrThrowArgs<ExtArgs>>): Prisma__QuestionnaireClient<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Questionnaire that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuestionnaireFindFirstArgs} args - Arguments to find a Questionnaire
+     * @example
+     * // Get one Questionnaire
+     * const questionnaire = await prisma.questionnaire.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends QuestionnaireFindFirstArgs>(args?: SelectSubset<T, QuestionnaireFindFirstArgs<ExtArgs>>): Prisma__QuestionnaireClient<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Questionnaire that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuestionnaireFindFirstOrThrowArgs} args - Arguments to find a Questionnaire
+     * @example
+     * // Get one Questionnaire
+     * const questionnaire = await prisma.questionnaire.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends QuestionnaireFindFirstOrThrowArgs>(args?: SelectSubset<T, QuestionnaireFindFirstOrThrowArgs<ExtArgs>>): Prisma__QuestionnaireClient<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Questionnaires that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuestionnaireFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Questionnaires
+     * const questionnaires = await prisma.questionnaire.findMany()
+     * 
+     * // Get first 10 Questionnaires
+     * const questionnaires = await prisma.questionnaire.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const questionnaireWithIdOnly = await prisma.questionnaire.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends QuestionnaireFindManyArgs>(args?: SelectSubset<T, QuestionnaireFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Questionnaire.
+     * @param {QuestionnaireCreateArgs} args - Arguments to create a Questionnaire.
+     * @example
+     * // Create one Questionnaire
+     * const Questionnaire = await prisma.questionnaire.create({
+     *   data: {
+     *     // ... data to create a Questionnaire
+     *   }
+     * })
+     * 
+     */
+    create<T extends QuestionnaireCreateArgs>(args: SelectSubset<T, QuestionnaireCreateArgs<ExtArgs>>): Prisma__QuestionnaireClient<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Questionnaires.
+     * @param {QuestionnaireCreateManyArgs} args - Arguments to create many Questionnaires.
+     * @example
+     * // Create many Questionnaires
+     * const questionnaire = await prisma.questionnaire.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends QuestionnaireCreateManyArgs>(args?: SelectSubset<T, QuestionnaireCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Questionnaires and returns the data saved in the database.
+     * @param {QuestionnaireCreateManyAndReturnArgs} args - Arguments to create many Questionnaires.
+     * @example
+     * // Create many Questionnaires
+     * const questionnaire = await prisma.questionnaire.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Questionnaires and only return the `id`
+     * const questionnaireWithIdOnly = await prisma.questionnaire.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends QuestionnaireCreateManyAndReturnArgs>(args?: SelectSubset<T, QuestionnaireCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Questionnaire.
+     * @param {QuestionnaireDeleteArgs} args - Arguments to delete one Questionnaire.
+     * @example
+     * // Delete one Questionnaire
+     * const Questionnaire = await prisma.questionnaire.delete({
+     *   where: {
+     *     // ... filter to delete one Questionnaire
+     *   }
+     * })
+     * 
+     */
+    delete<T extends QuestionnaireDeleteArgs>(args: SelectSubset<T, QuestionnaireDeleteArgs<ExtArgs>>): Prisma__QuestionnaireClient<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Questionnaire.
+     * @param {QuestionnaireUpdateArgs} args - Arguments to update one Questionnaire.
+     * @example
+     * // Update one Questionnaire
+     * const questionnaire = await prisma.questionnaire.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends QuestionnaireUpdateArgs>(args: SelectSubset<T, QuestionnaireUpdateArgs<ExtArgs>>): Prisma__QuestionnaireClient<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Questionnaires.
+     * @param {QuestionnaireDeleteManyArgs} args - Arguments to filter Questionnaires to delete.
+     * @example
+     * // Delete a few Questionnaires
+     * const { count } = await prisma.questionnaire.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends QuestionnaireDeleteManyArgs>(args?: SelectSubset<T, QuestionnaireDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Questionnaires.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuestionnaireUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Questionnaires
+     * const questionnaire = await prisma.questionnaire.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends QuestionnaireUpdateManyArgs>(args: SelectSubset<T, QuestionnaireUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Questionnaires and returns the data updated in the database.
+     * @param {QuestionnaireUpdateManyAndReturnArgs} args - Arguments to update many Questionnaires.
+     * @example
+     * // Update many Questionnaires
+     * const questionnaire = await prisma.questionnaire.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Questionnaires and only return the `id`
+     * const questionnaireWithIdOnly = await prisma.questionnaire.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends QuestionnaireUpdateManyAndReturnArgs>(args: SelectSubset<T, QuestionnaireUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Questionnaire.
+     * @param {QuestionnaireUpsertArgs} args - Arguments to update or create a Questionnaire.
+     * @example
+     * // Update or create a Questionnaire
+     * const questionnaire = await prisma.questionnaire.upsert({
+     *   create: {
+     *     // ... data to create a Questionnaire
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Questionnaire we want to update
+     *   }
+     * })
+     */
+    upsert<T extends QuestionnaireUpsertArgs>(args: SelectSubset<T, QuestionnaireUpsertArgs<ExtArgs>>): Prisma__QuestionnaireClient<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Questionnaires.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuestionnaireCountArgs} args - Arguments to filter Questionnaires to count.
+     * @example
+     * // Count the number of Questionnaires
+     * const count = await prisma.questionnaire.count({
+     *   where: {
+     *     // ... the filter for the Questionnaires we want to count
+     *   }
+     * })
+    **/
+    count<T extends QuestionnaireCountArgs>(
+      args?: Subset<T, QuestionnaireCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], QuestionnaireCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Questionnaire.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuestionnaireAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends QuestionnaireAggregateArgs>(args: Subset<T, QuestionnaireAggregateArgs>): Prisma.PrismaPromise<GetQuestionnaireAggregateType<T>>
+
+    /**
+     * Group by Questionnaire.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {QuestionnaireGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends QuestionnaireGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: QuestionnaireGroupByArgs['orderBy'] }
+        : { orderBy?: QuestionnaireGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, QuestionnaireGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetQuestionnaireGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Questionnaire model
+   */
+  readonly fields: QuestionnaireFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Questionnaire.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__QuestionnaireClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends Questionnaire$userArgs<ExtArgs> = {}>(args?: Subset<T, Questionnaire$userArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Questionnaire model
+   */
+  interface QuestionnaireFieldRefs {
+    readonly id: FieldRef<"Questionnaire", 'String'>
+    readonly nameEntreprise: FieldRef<"Questionnaire", 'String'>
+    readonly objectifSite: FieldRef<"Questionnaire", 'String'>
+    readonly cible: FieldRef<"Questionnaire", 'String'>
+    readonly concurrents: FieldRef<"Questionnaire", 'String'>
+    readonly identiteVisuelle: FieldRef<"Questionnaire", 'String'>
+    readonly textes: FieldRef<"Questionnaire", 'String'>
+    readonly fonctionnalites: FieldRef<"Questionnaire", 'String[]'>
+    readonly inspiration: FieldRef<"Questionnaire", 'String'>
+    readonly nomDeDomaine: FieldRef<"Questionnaire", 'String'>
+    readonly email: FieldRef<"Questionnaire", 'String'>
+    readonly autresInformations: FieldRef<"Questionnaire", 'String'>
+    readonly userId: FieldRef<"Questionnaire", 'String'>
+    readonly createdAt: FieldRef<"Questionnaire", 'DateTime'>
+    readonly updatedAt: FieldRef<"Questionnaire", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Questionnaire findUnique
+   */
+  export type QuestionnaireFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Questionnaire
+     */
+    select?: QuestionnaireSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Questionnaire
+     */
+    omit?: QuestionnaireOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: QuestionnaireInclude<ExtArgs> | null
+    /**
+     * Filter, which Questionnaire to fetch.
+     */
+    where: QuestionnaireWhereUniqueInput
+  }
+
+  /**
+   * Questionnaire findUniqueOrThrow
+   */
+  export type QuestionnaireFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Questionnaire
+     */
+    select?: QuestionnaireSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Questionnaire
+     */
+    omit?: QuestionnaireOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: QuestionnaireInclude<ExtArgs> | null
+    /**
+     * Filter, which Questionnaire to fetch.
+     */
+    where: QuestionnaireWhereUniqueInput
+  }
+
+  /**
+   * Questionnaire findFirst
+   */
+  export type QuestionnaireFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Questionnaire
+     */
+    select?: QuestionnaireSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Questionnaire
+     */
+    omit?: QuestionnaireOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: QuestionnaireInclude<ExtArgs> | null
+    /**
+     * Filter, which Questionnaire to fetch.
+     */
+    where?: QuestionnaireWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Questionnaires to fetch.
+     */
+    orderBy?: QuestionnaireOrderByWithRelationInput | QuestionnaireOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Questionnaires.
+     */
+    cursor?: QuestionnaireWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Questionnaires from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Questionnaires.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Questionnaires.
+     */
+    distinct?: QuestionnaireScalarFieldEnum | QuestionnaireScalarFieldEnum[]
+  }
+
+  /**
+   * Questionnaire findFirstOrThrow
+   */
+  export type QuestionnaireFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Questionnaire
+     */
+    select?: QuestionnaireSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Questionnaire
+     */
+    omit?: QuestionnaireOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: QuestionnaireInclude<ExtArgs> | null
+    /**
+     * Filter, which Questionnaire to fetch.
+     */
+    where?: QuestionnaireWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Questionnaires to fetch.
+     */
+    orderBy?: QuestionnaireOrderByWithRelationInput | QuestionnaireOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Questionnaires.
+     */
+    cursor?: QuestionnaireWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Questionnaires from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Questionnaires.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Questionnaires.
+     */
+    distinct?: QuestionnaireScalarFieldEnum | QuestionnaireScalarFieldEnum[]
+  }
+
+  /**
+   * Questionnaire findMany
+   */
+  export type QuestionnaireFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Questionnaire
+     */
+    select?: QuestionnaireSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Questionnaire
+     */
+    omit?: QuestionnaireOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: QuestionnaireInclude<ExtArgs> | null
+    /**
+     * Filter, which Questionnaires to fetch.
+     */
+    where?: QuestionnaireWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Questionnaires to fetch.
+     */
+    orderBy?: QuestionnaireOrderByWithRelationInput | QuestionnaireOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Questionnaires.
+     */
+    cursor?: QuestionnaireWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Questionnaires from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Questionnaires.
+     */
+    skip?: number
+    distinct?: QuestionnaireScalarFieldEnum | QuestionnaireScalarFieldEnum[]
+  }
+
+  /**
+   * Questionnaire create
+   */
+  export type QuestionnaireCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Questionnaire
+     */
+    select?: QuestionnaireSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Questionnaire
+     */
+    omit?: QuestionnaireOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: QuestionnaireInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Questionnaire.
+     */
+    data: XOR<QuestionnaireCreateInput, QuestionnaireUncheckedCreateInput>
+  }
+
+  /**
+   * Questionnaire createMany
+   */
+  export type QuestionnaireCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Questionnaires.
+     */
+    data: QuestionnaireCreateManyInput | QuestionnaireCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Questionnaire createManyAndReturn
+   */
+  export type QuestionnaireCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Questionnaire
+     */
+    select?: QuestionnaireSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Questionnaire
+     */
+    omit?: QuestionnaireOmit<ExtArgs> | null
+    /**
+     * The data used to create many Questionnaires.
+     */
+    data: QuestionnaireCreateManyInput | QuestionnaireCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: QuestionnaireIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Questionnaire update
+   */
+  export type QuestionnaireUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Questionnaire
+     */
+    select?: QuestionnaireSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Questionnaire
+     */
+    omit?: QuestionnaireOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: QuestionnaireInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Questionnaire.
+     */
+    data: XOR<QuestionnaireUpdateInput, QuestionnaireUncheckedUpdateInput>
+    /**
+     * Choose, which Questionnaire to update.
+     */
+    where: QuestionnaireWhereUniqueInput
+  }
+
+  /**
+   * Questionnaire updateMany
+   */
+  export type QuestionnaireUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Questionnaires.
+     */
+    data: XOR<QuestionnaireUpdateManyMutationInput, QuestionnaireUncheckedUpdateManyInput>
+    /**
+     * Filter which Questionnaires to update
+     */
+    where?: QuestionnaireWhereInput
+    /**
+     * Limit how many Questionnaires to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Questionnaire updateManyAndReturn
+   */
+  export type QuestionnaireUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Questionnaire
+     */
+    select?: QuestionnaireSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Questionnaire
+     */
+    omit?: QuestionnaireOmit<ExtArgs> | null
+    /**
+     * The data used to update Questionnaires.
+     */
+    data: XOR<QuestionnaireUpdateManyMutationInput, QuestionnaireUncheckedUpdateManyInput>
+    /**
+     * Filter which Questionnaires to update
+     */
+    where?: QuestionnaireWhereInput
+    /**
+     * Limit how many Questionnaires to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: QuestionnaireIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Questionnaire upsert
+   */
+  export type QuestionnaireUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Questionnaire
+     */
+    select?: QuestionnaireSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Questionnaire
+     */
+    omit?: QuestionnaireOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: QuestionnaireInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Questionnaire to update in case it exists.
+     */
+    where: QuestionnaireWhereUniqueInput
+    /**
+     * In case the Questionnaire found by the `where` argument doesn't exist, create a new Questionnaire with this data.
+     */
+    create: XOR<QuestionnaireCreateInput, QuestionnaireUncheckedCreateInput>
+    /**
+     * In case the Questionnaire was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<QuestionnaireUpdateInput, QuestionnaireUncheckedUpdateInput>
+  }
+
+  /**
+   * Questionnaire delete
+   */
+  export type QuestionnaireDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Questionnaire
+     */
+    select?: QuestionnaireSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Questionnaire
+     */
+    omit?: QuestionnaireOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: QuestionnaireInclude<ExtArgs> | null
+    /**
+     * Filter which Questionnaire to delete.
+     */
+    where: QuestionnaireWhereUniqueInput
+  }
+
+  /**
+   * Questionnaire deleteMany
+   */
+  export type QuestionnaireDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Questionnaires to delete
+     */
+    where?: QuestionnaireWhereInput
+    /**
+     * Limit how many Questionnaires to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Questionnaire.user
+   */
+  export type Questionnaire$userArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the User
+     */
+    select?: UserSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the User
+     */
+    omit?: UserOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
+    where?: UserWhereInput
+  }
+
+  /**
+   * Questionnaire without action
+   */
+  export type QuestionnaireDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Questionnaire
+     */
+    select?: QuestionnaireSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Questionnaire
+     */
+    omit?: QuestionnaireOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: QuestionnaireInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -8153,6 +9488,27 @@ export namespace Prisma {
   };
 
   export type SubscriptionScalarFieldEnum = (typeof SubscriptionScalarFieldEnum)[keyof typeof SubscriptionScalarFieldEnum]
+
+
+  export const QuestionnaireScalarFieldEnum: {
+    id: 'id',
+    nameEntreprise: 'nameEntreprise',
+    objectifSite: 'objectifSite',
+    cible: 'cible',
+    concurrents: 'concurrents',
+    identiteVisuelle: 'identiteVisuelle',
+    textes: 'textes',
+    fonctionnalites: 'fonctionnalites',
+    inspiration: 'inspiration',
+    nomDeDomaine: 'nomDeDomaine',
+    email: 'email',
+    autresInformations: 'autresInformations',
+    userId: 'userId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type QuestionnaireScalarFieldEnum = (typeof QuestionnaireScalarFieldEnum)[keyof typeof QuestionnaireScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -8294,6 +9650,7 @@ export namespace Prisma {
     sessions?: SessionListRelationFilter
     Authenticator?: AuthenticatorListRelationFilter
     subscription?: XOR<SubscriptionNullableScalarRelationFilter, SubscriptionWhereInput> | null
+    questionnaires?: QuestionnaireListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -8309,6 +9666,7 @@ export namespace Prisma {
     sessions?: SessionOrderByRelationAggregateInput
     Authenticator?: AuthenticatorOrderByRelationAggregateInput
     subscription?: SubscriptionOrderByWithRelationInput
+    questionnaires?: QuestionnaireOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -8327,6 +9685,7 @@ export namespace Prisma {
     sessions?: SessionListRelationFilter
     Authenticator?: AuthenticatorListRelationFilter
     subscription?: XOR<SubscriptionNullableScalarRelationFilter, SubscriptionWhereInput> | null
+    questionnaires?: QuestionnaireListRelationFilter
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -8701,6 +10060,111 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"Subscription"> | Date | string
   }
 
+  export type QuestionnaireWhereInput = {
+    AND?: QuestionnaireWhereInput | QuestionnaireWhereInput[]
+    OR?: QuestionnaireWhereInput[]
+    NOT?: QuestionnaireWhereInput | QuestionnaireWhereInput[]
+    id?: StringFilter<"Questionnaire"> | string
+    nameEntreprise?: StringNullableFilter<"Questionnaire"> | string | null
+    objectifSite?: StringFilter<"Questionnaire"> | string
+    cible?: StringNullableFilter<"Questionnaire"> | string | null
+    concurrents?: StringNullableFilter<"Questionnaire"> | string | null
+    identiteVisuelle?: StringFilter<"Questionnaire"> | string
+    textes?: StringFilter<"Questionnaire"> | string
+    fonctionnalites?: StringNullableListFilter<"Questionnaire">
+    inspiration?: StringNullableFilter<"Questionnaire"> | string | null
+    nomDeDomaine?: StringFilter<"Questionnaire"> | string
+    email?: StringFilter<"Questionnaire"> | string
+    autresInformations?: StringNullableFilter<"Questionnaire"> | string | null
+    userId?: StringNullableFilter<"Questionnaire"> | string | null
+    createdAt?: DateTimeFilter<"Questionnaire"> | Date | string
+    updatedAt?: DateTimeFilter<"Questionnaire"> | Date | string
+    user?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
+  }
+
+  export type QuestionnaireOrderByWithRelationInput = {
+    id?: SortOrder
+    nameEntreprise?: SortOrderInput | SortOrder
+    objectifSite?: SortOrder
+    cible?: SortOrderInput | SortOrder
+    concurrents?: SortOrderInput | SortOrder
+    identiteVisuelle?: SortOrder
+    textes?: SortOrder
+    fonctionnalites?: SortOrder
+    inspiration?: SortOrderInput | SortOrder
+    nomDeDomaine?: SortOrder
+    email?: SortOrder
+    autresInformations?: SortOrderInput | SortOrder
+    userId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    user?: UserOrderByWithRelationInput
+  }
+
+  export type QuestionnaireWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: QuestionnaireWhereInput | QuestionnaireWhereInput[]
+    OR?: QuestionnaireWhereInput[]
+    NOT?: QuestionnaireWhereInput | QuestionnaireWhereInput[]
+    nameEntreprise?: StringNullableFilter<"Questionnaire"> | string | null
+    objectifSite?: StringFilter<"Questionnaire"> | string
+    cible?: StringNullableFilter<"Questionnaire"> | string | null
+    concurrents?: StringNullableFilter<"Questionnaire"> | string | null
+    identiteVisuelle?: StringFilter<"Questionnaire"> | string
+    textes?: StringFilter<"Questionnaire"> | string
+    fonctionnalites?: StringNullableListFilter<"Questionnaire">
+    inspiration?: StringNullableFilter<"Questionnaire"> | string | null
+    nomDeDomaine?: StringFilter<"Questionnaire"> | string
+    email?: StringFilter<"Questionnaire"> | string
+    autresInformations?: StringNullableFilter<"Questionnaire"> | string | null
+    userId?: StringNullableFilter<"Questionnaire"> | string | null
+    createdAt?: DateTimeFilter<"Questionnaire"> | Date | string
+    updatedAt?: DateTimeFilter<"Questionnaire"> | Date | string
+    user?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
+  }, "id">
+
+  export type QuestionnaireOrderByWithAggregationInput = {
+    id?: SortOrder
+    nameEntreprise?: SortOrderInput | SortOrder
+    objectifSite?: SortOrder
+    cible?: SortOrderInput | SortOrder
+    concurrents?: SortOrderInput | SortOrder
+    identiteVisuelle?: SortOrder
+    textes?: SortOrder
+    fonctionnalites?: SortOrder
+    inspiration?: SortOrderInput | SortOrder
+    nomDeDomaine?: SortOrder
+    email?: SortOrder
+    autresInformations?: SortOrderInput | SortOrder
+    userId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: QuestionnaireCountOrderByAggregateInput
+    _max?: QuestionnaireMaxOrderByAggregateInput
+    _min?: QuestionnaireMinOrderByAggregateInput
+  }
+
+  export type QuestionnaireScalarWhereWithAggregatesInput = {
+    AND?: QuestionnaireScalarWhereWithAggregatesInput | QuestionnaireScalarWhereWithAggregatesInput[]
+    OR?: QuestionnaireScalarWhereWithAggregatesInput[]
+    NOT?: QuestionnaireScalarWhereWithAggregatesInput | QuestionnaireScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Questionnaire"> | string
+    nameEntreprise?: StringNullableWithAggregatesFilter<"Questionnaire"> | string | null
+    objectifSite?: StringWithAggregatesFilter<"Questionnaire"> | string
+    cible?: StringNullableWithAggregatesFilter<"Questionnaire"> | string | null
+    concurrents?: StringNullableWithAggregatesFilter<"Questionnaire"> | string | null
+    identiteVisuelle?: StringWithAggregatesFilter<"Questionnaire"> | string
+    textes?: StringWithAggregatesFilter<"Questionnaire"> | string
+    fonctionnalites?: StringNullableListFilter<"Questionnaire">
+    inspiration?: StringNullableWithAggregatesFilter<"Questionnaire"> | string | null
+    nomDeDomaine?: StringWithAggregatesFilter<"Questionnaire"> | string
+    email?: StringWithAggregatesFilter<"Questionnaire"> | string
+    autresInformations?: StringNullableWithAggregatesFilter<"Questionnaire"> | string | null
+    userId?: StringNullableWithAggregatesFilter<"Questionnaire"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"Questionnaire"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Questionnaire"> | Date | string
+  }
+
   export type UserCreateInput = {
     id?: string
     name?: string | null
@@ -8714,6 +10178,7 @@ export namespace Prisma {
     sessions?: SessionCreateNestedManyWithoutUserInput
     Authenticator?: AuthenticatorCreateNestedManyWithoutUserInput
     subscription?: SubscriptionCreateNestedOneWithoutUserInput
+    questionnaires?: QuestionnaireCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -8729,6 +10194,7 @@ export namespace Prisma {
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
     Authenticator?: AuthenticatorUncheckedCreateNestedManyWithoutUserInput
     subscription?: SubscriptionUncheckedCreateNestedOneWithoutUserInput
+    questionnaires?: QuestionnaireUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -8744,6 +10210,7 @@ export namespace Prisma {
     sessions?: SessionUpdateManyWithoutUserNestedInput
     Authenticator?: AuthenticatorUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUpdateOneWithoutUserNestedInput
+    questionnaires?: QuestionnaireUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -8759,6 +10226,7 @@ export namespace Prisma {
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
     Authenticator?: AuthenticatorUncheckedUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUncheckedUpdateOneWithoutUserNestedInput
+    questionnaires?: QuestionnaireUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -9161,6 +10629,131 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type QuestionnaireCreateInput = {
+    id?: string
+    nameEntreprise?: string | null
+    objectifSite: string
+    cible?: string | null
+    concurrents?: string | null
+    identiteVisuelle: string
+    textes: string
+    fonctionnalites?: QuestionnaireCreatefonctionnalitesInput | string[]
+    inspiration?: string | null
+    nomDeDomaine: string
+    email: string
+    autresInformations?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    user?: UserCreateNestedOneWithoutQuestionnairesInput
+  }
+
+  export type QuestionnaireUncheckedCreateInput = {
+    id?: string
+    nameEntreprise?: string | null
+    objectifSite: string
+    cible?: string | null
+    concurrents?: string | null
+    identiteVisuelle: string
+    textes: string
+    fonctionnalites?: QuestionnaireCreatefonctionnalitesInput | string[]
+    inspiration?: string | null
+    nomDeDomaine: string
+    email: string
+    autresInformations?: string | null
+    userId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type QuestionnaireUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nameEntreprise?: NullableStringFieldUpdateOperationsInput | string | null
+    objectifSite?: StringFieldUpdateOperationsInput | string
+    cible?: NullableStringFieldUpdateOperationsInput | string | null
+    concurrents?: NullableStringFieldUpdateOperationsInput | string | null
+    identiteVisuelle?: StringFieldUpdateOperationsInput | string
+    textes?: StringFieldUpdateOperationsInput | string
+    fonctionnalites?: QuestionnaireUpdatefonctionnalitesInput | string[]
+    inspiration?: NullableStringFieldUpdateOperationsInput | string | null
+    nomDeDomaine?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    autresInformations?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneWithoutQuestionnairesNestedInput
+  }
+
+  export type QuestionnaireUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nameEntreprise?: NullableStringFieldUpdateOperationsInput | string | null
+    objectifSite?: StringFieldUpdateOperationsInput | string
+    cible?: NullableStringFieldUpdateOperationsInput | string | null
+    concurrents?: NullableStringFieldUpdateOperationsInput | string | null
+    identiteVisuelle?: StringFieldUpdateOperationsInput | string
+    textes?: StringFieldUpdateOperationsInput | string
+    fonctionnalites?: QuestionnaireUpdatefonctionnalitesInput | string[]
+    inspiration?: NullableStringFieldUpdateOperationsInput | string | null
+    nomDeDomaine?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    autresInformations?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type QuestionnaireCreateManyInput = {
+    id?: string
+    nameEntreprise?: string | null
+    objectifSite: string
+    cible?: string | null
+    concurrents?: string | null
+    identiteVisuelle: string
+    textes: string
+    fonctionnalites?: QuestionnaireCreatefonctionnalitesInput | string[]
+    inspiration?: string | null
+    nomDeDomaine: string
+    email: string
+    autresInformations?: string | null
+    userId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type QuestionnaireUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nameEntreprise?: NullableStringFieldUpdateOperationsInput | string | null
+    objectifSite?: StringFieldUpdateOperationsInput | string
+    cible?: NullableStringFieldUpdateOperationsInput | string | null
+    concurrents?: NullableStringFieldUpdateOperationsInput | string | null
+    identiteVisuelle?: StringFieldUpdateOperationsInput | string
+    textes?: StringFieldUpdateOperationsInput | string
+    fonctionnalites?: QuestionnaireUpdatefonctionnalitesInput | string[]
+    inspiration?: NullableStringFieldUpdateOperationsInput | string | null
+    nomDeDomaine?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    autresInformations?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type QuestionnaireUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nameEntreprise?: NullableStringFieldUpdateOperationsInput | string | null
+    objectifSite?: StringFieldUpdateOperationsInput | string
+    cible?: NullableStringFieldUpdateOperationsInput | string | null
+    concurrents?: NullableStringFieldUpdateOperationsInput | string | null
+    identiteVisuelle?: StringFieldUpdateOperationsInput | string
+    textes?: StringFieldUpdateOperationsInput | string
+    fonctionnalites?: QuestionnaireUpdatefonctionnalitesInput | string[]
+    inspiration?: NullableStringFieldUpdateOperationsInput | string | null
+    nomDeDomaine?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    autresInformations?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -9236,6 +10829,12 @@ export namespace Prisma {
     isNot?: SubscriptionWhereInput | null
   }
 
+  export type QuestionnaireListRelationFilter = {
+    every?: QuestionnaireWhereInput
+    some?: QuestionnaireWhereInput
+    none?: QuestionnaireWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -9250,6 +10849,10 @@ export namespace Prisma {
   }
 
   export type AuthenticatorOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type QuestionnaireOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -9646,6 +11249,71 @@ export namespace Prisma {
     _max?: NestedEnumSubscriptionStatusFilter<$PrismaModel>
   }
 
+  export type StringNullableListFilter<$PrismaModel = never> = {
+    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    has?: string | StringFieldRefInput<$PrismaModel> | null
+    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
+    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
+    isEmpty?: boolean
+  }
+
+  export type UserNullableScalarRelationFilter = {
+    is?: UserWhereInput | null
+    isNot?: UserWhereInput | null
+  }
+
+  export type QuestionnaireCountOrderByAggregateInput = {
+    id?: SortOrder
+    nameEntreprise?: SortOrder
+    objectifSite?: SortOrder
+    cible?: SortOrder
+    concurrents?: SortOrder
+    identiteVisuelle?: SortOrder
+    textes?: SortOrder
+    fonctionnalites?: SortOrder
+    inspiration?: SortOrder
+    nomDeDomaine?: SortOrder
+    email?: SortOrder
+    autresInformations?: SortOrder
+    userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type QuestionnaireMaxOrderByAggregateInput = {
+    id?: SortOrder
+    nameEntreprise?: SortOrder
+    objectifSite?: SortOrder
+    cible?: SortOrder
+    concurrents?: SortOrder
+    identiteVisuelle?: SortOrder
+    textes?: SortOrder
+    inspiration?: SortOrder
+    nomDeDomaine?: SortOrder
+    email?: SortOrder
+    autresInformations?: SortOrder
+    userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type QuestionnaireMinOrderByAggregateInput = {
+    id?: SortOrder
+    nameEntreprise?: SortOrder
+    objectifSite?: SortOrder
+    cible?: SortOrder
+    concurrents?: SortOrder
+    identiteVisuelle?: SortOrder
+    textes?: SortOrder
+    inspiration?: SortOrder
+    nomDeDomaine?: SortOrder
+    email?: SortOrder
+    autresInformations?: SortOrder
+    userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
   export type AccountCreateNestedManyWithoutUserInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -9673,6 +11341,13 @@ export namespace Prisma {
     connect?: SubscriptionWhereUniqueInput
   }
 
+  export type QuestionnaireCreateNestedManyWithoutUserInput = {
+    create?: XOR<QuestionnaireCreateWithoutUserInput, QuestionnaireUncheckedCreateWithoutUserInput> | QuestionnaireCreateWithoutUserInput[] | QuestionnaireUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: QuestionnaireCreateOrConnectWithoutUserInput | QuestionnaireCreateOrConnectWithoutUserInput[]
+    createMany?: QuestionnaireCreateManyUserInputEnvelope
+    connect?: QuestionnaireWhereUniqueInput | QuestionnaireWhereUniqueInput[]
+  }
+
   export type AccountUncheckedCreateNestedManyWithoutUserInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -9698,6 +11373,13 @@ export namespace Prisma {
     create?: XOR<SubscriptionCreateWithoutUserInput, SubscriptionUncheckedCreateWithoutUserInput>
     connectOrCreate?: SubscriptionCreateOrConnectWithoutUserInput
     connect?: SubscriptionWhereUniqueInput
+  }
+
+  export type QuestionnaireUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<QuestionnaireCreateWithoutUserInput, QuestionnaireUncheckedCreateWithoutUserInput> | QuestionnaireCreateWithoutUserInput[] | QuestionnaireUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: QuestionnaireCreateOrConnectWithoutUserInput | QuestionnaireCreateOrConnectWithoutUserInput[]
+    createMany?: QuestionnaireCreateManyUserInputEnvelope
+    connect?: QuestionnaireWhereUniqueInput | QuestionnaireWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -9768,6 +11450,20 @@ export namespace Prisma {
     update?: XOR<XOR<SubscriptionUpdateToOneWithWhereWithoutUserInput, SubscriptionUpdateWithoutUserInput>, SubscriptionUncheckedUpdateWithoutUserInput>
   }
 
+  export type QuestionnaireUpdateManyWithoutUserNestedInput = {
+    create?: XOR<QuestionnaireCreateWithoutUserInput, QuestionnaireUncheckedCreateWithoutUserInput> | QuestionnaireCreateWithoutUserInput[] | QuestionnaireUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: QuestionnaireCreateOrConnectWithoutUserInput | QuestionnaireCreateOrConnectWithoutUserInput[]
+    upsert?: QuestionnaireUpsertWithWhereUniqueWithoutUserInput | QuestionnaireUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: QuestionnaireCreateManyUserInputEnvelope
+    set?: QuestionnaireWhereUniqueInput | QuestionnaireWhereUniqueInput[]
+    disconnect?: QuestionnaireWhereUniqueInput | QuestionnaireWhereUniqueInput[]
+    delete?: QuestionnaireWhereUniqueInput | QuestionnaireWhereUniqueInput[]
+    connect?: QuestionnaireWhereUniqueInput | QuestionnaireWhereUniqueInput[]
+    update?: QuestionnaireUpdateWithWhereUniqueWithoutUserInput | QuestionnaireUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: QuestionnaireUpdateManyWithWhereWithoutUserInput | QuestionnaireUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: QuestionnaireScalarWhereInput | QuestionnaireScalarWhereInput[]
+  }
+
   export type AccountUncheckedUpdateManyWithoutUserNestedInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -9818,6 +11514,20 @@ export namespace Prisma {
     delete?: SubscriptionWhereInput | boolean
     connect?: SubscriptionWhereUniqueInput
     update?: XOR<XOR<SubscriptionUpdateToOneWithWhereWithoutUserInput, SubscriptionUpdateWithoutUserInput>, SubscriptionUncheckedUpdateWithoutUserInput>
+  }
+
+  export type QuestionnaireUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<QuestionnaireCreateWithoutUserInput, QuestionnaireUncheckedCreateWithoutUserInput> | QuestionnaireCreateWithoutUserInput[] | QuestionnaireUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: QuestionnaireCreateOrConnectWithoutUserInput | QuestionnaireCreateOrConnectWithoutUserInput[]
+    upsert?: QuestionnaireUpsertWithWhereUniqueWithoutUserInput | QuestionnaireUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: QuestionnaireCreateManyUserInputEnvelope
+    set?: QuestionnaireWhereUniqueInput | QuestionnaireWhereUniqueInput[]
+    disconnect?: QuestionnaireWhereUniqueInput | QuestionnaireWhereUniqueInput[]
+    delete?: QuestionnaireWhereUniqueInput | QuestionnaireWhereUniqueInput[]
+    connect?: QuestionnaireWhereUniqueInput | QuestionnaireWhereUniqueInput[]
+    update?: QuestionnaireUpdateWithWhereUniqueWithoutUserInput | QuestionnaireUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: QuestionnaireUpdateManyWithWhereWithoutUserInput | QuestionnaireUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: QuestionnaireScalarWhereInput | QuestionnaireScalarWhereInput[]
   }
 
   export type UserCreateNestedOneWithoutAccountsInput = {
@@ -9902,6 +11612,31 @@ export namespace Prisma {
     upsert?: UserUpsertWithoutSubscriptionInput
     connect?: UserWhereUniqueInput
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutSubscriptionInput, UserUpdateWithoutSubscriptionInput>, UserUncheckedUpdateWithoutSubscriptionInput>
+  }
+
+  export type QuestionnaireCreatefonctionnalitesInput = {
+    set: string[]
+  }
+
+  export type UserCreateNestedOneWithoutQuestionnairesInput = {
+    create?: XOR<UserCreateWithoutQuestionnairesInput, UserUncheckedCreateWithoutQuestionnairesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutQuestionnairesInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type QuestionnaireUpdatefonctionnalitesInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type UserUpdateOneWithoutQuestionnairesNestedInput = {
+    create?: XOR<UserCreateWithoutQuestionnairesInput, UserUncheckedCreateWithoutQuestionnairesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutQuestionnairesInput
+    upsert?: UserUpsertWithoutQuestionnairesInput
+    disconnect?: UserWhereInput | boolean
+    delete?: UserWhereInput | boolean
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutQuestionnairesInput, UserUpdateWithoutQuestionnairesInput>, UserUncheckedUpdateWithoutQuestionnairesInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -10260,6 +11995,50 @@ export namespace Prisma {
     create: XOR<SubscriptionCreateWithoutUserInput, SubscriptionUncheckedCreateWithoutUserInput>
   }
 
+  export type QuestionnaireCreateWithoutUserInput = {
+    id?: string
+    nameEntreprise?: string | null
+    objectifSite: string
+    cible?: string | null
+    concurrents?: string | null
+    identiteVisuelle: string
+    textes: string
+    fonctionnalites?: QuestionnaireCreatefonctionnalitesInput | string[]
+    inspiration?: string | null
+    nomDeDomaine: string
+    email: string
+    autresInformations?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type QuestionnaireUncheckedCreateWithoutUserInput = {
+    id?: string
+    nameEntreprise?: string | null
+    objectifSite: string
+    cible?: string | null
+    concurrents?: string | null
+    identiteVisuelle: string
+    textes: string
+    fonctionnalites?: QuestionnaireCreatefonctionnalitesInput | string[]
+    inspiration?: string | null
+    nomDeDomaine: string
+    email: string
+    autresInformations?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type QuestionnaireCreateOrConnectWithoutUserInput = {
+    where: QuestionnaireWhereUniqueInput
+    create: XOR<QuestionnaireCreateWithoutUserInput, QuestionnaireUncheckedCreateWithoutUserInput>
+  }
+
+  export type QuestionnaireCreateManyUserInputEnvelope = {
+    data: QuestionnaireCreateManyUserInput | QuestionnaireCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
   export type AccountUpsertWithWhereUniqueWithoutUserInput = {
     where: AccountWhereUniqueInput
     update: XOR<AccountUpdateWithoutUserInput, AccountUncheckedUpdateWithoutUserInput>
@@ -10385,6 +12164,43 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type QuestionnaireUpsertWithWhereUniqueWithoutUserInput = {
+    where: QuestionnaireWhereUniqueInput
+    update: XOR<QuestionnaireUpdateWithoutUserInput, QuestionnaireUncheckedUpdateWithoutUserInput>
+    create: XOR<QuestionnaireCreateWithoutUserInput, QuestionnaireUncheckedCreateWithoutUserInput>
+  }
+
+  export type QuestionnaireUpdateWithWhereUniqueWithoutUserInput = {
+    where: QuestionnaireWhereUniqueInput
+    data: XOR<QuestionnaireUpdateWithoutUserInput, QuestionnaireUncheckedUpdateWithoutUserInput>
+  }
+
+  export type QuestionnaireUpdateManyWithWhereWithoutUserInput = {
+    where: QuestionnaireScalarWhereInput
+    data: XOR<QuestionnaireUpdateManyMutationInput, QuestionnaireUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type QuestionnaireScalarWhereInput = {
+    AND?: QuestionnaireScalarWhereInput | QuestionnaireScalarWhereInput[]
+    OR?: QuestionnaireScalarWhereInput[]
+    NOT?: QuestionnaireScalarWhereInput | QuestionnaireScalarWhereInput[]
+    id?: StringFilter<"Questionnaire"> | string
+    nameEntreprise?: StringNullableFilter<"Questionnaire"> | string | null
+    objectifSite?: StringFilter<"Questionnaire"> | string
+    cible?: StringNullableFilter<"Questionnaire"> | string | null
+    concurrents?: StringNullableFilter<"Questionnaire"> | string | null
+    identiteVisuelle?: StringFilter<"Questionnaire"> | string
+    textes?: StringFilter<"Questionnaire"> | string
+    fonctionnalites?: StringNullableListFilter<"Questionnaire">
+    inspiration?: StringNullableFilter<"Questionnaire"> | string | null
+    nomDeDomaine?: StringFilter<"Questionnaire"> | string
+    email?: StringFilter<"Questionnaire"> | string
+    autresInformations?: StringNullableFilter<"Questionnaire"> | string | null
+    userId?: StringNullableFilter<"Questionnaire"> | string | null
+    createdAt?: DateTimeFilter<"Questionnaire"> | Date | string
+    updatedAt?: DateTimeFilter<"Questionnaire"> | Date | string
+  }
+
   export type UserCreateWithoutAccountsInput = {
     id?: string
     name?: string | null
@@ -10397,6 +12213,7 @@ export namespace Prisma {
     sessions?: SessionCreateNestedManyWithoutUserInput
     Authenticator?: AuthenticatorCreateNestedManyWithoutUserInput
     subscription?: SubscriptionCreateNestedOneWithoutUserInput
+    questionnaires?: QuestionnaireCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutAccountsInput = {
@@ -10411,6 +12228,7 @@ export namespace Prisma {
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
     Authenticator?: AuthenticatorUncheckedCreateNestedManyWithoutUserInput
     subscription?: SubscriptionUncheckedCreateNestedOneWithoutUserInput
+    questionnaires?: QuestionnaireUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutAccountsInput = {
@@ -10441,6 +12259,7 @@ export namespace Prisma {
     sessions?: SessionUpdateManyWithoutUserNestedInput
     Authenticator?: AuthenticatorUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUpdateOneWithoutUserNestedInput
+    questionnaires?: QuestionnaireUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -10455,6 +12274,7 @@ export namespace Prisma {
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
     Authenticator?: AuthenticatorUncheckedUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUncheckedUpdateOneWithoutUserNestedInput
+    questionnaires?: QuestionnaireUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutSessionsInput = {
@@ -10469,6 +12289,7 @@ export namespace Prisma {
     accounts?: AccountCreateNestedManyWithoutUserInput
     Authenticator?: AuthenticatorCreateNestedManyWithoutUserInput
     subscription?: SubscriptionCreateNestedOneWithoutUserInput
+    questionnaires?: QuestionnaireCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutSessionsInput = {
@@ -10483,6 +12304,7 @@ export namespace Prisma {
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
     Authenticator?: AuthenticatorUncheckedCreateNestedManyWithoutUserInput
     subscription?: SubscriptionUncheckedCreateNestedOneWithoutUserInput
+    questionnaires?: QuestionnaireUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutSessionsInput = {
@@ -10513,6 +12335,7 @@ export namespace Prisma {
     accounts?: AccountUpdateManyWithoutUserNestedInput
     Authenticator?: AuthenticatorUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUpdateOneWithoutUserNestedInput
+    questionnaires?: QuestionnaireUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -10527,6 +12350,7 @@ export namespace Prisma {
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
     Authenticator?: AuthenticatorUncheckedUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUncheckedUpdateOneWithoutUserNestedInput
+    questionnaires?: QuestionnaireUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutAuthenticatorInput = {
@@ -10541,6 +12365,7 @@ export namespace Prisma {
     accounts?: AccountCreateNestedManyWithoutUserInput
     sessions?: SessionCreateNestedManyWithoutUserInput
     subscription?: SubscriptionCreateNestedOneWithoutUserInput
+    questionnaires?: QuestionnaireCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutAuthenticatorInput = {
@@ -10555,6 +12380,7 @@ export namespace Prisma {
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
     subscription?: SubscriptionUncheckedCreateNestedOneWithoutUserInput
+    questionnaires?: QuestionnaireUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutAuthenticatorInput = {
@@ -10585,6 +12411,7 @@ export namespace Prisma {
     accounts?: AccountUpdateManyWithoutUserNestedInput
     sessions?: SessionUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUpdateOneWithoutUserNestedInput
+    questionnaires?: QuestionnaireUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutAuthenticatorInput = {
@@ -10599,6 +12426,7 @@ export namespace Prisma {
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUncheckedUpdateOneWithoutUserNestedInput
+    questionnaires?: QuestionnaireUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutSubscriptionInput = {
@@ -10613,6 +12441,7 @@ export namespace Prisma {
     accounts?: AccountCreateNestedManyWithoutUserInput
     sessions?: SessionCreateNestedManyWithoutUserInput
     Authenticator?: AuthenticatorCreateNestedManyWithoutUserInput
+    questionnaires?: QuestionnaireCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutSubscriptionInput = {
@@ -10627,6 +12456,7 @@ export namespace Prisma {
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
     Authenticator?: AuthenticatorUncheckedCreateNestedManyWithoutUserInput
+    questionnaires?: QuestionnaireUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutSubscriptionInput = {
@@ -10657,6 +12487,7 @@ export namespace Prisma {
     accounts?: AccountUpdateManyWithoutUserNestedInput
     sessions?: SessionUpdateManyWithoutUserNestedInput
     Authenticator?: AuthenticatorUpdateManyWithoutUserNestedInput
+    questionnaires?: QuestionnaireUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSubscriptionInput = {
@@ -10671,6 +12502,83 @@ export namespace Prisma {
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
     Authenticator?: AuthenticatorUncheckedUpdateManyWithoutUserNestedInput
+    questionnaires?: QuestionnaireUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserCreateWithoutQuestionnairesInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    image?: string | null
+    password?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    accounts?: AccountCreateNestedManyWithoutUserInput
+    sessions?: SessionCreateNestedManyWithoutUserInput
+    Authenticator?: AuthenticatorCreateNestedManyWithoutUserInput
+    subscription?: SubscriptionCreateNestedOneWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutQuestionnairesInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    image?: string | null
+    password?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    Authenticator?: AuthenticatorUncheckedCreateNestedManyWithoutUserInput
+    subscription?: SubscriptionUncheckedCreateNestedOneWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutQuestionnairesInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutQuestionnairesInput, UserUncheckedCreateWithoutQuestionnairesInput>
+  }
+
+  export type UserUpsertWithoutQuestionnairesInput = {
+    update: XOR<UserUpdateWithoutQuestionnairesInput, UserUncheckedUpdateWithoutQuestionnairesInput>
+    create: XOR<UserCreateWithoutQuestionnairesInput, UserUncheckedCreateWithoutQuestionnairesInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutQuestionnairesInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutQuestionnairesInput, UserUncheckedUpdateWithoutQuestionnairesInput>
+  }
+
+  export type UserUpdateWithoutQuestionnairesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    accounts?: AccountUpdateManyWithoutUserNestedInput
+    sessions?: SessionUpdateManyWithoutUserNestedInput
+    Authenticator?: AuthenticatorUpdateManyWithoutUserNestedInput
+    subscription?: SubscriptionUpdateOneWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutQuestionnairesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    Authenticator?: AuthenticatorUncheckedUpdateManyWithoutUserNestedInput
+    subscription?: SubscriptionUncheckedUpdateOneWithoutUserNestedInput
   }
 
   export type AccountCreateManyUserInput = {
@@ -10703,6 +12611,23 @@ export namespace Prisma {
     credentialDeviceType: string
     credentialBackedUp: boolean
     transports?: string | null
+  }
+
+  export type QuestionnaireCreateManyUserInput = {
+    id?: string
+    nameEntreprise?: string | null
+    objectifSite: string
+    cible?: string | null
+    concurrents?: string | null
+    identiteVisuelle: string
+    textes: string
+    fonctionnalites?: QuestionnaireCreatefonctionnalitesInput | string[]
+    inspiration?: string | null
+    nomDeDomaine: string
+    email: string
+    autresInformations?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type AccountUpdateWithoutUserInput = {
@@ -10799,6 +12724,57 @@ export namespace Prisma {
     credentialDeviceType?: StringFieldUpdateOperationsInput | string
     credentialBackedUp?: BoolFieldUpdateOperationsInput | boolean
     transports?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type QuestionnaireUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nameEntreprise?: NullableStringFieldUpdateOperationsInput | string | null
+    objectifSite?: StringFieldUpdateOperationsInput | string
+    cible?: NullableStringFieldUpdateOperationsInput | string | null
+    concurrents?: NullableStringFieldUpdateOperationsInput | string | null
+    identiteVisuelle?: StringFieldUpdateOperationsInput | string
+    textes?: StringFieldUpdateOperationsInput | string
+    fonctionnalites?: QuestionnaireUpdatefonctionnalitesInput | string[]
+    inspiration?: NullableStringFieldUpdateOperationsInput | string | null
+    nomDeDomaine?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    autresInformations?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type QuestionnaireUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nameEntreprise?: NullableStringFieldUpdateOperationsInput | string | null
+    objectifSite?: StringFieldUpdateOperationsInput | string
+    cible?: NullableStringFieldUpdateOperationsInput | string | null
+    concurrents?: NullableStringFieldUpdateOperationsInput | string | null
+    identiteVisuelle?: StringFieldUpdateOperationsInput | string
+    textes?: StringFieldUpdateOperationsInput | string
+    fonctionnalites?: QuestionnaireUpdatefonctionnalitesInput | string[]
+    inspiration?: NullableStringFieldUpdateOperationsInput | string | null
+    nomDeDomaine?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    autresInformations?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type QuestionnaireUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nameEntreprise?: NullableStringFieldUpdateOperationsInput | string | null
+    objectifSite?: StringFieldUpdateOperationsInput | string
+    cible?: NullableStringFieldUpdateOperationsInput | string | null
+    concurrents?: NullableStringFieldUpdateOperationsInput | string | null
+    identiteVisuelle?: StringFieldUpdateOperationsInput | string
+    textes?: StringFieldUpdateOperationsInput | string
+    fonctionnalites?: QuestionnaireUpdatefonctionnalitesInput | string[]
+    inspiration?: NullableStringFieldUpdateOperationsInput | string | null
+    nomDeDomaine?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    autresInformations?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 
