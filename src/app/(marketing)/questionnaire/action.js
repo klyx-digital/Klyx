@@ -3,6 +3,7 @@
 import prisma from "@/lib/prisma";
 import { z } from "zod";
 import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
 const QuestionnaireSchema = z.object({
   nameEntreprise: z.string().optional(),
