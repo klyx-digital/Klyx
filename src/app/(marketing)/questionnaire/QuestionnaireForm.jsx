@@ -291,7 +291,13 @@ export function QuestionnaireForm() {
               </Button>
             )}
             {step < totalSteps ? (
-              <Button type="button" onClick={nextStep}>
+              <Button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  nextStep();
+                }}
+              >
                 Étape suivante →
               </Button>
             ) : (
