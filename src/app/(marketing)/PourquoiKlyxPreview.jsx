@@ -6,14 +6,14 @@ export function PourquoiKlyxPreview() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">
-            Bien plus qu’un site web : une solution complète, humaine et
-            performante
+            Transformez votre présence en ligne avec une solution web complète,
+            humaine et performante.
           </h2>
           <p className="mt-6 text-base/7 text-gray-200">
-            Chez Klyx, nous ne livrons pas simplement un site. Nous vous
-            accompagnons à chaque étape pour garantir votre sérénité, la
-            performance de votre présence en ligne et la croissance de votre
-            activité.
+            Chez Klyx, nous sommes plus que des créateurs de sites web. Nous
+            sommes vos partenaires dédiés, engagés à vous offrir une expérience
+            sereine, une présence en ligne performante et une croissance
+            durable.
           </p>
         </div>
       </div>
@@ -28,13 +28,12 @@ export function PourquoiKlyxPreview() {
             />
           </div>
           <h3 className="text-base/7 font-semibold text-blue-600">
-            Un site qui vous ressemble, pensé pour durer
+            Votre identité en ligne, sublimée par une technologie de pointe
           </h3>
           <p className="text-left sm:text-center">
-            Votre site est unique, conçu à votre image et développé avec les
-            technologies les plus modernes (Next.js, React, Tailwind CSS…). Fini
-            les templates impersonnels : vous bénéficiez d’une solution
-            évolutive, rapide et parfaitement adaptée à vos besoins.
+            Un site unique, développé avec Next.js, React et Tailwind CSS, pour
+            une performance et une évolutivité maximales. Dites adieu aux
+            designs génériques !
           </p>
         </div>
         <div className="flex flex-col items-center justify-center space-y-2">
@@ -47,12 +46,12 @@ export function PourquoiKlyxPreview() {
             />
           </div>
           <h3 className="text-base/7 font-semibold text-blue-600">
-            Un accompagnement humain, à chaque instant{" "}
+            Votre équipe web dédiée, toujours à vos côtés.
           </h3>
           <p className="text-left sm:text-center">
-            Vous n’êtes jamais seul. Notre équipe est disponible, à l’écoute et
-            vous guide à chaque étape. Nous répondons à toutes vos questions et
-            faisons évoluer votre site selon vos ambitions.
+            Bénéficiez d'un support humain réactif et expert pour vous guider,
+            répondre à vos questions et faire évoluer votre site en fonction de
+            vos besoins. Vous n'êtes jamais seul avec Klyx.
           </p>
         </div>
         <div className="flex flex-col items-center justify-center space-y-2">
@@ -65,12 +64,12 @@ export function PourquoiKlyxPreview() {
             />
           </div>
           <h3 className="text-base/7 font-semibold text-blue-600">
-            Technique et gestion intégrale
+            Zéro souci technique, une performance optimale garantie.{" "}
           </h3>
           <p className="text-left sm:text-center">
-            Hébergement, nom de domaine, maintenance : tout est géré par nos
-            soins. Votre site reste rapide, sécurisé et accessible, sans effort
-            de votre part.
+            Nous gérons l'hébergement, le nom de domaine et la maintenance pour
+            que votre site soit toujours rapide, sécurisé et accessible, sans
+            que vous ayez à lever le petit doigt.
           </p>
         </div>
         <div className="flex flex-col items-center justify-center space-y-2">
@@ -83,11 +82,12 @@ export function PourquoiKlyxPreview() {
             />
           </div>
           <h3 className="text-base/7 font-semibold text-blue-600">
-            Sécurité & conformité
+            Votre sécurité et la confidentialité de vos clients, notre priorité
+            absolue.{" "}
           </h3>
           <p className="text-left sm:text-center">
-            La confidentialité et la protection de vos données – et celles de
-            vos clients – sont assurées selon les meilleures pratiques du web.
+            Nous appliquons les meilleures pratiques du web pour garantir la
+            protection de vos données et la conformité de votre site.
           </p>
         </div>
       </div>

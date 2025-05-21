@@ -15,6 +15,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { SignInGoogle } from "@/components/formulaire/SignInGoogle";
+import Image from "next/image";
+import Link from "next/link";
 
 export function FormulaireRegister() {
   const initialState = {
@@ -40,6 +42,14 @@ export function FormulaireRegister() {
           action={formAction}
           className="grid w-full max-w-sm grid-cols-1 gap-8"
         >
+          <Link href="/">
+            <Image
+              src="/logoCompletKlyx.svg"
+              alt="Logo"
+              width={100}
+              height={100}
+            />
+          </Link>
           <Heading>Créer un compte</Heading>
           {state.message && (
             <p className="rounded bg-red-100 px-3 py-2 text-sm text-red-700">

@@ -16,7 +16,8 @@ import {
 
 const features = [
   {
-    title: "Performance et optimisation",
+    title:
+      "Performance optimale pour une expérience utilisateur exceptionnelle",
     description:
       "Un site rapide, fluide et optimisé dès le premier pixel pour maximiser l’expérience utilisateur.",
     icon: RocketLaunchIcon,
@@ -38,7 +39,7 @@ const features = [
   {
     title: "Maintenance et mises à jour",
     description:
-      "Votre site est constamment sécurisé, maintenu et optimisé sans effort de votre part.",
+      "Votre site toujours à jour et sécurisé, sans que vous ayez à y penser.",
     icon: WrenchScrewdriverIcon,
     points: [
       "Les agences facturent les mises à jour en supplément.",
@@ -47,8 +48,7 @@ const features = [
   },
   {
     title: "Tarification transparente",
-    description:
-      "Un abonnement tout compris sans frais cachés, pour une maîtrise totale de votre budget.",
+    description: "Un budget maîtrisé, une valeur maximale",
     icon: CurrencyEuroIcon,
     points: [
       "Les No-Code affichent des prix d'appel mais ajoutent de nombreux suppléments.",
@@ -81,11 +81,15 @@ export function List() {
     <section className="bg-gray-100 py-20 px-6 mt-12 rounded-2xl">
       <div className="mx-auto max-w-5xl text-center">
         <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 ">
-          Les avantages Klyx, là où ça fait la différence{" "}
+          Découvrez pourquoi Klyx est le choix idéal pour un site web performant
+          et sans souci.
         </h2>
         <p className="mt-4 text-lg text-gray-600">
-          Klyx se démarque là où ça compte vraiment : personnalisation,
-          rapidité, visibilité, simplicité et accompagnement humain.
+          Klyx va au-delà de la simple création de site web. Nous vous offrons
+          une solution complète qui excelle là où les autres échouent : une
+          personnalisation poussée, une rapidité inégalée, une visibilité
+          accrue, une simplicité d'utilisation et un accompagnement humain dédié
+          à votre succès.
         </p>
       </div>
 

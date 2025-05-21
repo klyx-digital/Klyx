@@ -11,21 +11,21 @@ import deploy from "../../../public/Deploie.jpg";
 
 const features = [
   {
-    title: "Quiz & définition de vos besoins",
+    title: "Parlons de vous",
     description:
-      "Répondez à un questionnaire interactif pour partager vos objectifs et attentes. Ce brief personnalisé nous permet de cerner parfaitement votre projet.",
+      "Partagez vos objectifs et vos rêves à travers un quiz interactif. Ce brief détaillé est la clé pour créer un site web qui vous ressemble vraiment.",
     image: meet,
   },
   {
-    title: "Conception collaborative & ajustements",
+    title: "Votre site prend forme, sous votre regard",
     description:
-      "Nous créons votre site sur-mesure, en tenant compte de chaque détail. Vous suivez l’avancée du projet, visualisez le rendu, et demandez facilement des modifications.",
+      "Suivez l'évolution de votre site sur-mesure, visualisez chaque détail et demandez des modifications facilement. Votre avis compte à chaque étape.",
     image: code,
   },
   {
-    title: "Validation & mise en ligne",
+    title: "Votre succès en ligne commence ici.",
     description:
-      "Dès que vous validez le résultat, nous mettons votre site en ligne, optimisé pour le SEO, sécurisé et prêt à accueillir vos clients. Notre équipe reste à vos côtés pour la maintenance et les évolutions.",
+      "Une fois validé, votre site optimisé (SEO, sécurité) est mis en ligne. Mais notre accompagnement ne s'arrête pas là : nous restons à vos côtés pour la maintenance et les évolutions futures.",
     image: deploy,
   },
 ];
@@ -65,12 +65,10 @@ export function Etape() {
             Votre site web clé en main en 3 étapes simples{" "}
           </h2>
           <p className="mt-6 text-lg tracking-tight text-blue-100">
-            Chez Klyx, chaque projet est pensé pour vous simplifier la vie. De
-            la première prise de contact à la mise en ligne, nous vous
-            accompagnons à chaque étape pour garantir un résultat professionnel,
-            sans stress et sans jargon technique. Découvrez comment, en trois
-            étapes claires, votre site prend vie et commence à travailler pour
-            vous.
+            Votre projet web mérite une approche simple et efficace. Klyx vous
+            accompagne main dans la main à travers 3 étapes claires pour
+            transformer votre vision en une réalité en ligne performante, sans
+            stress et avec un accompagnement personnalisé à chaque étape.
           </p>
         </div>
         <TabGroup

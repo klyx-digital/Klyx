@@ -4,17 +4,15 @@ export function Statistique() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-            Votre site web : la clé de votre crédibilité et de votre croissance
+            Développez votre crédibilité et accélérez votre croissance grâce à
+            un site web performant.
           </h2>
           <p className="mt-6 text-base/7 text-gray-600">
-            En 2025, avoir un site internet ne relève plus du choix, mais de
-            l’évidence. Face à des clients toujours plus connectés et exigeants,
-            votre site est bien plus qu’une simple vitrine : c’est le cœur de
-            votre présence digitale, votre carte de visite accessible 24h/24, et
-            le premier levier pour inspirer confiance, maîtriser votre image et
-            générer de nouvelles opportunités. Dans un monde où la concurrence
-            se joue en ligne, un site performant et bien référencé fait toute la
-            différence pour attirer, convaincre et fidéliser vos clients
+            En 2025, votre site web n'est pas une option, c'est votre arme de
+            croissance essentielle. Face à des clients connectés et exigeants,
+            il est votre vitrine ouverte 24/7, votre gage de confiance et votre
+            principal générateur de prospects. Avec Klyx, transformez cette
+            nécessité en un avantage concurrentiel majeur.
           </p>
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl flex-col gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end">
@@ -27,9 +25,9 @@ export function Statistique() {
                 Des recherches locales se transforment en achat
               </p>
               <p className="mt-2 text-base/7 text-gray-600">
-                Chaque recherche locale est une occasion de gagner un nouveau
-                client. Ne ratez plus aucune vente grâce à un site performant et
-                bien référencé.
+                Êtes-vous prêt à capter cette clientèle près de chez vous ? Avec
+                un site optimisé par Klyx, ne manquez plus aucune opportunité
+                locale
               </p>
             </div>
           </div>
@@ -43,8 +41,9 @@ export function Statistique() {
                 web{" "}
               </p>
               <p className="mt-2 text-base/7 text-gray-400">
-                Ne laissez pas votre première impression au hasard. Offrez à vos
-                clients un site qui inspire confiance et professionnalisme.
+                Votre première impression en ligne est cruciale. Klyx vous aide
+                à créer un site qui inspire confiance et professionnalisme dès
+                le premier clic.
               </p>
             </div>
           </div>
@@ -58,9 +57,9 @@ export function Statistique() {
                 Google{" "}
               </p>
               <p className="mt-2 text-base/7 text-indigo-200">
-                Soyez visible là où vos clients vous cherchent: un site
-                optimisé, c’est la clé pour apparaître en première page et
-                capter toutes les opportunités.
+                Être visible là où vos clients vous cherchent est essentiel.
+                L'optimisation SEO est intégrée à chaque site Klyx pour vous
+                aider à atteindre le sommet des résultats.
               </p>
             </div>
           </div>

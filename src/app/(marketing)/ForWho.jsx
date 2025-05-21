@@ -9,11 +9,10 @@ export function ForWho() {
             Klyx s’adapte à tous les profils
           </h2>
           <p className="mt-6 text-base/7 text-gray-600">
-            Chez Klyx, chaque projet est unique. Nous adaptons nos solutions à
-            vos besoins, à votre budget et à vos ambitions, pour rendre le web
-            accessible, performant et rentable à tous les entrepreneurs. Notre
-            mission : transformer vos idées en une présence digitale qui vous
-            ressemble et qui fait grandir votre activité
+            Le web peut être complexe, mais votre présence en ligne ne devrait
+            pas l'être. Klyx rend le digital accessible, performant et rentable
+            pour chaque entrepreneur, en adaptant nos solutions à vos besoins
+            spécifiques pour une croissance significative.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto px-4">
@@ -33,10 +32,11 @@ export function ForWho() {
               <h3 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">
                 Artisans, indépendants & freelances{" "}
               </h3>
-              <p className="text-white/95 text-lg drop-shadow-md">
-                Valorisez votre savoir-faire et attirez de nouveaux clients
-                grâce à un site professionnel, sans vous soucier de la
-                technique.
+              <p className="text-white/95 drop-shadow-md">
+                Vous êtes unique, votre site aussi. Valorisez votre savoir-faire
+                et attirez une clientèle ciblée grâce à un site web
+                professionnel et facile à gérer. Concentrez-vous sur votre
+                passion, nous gérons la technique.
               </p>
             </div>
           </div>
@@ -49,10 +49,10 @@ export function ForWho() {
               <h3 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">
                 TPE et PME
               </h3>
-              <p className="text-white/95 text-lg drop-shadow-md">
-                Démarquez-vous de la concurrence avec un site moderne, rapide et
-                fiable, pensé pour inspirer confiance et générer des
-                opportunités.
+              <p className="text-white/95 drop-shadow-md">
+                Démarquez-vous et inspirez confiance. Un site web moderne,
+                rapide et fiable signé Klyx vous positionne comme un leader et
+                attire de nouvelles opportunités commerciales.
               </p>
             </div>
           </div>
@@ -71,9 +71,10 @@ export function ForWho() {
               <h3 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">
                 Startups, entreprises en croissance & grands groupes
               </h3>
-              <p className="text-white/95 text-lg drop-shadow-md">
-                Bénéficiez d’un site sur-mesure, évolutif et ultra-performant,
-                avec un accompagnement humain et une gestion technique complète.
+              <p className="text-white/95 drop-shadow-md">
+                Votre croissance, notre expertise. Bénéficiez d'une solution web
+                sur-mesure, capable d'évoluer avec vos ambitions, soutenue par
+                un accompagnement humain et une gestion technique de pointe.
               </p>
             </div>
           </div>

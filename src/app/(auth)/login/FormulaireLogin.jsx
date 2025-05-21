@@ -10,6 +10,8 @@ import { Heading } from "@/components/ui/heading";
 import { Text, TextLink, Strong } from "@/components/ui/text";
 import { SignInGoogle } from "@/components/formulaire/SignInGoogle";
 import { AuthLayout } from "@/components/ui/auth-layout";
+import Image from "next/image";
+import Link from "next/link";
 
 export function FormulaireLogin() {
   const searchParams = useSearchParams();
@@ -26,6 +28,14 @@ export function FormulaireLogin() {
         action={formAction}
         className="grid w-full max-w-sm grid-cols-1 gap-8"
       >
+        <Link href="/">
+          <Image
+            src="/logoCompletKlyx.svg"
+            alt="Logo"
+            width={100}
+            height={100}
+          />
+        </Link>
         <Heading>Connectez-vous à votre compte</Heading>
 
         <SignInGoogle label="Se connecter avec Google" />

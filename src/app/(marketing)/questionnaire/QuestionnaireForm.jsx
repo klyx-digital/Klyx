@@ -105,17 +105,16 @@ export function QuestionnaireForm() {
 
             <Field hidden={step !== 3}>
               <Label>
-                Parlons de vos clients ! À qui s'adresse principalement votre
-                site web ?
+                Parlons de vos clients ! Décrivez votre audience idéale pour
+                notre équipe.
               </Label>
               <Textarea name="cible" />
               <Description>
-                Imaginez votre visiteur idéal... Quel âge a-t-il ? Quel est son
-                métier ? Quels sont ses besoins et ses centres d'intérêt ? Où
-                habite-t-il ? Plus vous nous donnez de détails, mieux nous
-                pourrons concevoir un site qui lui parle directement. Exemple :
-                "Jeunes professionnels de 30-45 ans à Paris, intéressés par les
-                solutions de gestion de projet innovantes.
+                Imaginez votre client type : âge, profession, besoins, intérêts,
+                localisation... Plus de détails nous aident à créer un site qui
+                lui parle directement. Exemple : "Professionnels du marketing
+                digital (25-40 ans) à Paris, intéressés par les outils
+                d'automatisation."
               </Description>
             </Field>
 
@@ -271,7 +270,10 @@ export function QuestionnaireForm() {
             </Field>
 
             <Field hidden={step !== 11}>
-              <Label>Autres informations concernant votre projet web ?</Label>
+              <Label>
+                Y a-t-il d'autres détails importants concernant votre projet web
+                ?
+              </Label>
               <Textarea
                 name="autresInformations"
                 placeholder="Si vous avez d'autres détails, des préférences particulières ou des informations complémentaires à nous communiquer concernant votre futur site web, n'hésitez pas à les mentionner ici..."

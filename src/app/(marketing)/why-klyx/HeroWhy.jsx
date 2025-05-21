@@ -36,8 +36,9 @@ export function HeroWhy() {
             <div className="mx-auto max-w-7xl px-6 pt-5 pb-18 sm:pt-60 lg:px-8 lg:pt-10">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <h1 className="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
-                    Le choix du web sur-mesure, sans compromis{" "}
+                  <h1 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+                    Performance, liberté, sérénité : le web sur-mesure sans
+                    compromis, c'est Klyx.
                   </h1>
                   <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
                     Faites le choix de la performance, de la liberté et de la
