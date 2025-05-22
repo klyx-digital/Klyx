@@ -1,3 +1,9 @@
+import { HeroWhy } from "./HeroWhy";
+import { CodeVsNocode } from "./CodeVsNocode";
+import { List } from "./List";
+import { CtaWhy } from "./CtaWhy";
+import { Techno } from "./Techno";
+
 export const metadata = {
   title: "Pourquoi Klyx ? – Klyx Digital",
   description:
@@ -31,11 +37,6 @@ export const metadata = {
   },
 };
 
-import { HeroWhy } from "./HeroWhy";
-import { CodeVsNocode } from "./CodeVsNocode";
-import { List } from "./List";
-import { CtaWhy } from "./CtaWhy";
-
 export default function Page() {
   return (
     <main>
@@ -63,6 +64,7 @@ export default function Page() {
       <HeroWhy />
       <CodeVsNocode />
       <List />
+      <Techno />
       <CtaWhy />
     </main>
   );
