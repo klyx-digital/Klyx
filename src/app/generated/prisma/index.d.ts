@@ -48,6 +48,21 @@ export type Subscription = $Result.DefaultSelection<Prisma.$SubscriptionPayload>
  * 
  */
 export type Questionnaire = $Result.DefaultSelection<Prisma.$QuestionnairePayload>
+/**
+ * Model OAuthToken
+ * 
+ */
+export type OAuthToken = $Result.DefaultSelection<Prisma.$OAuthTokenPayload>
+/**
+ * Model SearchAnalyticsDay
+ * 
+ */
+export type SearchAnalyticsDay = $Result.DefaultSelection<Prisma.$SearchAnalyticsDayPayload>
+/**
+ * Model Site
+ * 
+ */
+export type Site = $Result.DefaultSelection<Prisma.$SitePayload>
 
 /**
  * Enums
@@ -278,6 +293,36 @@ export class PrismaClient<
     * ```
     */
   get questionnaire(): Prisma.QuestionnaireDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.oAuthToken`: Exposes CRUD operations for the **OAuthToken** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more OAuthTokens
+    * const oAuthTokens = await prisma.oAuthToken.findMany()
+    * ```
+    */
+  get oAuthToken(): Prisma.OAuthTokenDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.searchAnalyticsDay`: Exposes CRUD operations for the **SearchAnalyticsDay** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more SearchAnalyticsDays
+    * const searchAnalyticsDays = await prisma.searchAnalyticsDay.findMany()
+    * ```
+    */
+  get searchAnalyticsDay(): Prisma.SearchAnalyticsDayDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.site`: Exposes CRUD operations for the **Site** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Sites
+    * const sites = await prisma.site.findMany()
+    * ```
+    */
+  get site(): Prisma.SiteDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -724,7 +769,10 @@ export namespace Prisma {
     VerificationToken: 'VerificationToken',
     Authenticator: 'Authenticator',
     Subscription: 'Subscription',
-    Questionnaire: 'Questionnaire'
+    Questionnaire: 'Questionnaire',
+    OAuthToken: 'OAuthToken',
+    SearchAnalyticsDay: 'SearchAnalyticsDay',
+    Site: 'Site'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -743,7 +791,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "account" | "session" | "verificationToken" | "authenticator" | "subscription" | "questionnaire"
+      modelProps: "user" | "account" | "session" | "verificationToken" | "authenticator" | "subscription" | "questionnaire" | "oAuthToken" | "searchAnalyticsDay" | "site"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1265,6 +1313,228 @@ export namespace Prisma {
           }
         }
       }
+      OAuthToken: {
+        payload: Prisma.$OAuthTokenPayload<ExtArgs>
+        fields: Prisma.OAuthTokenFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.OAuthTokenFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OAuthTokenPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.OAuthTokenFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OAuthTokenPayload>
+          }
+          findFirst: {
+            args: Prisma.OAuthTokenFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OAuthTokenPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.OAuthTokenFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OAuthTokenPayload>
+          }
+          findMany: {
+            args: Prisma.OAuthTokenFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OAuthTokenPayload>[]
+          }
+          create: {
+            args: Prisma.OAuthTokenCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OAuthTokenPayload>
+          }
+          createMany: {
+            args: Prisma.OAuthTokenCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.OAuthTokenCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OAuthTokenPayload>[]
+          }
+          delete: {
+            args: Prisma.OAuthTokenDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OAuthTokenPayload>
+          }
+          update: {
+            args: Prisma.OAuthTokenUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OAuthTokenPayload>
+          }
+          deleteMany: {
+            args: Prisma.OAuthTokenDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.OAuthTokenUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.OAuthTokenUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OAuthTokenPayload>[]
+          }
+          upsert: {
+            args: Prisma.OAuthTokenUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$OAuthTokenPayload>
+          }
+          aggregate: {
+            args: Prisma.OAuthTokenAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateOAuthToken>
+          }
+          groupBy: {
+            args: Prisma.OAuthTokenGroupByArgs<ExtArgs>
+            result: $Utils.Optional<OAuthTokenGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.OAuthTokenCountArgs<ExtArgs>
+            result: $Utils.Optional<OAuthTokenCountAggregateOutputType> | number
+          }
+        }
+      }
+      SearchAnalyticsDay: {
+        payload: Prisma.$SearchAnalyticsDayPayload<ExtArgs>
+        fields: Prisma.SearchAnalyticsDayFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.SearchAnalyticsDayFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SearchAnalyticsDayPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.SearchAnalyticsDayFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SearchAnalyticsDayPayload>
+          }
+          findFirst: {
+            args: Prisma.SearchAnalyticsDayFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SearchAnalyticsDayPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.SearchAnalyticsDayFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SearchAnalyticsDayPayload>
+          }
+          findMany: {
+            args: Prisma.SearchAnalyticsDayFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SearchAnalyticsDayPayload>[]
+          }
+          create: {
+            args: Prisma.SearchAnalyticsDayCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SearchAnalyticsDayPayload>
+          }
+          createMany: {
+            args: Prisma.SearchAnalyticsDayCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.SearchAnalyticsDayCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SearchAnalyticsDayPayload>[]
+          }
+          delete: {
+            args: Prisma.SearchAnalyticsDayDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SearchAnalyticsDayPayload>
+          }
+          update: {
+            args: Prisma.SearchAnalyticsDayUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SearchAnalyticsDayPayload>
+          }
+          deleteMany: {
+            args: Prisma.SearchAnalyticsDayDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.SearchAnalyticsDayUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SearchAnalyticsDayUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SearchAnalyticsDayPayload>[]
+          }
+          upsert: {
+            args: Prisma.SearchAnalyticsDayUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SearchAnalyticsDayPayload>
+          }
+          aggregate: {
+            args: Prisma.SearchAnalyticsDayAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateSearchAnalyticsDay>
+          }
+          groupBy: {
+            args: Prisma.SearchAnalyticsDayGroupByArgs<ExtArgs>
+            result: $Utils.Optional<SearchAnalyticsDayGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.SearchAnalyticsDayCountArgs<ExtArgs>
+            result: $Utils.Optional<SearchAnalyticsDayCountAggregateOutputType> | number
+          }
+        }
+      }
+      Site: {
+        payload: Prisma.$SitePayload<ExtArgs>
+        fields: Prisma.SiteFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.SiteFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SitePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.SiteFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SitePayload>
+          }
+          findFirst: {
+            args: Prisma.SiteFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SitePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.SiteFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SitePayload>
+          }
+          findMany: {
+            args: Prisma.SiteFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SitePayload>[]
+          }
+          create: {
+            args: Prisma.SiteCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SitePayload>
+          }
+          createMany: {
+            args: Prisma.SiteCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.SiteCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SitePayload>[]
+          }
+          delete: {
+            args: Prisma.SiteDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SitePayload>
+          }
+          update: {
+            args: Prisma.SiteUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SitePayload>
+          }
+          deleteMany: {
+            args: Prisma.SiteDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.SiteUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.SiteUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SitePayload>[]
+          }
+          upsert: {
+            args: Prisma.SiteUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$SitePayload>
+          }
+          aggregate: {
+            args: Prisma.SiteAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateSite>
+          }
+          groupBy: {
+            args: Prisma.SiteGroupByArgs<ExtArgs>
+            result: $Utils.Optional<SiteGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.SiteCountArgs<ExtArgs>
+            result: $Utils.Optional<SiteCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1356,6 +1626,9 @@ export namespace Prisma {
     authenticator?: AuthenticatorOmit
     subscription?: SubscriptionOmit
     questionnaire?: QuestionnaireOmit
+    oAuthToken?: OAuthTokenOmit
+    searchAnalyticsDay?: SearchAnalyticsDayOmit
+    site?: SiteOmit
   }
 
   /* Types for Logging */
@@ -1454,6 +1727,8 @@ export namespace Prisma {
     sessions: number
     Authenticator: number
     questionnaires: number
+    tokens: number
+    sites: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -1461,6 +1736,8 @@ export namespace Prisma {
     sessions?: boolean | UserCountOutputTypeCountSessionsArgs
     Authenticator?: boolean | UserCountOutputTypeCountAuthenticatorArgs
     questionnaires?: boolean | UserCountOutputTypeCountQuestionnairesArgs
+    tokens?: boolean | UserCountOutputTypeCountTokensArgs
+    sites?: boolean | UserCountOutputTypeCountSitesArgs
   }
 
   // Custom InputTypes
@@ -1500,6 +1777,60 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountQuestionnairesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: QuestionnaireWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountTokensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: OAuthTokenWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountSitesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SiteWhereInput
+  }
+
+
+  /**
+   * Count Type SiteCountOutputType
+   */
+
+  export type SiteCountOutputType = {
+    tokens: number
+    analytics: number
+  }
+
+  export type SiteCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    tokens?: boolean | SiteCountOutputTypeCountTokensArgs
+    analytics?: boolean | SiteCountOutputTypeCountAnalyticsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * SiteCountOutputType without action
+   */
+  export type SiteCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SiteCountOutputType
+     */
+    select?: SiteCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * SiteCountOutputType without action
+   */
+  export type SiteCountOutputTypeCountTokensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: OAuthTokenWhereInput
+  }
+
+  /**
+   * SiteCountOutputType without action
+   */
+  export type SiteCountOutputTypeCountAnalyticsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SearchAnalyticsDayWhereInput
   }
 
 
@@ -1700,6 +2031,8 @@ export namespace Prisma {
     Authenticator?: boolean | User$AuthenticatorArgs<ExtArgs>
     subscription?: boolean | User$subscriptionArgs<ExtArgs>
     questionnaires?: boolean | User$questionnairesArgs<ExtArgs>
+    tokens?: boolean | User$tokensArgs<ExtArgs>
+    sites?: boolean | User$sitesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -1743,6 +2076,8 @@ export namespace Prisma {
     Authenticator?: boolean | User$AuthenticatorArgs<ExtArgs>
     subscription?: boolean | User$subscriptionArgs<ExtArgs>
     questionnaires?: boolean | User$questionnairesArgs<ExtArgs>
+    tokens?: boolean | User$tokensArgs<ExtArgs>
+    sites?: boolean | User$sitesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1756,6 +2091,8 @@ export namespace Prisma {
       Authenticator: Prisma.$AuthenticatorPayload<ExtArgs>[]
       subscription: Prisma.$SubscriptionPayload<ExtArgs> | null
       questionnaires: Prisma.$QuestionnairePayload<ExtArgs>[]
+      tokens: Prisma.$OAuthTokenPayload<ExtArgs>[]
+      sites: Prisma.$SitePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -2165,6 +2502,8 @@ export namespace Prisma {
     Authenticator<T extends User$AuthenticatorArgs<ExtArgs> = {}>(args?: Subset<T, User$AuthenticatorArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AuthenticatorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     subscription<T extends User$subscriptionArgs<ExtArgs> = {}>(args?: Subset<T, User$subscriptionArgs<ExtArgs>>): Prisma__SubscriptionClient<$Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     questionnaires<T extends User$questionnairesArgs<ExtArgs> = {}>(args?: Subset<T, User$questionnairesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    tokens<T extends User$tokensArgs<ExtArgs> = {}>(args?: Subset<T, User$tokensArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OAuthTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    sites<T extends User$sitesArgs<ExtArgs> = {}>(args?: Subset<T, User$sitesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2702,6 +3041,54 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: QuestionnaireScalarFieldEnum | QuestionnaireScalarFieldEnum[]
+  }
+
+  /**
+   * User.tokens
+   */
+  export type User$tokensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenInclude<ExtArgs> | null
+    where?: OAuthTokenWhereInput
+    orderBy?: OAuthTokenOrderByWithRelationInput | OAuthTokenOrderByWithRelationInput[]
+    cursor?: OAuthTokenWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: OAuthTokenScalarFieldEnum | OAuthTokenScalarFieldEnum[]
+  }
+
+  /**
+   * User.sites
+   */
+  export type User$sitesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteInclude<ExtArgs> | null
+    where?: SiteWhereInput
+    orderBy?: SiteOrderByWithRelationInput | SiteOrderByWithRelationInput[]
+    cursor?: SiteWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: SiteScalarFieldEnum | SiteScalarFieldEnum[]
   }
 
   /**
@@ -9395,6 +9782,3421 @@ export namespace Prisma {
 
 
   /**
+   * Model OAuthToken
+   */
+
+  export type AggregateOAuthToken = {
+    _count: OAuthTokenCountAggregateOutputType | null
+    _min: OAuthTokenMinAggregateOutputType | null
+    _max: OAuthTokenMaxAggregateOutputType | null
+  }
+
+  export type OAuthTokenMinAggregateOutputType = {
+    id: string | null
+    provider: string | null
+    accessToken: string | null
+    refreshToken: string | null
+    scope: string | null
+    expiresAt: Date | null
+    userId: string | null
+    siteId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type OAuthTokenMaxAggregateOutputType = {
+    id: string | null
+    provider: string | null
+    accessToken: string | null
+    refreshToken: string | null
+    scope: string | null
+    expiresAt: Date | null
+    userId: string | null
+    siteId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type OAuthTokenCountAggregateOutputType = {
+    id: number
+    provider: number
+    accessToken: number
+    refreshToken: number
+    scope: number
+    expiresAt: number
+    userId: number
+    siteId: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type OAuthTokenMinAggregateInputType = {
+    id?: true
+    provider?: true
+    accessToken?: true
+    refreshToken?: true
+    scope?: true
+    expiresAt?: true
+    userId?: true
+    siteId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type OAuthTokenMaxAggregateInputType = {
+    id?: true
+    provider?: true
+    accessToken?: true
+    refreshToken?: true
+    scope?: true
+    expiresAt?: true
+    userId?: true
+    siteId?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type OAuthTokenCountAggregateInputType = {
+    id?: true
+    provider?: true
+    accessToken?: true
+    refreshToken?: true
+    scope?: true
+    expiresAt?: true
+    userId?: true
+    siteId?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type OAuthTokenAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which OAuthToken to aggregate.
+     */
+    where?: OAuthTokenWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of OAuthTokens to fetch.
+     */
+    orderBy?: OAuthTokenOrderByWithRelationInput | OAuthTokenOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: OAuthTokenWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` OAuthTokens from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` OAuthTokens.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned OAuthTokens
+    **/
+    _count?: true | OAuthTokenCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: OAuthTokenMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: OAuthTokenMaxAggregateInputType
+  }
+
+  export type GetOAuthTokenAggregateType<T extends OAuthTokenAggregateArgs> = {
+        [P in keyof T & keyof AggregateOAuthToken]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateOAuthToken[P]>
+      : GetScalarType<T[P], AggregateOAuthToken[P]>
+  }
+
+
+
+
+  export type OAuthTokenGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: OAuthTokenWhereInput
+    orderBy?: OAuthTokenOrderByWithAggregationInput | OAuthTokenOrderByWithAggregationInput[]
+    by: OAuthTokenScalarFieldEnum[] | OAuthTokenScalarFieldEnum
+    having?: OAuthTokenScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: OAuthTokenCountAggregateInputType | true
+    _min?: OAuthTokenMinAggregateInputType
+    _max?: OAuthTokenMaxAggregateInputType
+  }
+
+  export type OAuthTokenGroupByOutputType = {
+    id: string
+    provider: string
+    accessToken: string
+    refreshToken: string
+    scope: string
+    expiresAt: Date
+    userId: string
+    siteId: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: OAuthTokenCountAggregateOutputType | null
+    _min: OAuthTokenMinAggregateOutputType | null
+    _max: OAuthTokenMaxAggregateOutputType | null
+  }
+
+  type GetOAuthTokenGroupByPayload<T extends OAuthTokenGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<OAuthTokenGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof OAuthTokenGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], OAuthTokenGroupByOutputType[P]>
+            : GetScalarType<T[P], OAuthTokenGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type OAuthTokenSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    provider?: boolean
+    accessToken?: boolean
+    refreshToken?: boolean
+    scope?: boolean
+    expiresAt?: boolean
+    userId?: boolean
+    siteId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    site?: boolean | OAuthToken$siteArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["oAuthToken"]>
+
+  export type OAuthTokenSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    provider?: boolean
+    accessToken?: boolean
+    refreshToken?: boolean
+    scope?: boolean
+    expiresAt?: boolean
+    userId?: boolean
+    siteId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    site?: boolean | OAuthToken$siteArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["oAuthToken"]>
+
+  export type OAuthTokenSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    provider?: boolean
+    accessToken?: boolean
+    refreshToken?: boolean
+    scope?: boolean
+    expiresAt?: boolean
+    userId?: boolean
+    siteId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    site?: boolean | OAuthToken$siteArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["oAuthToken"]>
+
+  export type OAuthTokenSelectScalar = {
+    id?: boolean
+    provider?: boolean
+    accessToken?: boolean
+    refreshToken?: boolean
+    scope?: boolean
+    expiresAt?: boolean
+    userId?: boolean
+    siteId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type OAuthTokenOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "provider" | "accessToken" | "refreshToken" | "scope" | "expiresAt" | "userId" | "siteId" | "createdAt" | "updatedAt", ExtArgs["result"]["oAuthToken"]>
+  export type OAuthTokenInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    site?: boolean | OAuthToken$siteArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type OAuthTokenIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    site?: boolean | OAuthToken$siteArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type OAuthTokenIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    site?: boolean | OAuthToken$siteArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $OAuthTokenPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "OAuthToken"
+    objects: {
+      site: Prisma.$SitePayload<ExtArgs> | null
+      user: Prisma.$UserPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      provider: string
+      accessToken: string
+      refreshToken: string
+      scope: string
+      expiresAt: Date
+      userId: string
+      siteId: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["oAuthToken"]>
+    composites: {}
+  }
+
+  type OAuthTokenGetPayload<S extends boolean | null | undefined | OAuthTokenDefaultArgs> = $Result.GetResult<Prisma.$OAuthTokenPayload, S>
+
+  type OAuthTokenCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<OAuthTokenFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: OAuthTokenCountAggregateInputType | true
+    }
+
+  export interface OAuthTokenDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['OAuthToken'], meta: { name: 'OAuthToken' } }
+    /**
+     * Find zero or one OAuthToken that matches the filter.
+     * @param {OAuthTokenFindUniqueArgs} args - Arguments to find a OAuthToken
+     * @example
+     * // Get one OAuthToken
+     * const oAuthToken = await prisma.oAuthToken.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends OAuthTokenFindUniqueArgs>(args: SelectSubset<T, OAuthTokenFindUniqueArgs<ExtArgs>>): Prisma__OAuthTokenClient<$Result.GetResult<Prisma.$OAuthTokenPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one OAuthToken that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {OAuthTokenFindUniqueOrThrowArgs} args - Arguments to find a OAuthToken
+     * @example
+     * // Get one OAuthToken
+     * const oAuthToken = await prisma.oAuthToken.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends OAuthTokenFindUniqueOrThrowArgs>(args: SelectSubset<T, OAuthTokenFindUniqueOrThrowArgs<ExtArgs>>): Prisma__OAuthTokenClient<$Result.GetResult<Prisma.$OAuthTokenPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first OAuthToken that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {OAuthTokenFindFirstArgs} args - Arguments to find a OAuthToken
+     * @example
+     * // Get one OAuthToken
+     * const oAuthToken = await prisma.oAuthToken.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends OAuthTokenFindFirstArgs>(args?: SelectSubset<T, OAuthTokenFindFirstArgs<ExtArgs>>): Prisma__OAuthTokenClient<$Result.GetResult<Prisma.$OAuthTokenPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first OAuthToken that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {OAuthTokenFindFirstOrThrowArgs} args - Arguments to find a OAuthToken
+     * @example
+     * // Get one OAuthToken
+     * const oAuthToken = await prisma.oAuthToken.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends OAuthTokenFindFirstOrThrowArgs>(args?: SelectSubset<T, OAuthTokenFindFirstOrThrowArgs<ExtArgs>>): Prisma__OAuthTokenClient<$Result.GetResult<Prisma.$OAuthTokenPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more OAuthTokens that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {OAuthTokenFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all OAuthTokens
+     * const oAuthTokens = await prisma.oAuthToken.findMany()
+     * 
+     * // Get first 10 OAuthTokens
+     * const oAuthTokens = await prisma.oAuthToken.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const oAuthTokenWithIdOnly = await prisma.oAuthToken.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends OAuthTokenFindManyArgs>(args?: SelectSubset<T, OAuthTokenFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OAuthTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a OAuthToken.
+     * @param {OAuthTokenCreateArgs} args - Arguments to create a OAuthToken.
+     * @example
+     * // Create one OAuthToken
+     * const OAuthToken = await prisma.oAuthToken.create({
+     *   data: {
+     *     // ... data to create a OAuthToken
+     *   }
+     * })
+     * 
+     */
+    create<T extends OAuthTokenCreateArgs>(args: SelectSubset<T, OAuthTokenCreateArgs<ExtArgs>>): Prisma__OAuthTokenClient<$Result.GetResult<Prisma.$OAuthTokenPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many OAuthTokens.
+     * @param {OAuthTokenCreateManyArgs} args - Arguments to create many OAuthTokens.
+     * @example
+     * // Create many OAuthTokens
+     * const oAuthToken = await prisma.oAuthToken.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends OAuthTokenCreateManyArgs>(args?: SelectSubset<T, OAuthTokenCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many OAuthTokens and returns the data saved in the database.
+     * @param {OAuthTokenCreateManyAndReturnArgs} args - Arguments to create many OAuthTokens.
+     * @example
+     * // Create many OAuthTokens
+     * const oAuthToken = await prisma.oAuthToken.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many OAuthTokens and only return the `id`
+     * const oAuthTokenWithIdOnly = await prisma.oAuthToken.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends OAuthTokenCreateManyAndReturnArgs>(args?: SelectSubset<T, OAuthTokenCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OAuthTokenPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a OAuthToken.
+     * @param {OAuthTokenDeleteArgs} args - Arguments to delete one OAuthToken.
+     * @example
+     * // Delete one OAuthToken
+     * const OAuthToken = await prisma.oAuthToken.delete({
+     *   where: {
+     *     // ... filter to delete one OAuthToken
+     *   }
+     * })
+     * 
+     */
+    delete<T extends OAuthTokenDeleteArgs>(args: SelectSubset<T, OAuthTokenDeleteArgs<ExtArgs>>): Prisma__OAuthTokenClient<$Result.GetResult<Prisma.$OAuthTokenPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one OAuthToken.
+     * @param {OAuthTokenUpdateArgs} args - Arguments to update one OAuthToken.
+     * @example
+     * // Update one OAuthToken
+     * const oAuthToken = await prisma.oAuthToken.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends OAuthTokenUpdateArgs>(args: SelectSubset<T, OAuthTokenUpdateArgs<ExtArgs>>): Prisma__OAuthTokenClient<$Result.GetResult<Prisma.$OAuthTokenPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more OAuthTokens.
+     * @param {OAuthTokenDeleteManyArgs} args - Arguments to filter OAuthTokens to delete.
+     * @example
+     * // Delete a few OAuthTokens
+     * const { count } = await prisma.oAuthToken.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends OAuthTokenDeleteManyArgs>(args?: SelectSubset<T, OAuthTokenDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more OAuthTokens.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {OAuthTokenUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many OAuthTokens
+     * const oAuthToken = await prisma.oAuthToken.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends OAuthTokenUpdateManyArgs>(args: SelectSubset<T, OAuthTokenUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more OAuthTokens and returns the data updated in the database.
+     * @param {OAuthTokenUpdateManyAndReturnArgs} args - Arguments to update many OAuthTokens.
+     * @example
+     * // Update many OAuthTokens
+     * const oAuthToken = await prisma.oAuthToken.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more OAuthTokens and only return the `id`
+     * const oAuthTokenWithIdOnly = await prisma.oAuthToken.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends OAuthTokenUpdateManyAndReturnArgs>(args: SelectSubset<T, OAuthTokenUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OAuthTokenPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one OAuthToken.
+     * @param {OAuthTokenUpsertArgs} args - Arguments to update or create a OAuthToken.
+     * @example
+     * // Update or create a OAuthToken
+     * const oAuthToken = await prisma.oAuthToken.upsert({
+     *   create: {
+     *     // ... data to create a OAuthToken
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the OAuthToken we want to update
+     *   }
+     * })
+     */
+    upsert<T extends OAuthTokenUpsertArgs>(args: SelectSubset<T, OAuthTokenUpsertArgs<ExtArgs>>): Prisma__OAuthTokenClient<$Result.GetResult<Prisma.$OAuthTokenPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of OAuthTokens.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {OAuthTokenCountArgs} args - Arguments to filter OAuthTokens to count.
+     * @example
+     * // Count the number of OAuthTokens
+     * const count = await prisma.oAuthToken.count({
+     *   where: {
+     *     // ... the filter for the OAuthTokens we want to count
+     *   }
+     * })
+    **/
+    count<T extends OAuthTokenCountArgs>(
+      args?: Subset<T, OAuthTokenCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], OAuthTokenCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a OAuthToken.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {OAuthTokenAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends OAuthTokenAggregateArgs>(args: Subset<T, OAuthTokenAggregateArgs>): Prisma.PrismaPromise<GetOAuthTokenAggregateType<T>>
+
+    /**
+     * Group by OAuthToken.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {OAuthTokenGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends OAuthTokenGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: OAuthTokenGroupByArgs['orderBy'] }
+        : { orderBy?: OAuthTokenGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, OAuthTokenGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetOAuthTokenGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the OAuthToken model
+   */
+  readonly fields: OAuthTokenFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for OAuthToken.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__OAuthTokenClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    site<T extends OAuthToken$siteArgs<ExtArgs> = {}>(args?: Subset<T, OAuthToken$siteArgs<ExtArgs>>): Prisma__SiteClient<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the OAuthToken model
+   */
+  interface OAuthTokenFieldRefs {
+    readonly id: FieldRef<"OAuthToken", 'String'>
+    readonly provider: FieldRef<"OAuthToken", 'String'>
+    readonly accessToken: FieldRef<"OAuthToken", 'String'>
+    readonly refreshToken: FieldRef<"OAuthToken", 'String'>
+    readonly scope: FieldRef<"OAuthToken", 'String'>
+    readonly expiresAt: FieldRef<"OAuthToken", 'DateTime'>
+    readonly userId: FieldRef<"OAuthToken", 'String'>
+    readonly siteId: FieldRef<"OAuthToken", 'String'>
+    readonly createdAt: FieldRef<"OAuthToken", 'DateTime'>
+    readonly updatedAt: FieldRef<"OAuthToken", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * OAuthToken findUnique
+   */
+  export type OAuthTokenFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenInclude<ExtArgs> | null
+    /**
+     * Filter, which OAuthToken to fetch.
+     */
+    where: OAuthTokenWhereUniqueInput
+  }
+
+  /**
+   * OAuthToken findUniqueOrThrow
+   */
+  export type OAuthTokenFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenInclude<ExtArgs> | null
+    /**
+     * Filter, which OAuthToken to fetch.
+     */
+    where: OAuthTokenWhereUniqueInput
+  }
+
+  /**
+   * OAuthToken findFirst
+   */
+  export type OAuthTokenFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenInclude<ExtArgs> | null
+    /**
+     * Filter, which OAuthToken to fetch.
+     */
+    where?: OAuthTokenWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of OAuthTokens to fetch.
+     */
+    orderBy?: OAuthTokenOrderByWithRelationInput | OAuthTokenOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for OAuthTokens.
+     */
+    cursor?: OAuthTokenWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` OAuthTokens from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` OAuthTokens.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of OAuthTokens.
+     */
+    distinct?: OAuthTokenScalarFieldEnum | OAuthTokenScalarFieldEnum[]
+  }
+
+  /**
+   * OAuthToken findFirstOrThrow
+   */
+  export type OAuthTokenFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenInclude<ExtArgs> | null
+    /**
+     * Filter, which OAuthToken to fetch.
+     */
+    where?: OAuthTokenWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of OAuthTokens to fetch.
+     */
+    orderBy?: OAuthTokenOrderByWithRelationInput | OAuthTokenOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for OAuthTokens.
+     */
+    cursor?: OAuthTokenWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` OAuthTokens from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` OAuthTokens.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of OAuthTokens.
+     */
+    distinct?: OAuthTokenScalarFieldEnum | OAuthTokenScalarFieldEnum[]
+  }
+
+  /**
+   * OAuthToken findMany
+   */
+  export type OAuthTokenFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenInclude<ExtArgs> | null
+    /**
+     * Filter, which OAuthTokens to fetch.
+     */
+    where?: OAuthTokenWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of OAuthTokens to fetch.
+     */
+    orderBy?: OAuthTokenOrderByWithRelationInput | OAuthTokenOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing OAuthTokens.
+     */
+    cursor?: OAuthTokenWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` OAuthTokens from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` OAuthTokens.
+     */
+    skip?: number
+    distinct?: OAuthTokenScalarFieldEnum | OAuthTokenScalarFieldEnum[]
+  }
+
+  /**
+   * OAuthToken create
+   */
+  export type OAuthTokenCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenInclude<ExtArgs> | null
+    /**
+     * The data needed to create a OAuthToken.
+     */
+    data: XOR<OAuthTokenCreateInput, OAuthTokenUncheckedCreateInput>
+  }
+
+  /**
+   * OAuthToken createMany
+   */
+  export type OAuthTokenCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many OAuthTokens.
+     */
+    data: OAuthTokenCreateManyInput | OAuthTokenCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * OAuthToken createManyAndReturn
+   */
+  export type OAuthTokenCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * The data used to create many OAuthTokens.
+     */
+    data: OAuthTokenCreateManyInput | OAuthTokenCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * OAuthToken update
+   */
+  export type OAuthTokenUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenInclude<ExtArgs> | null
+    /**
+     * The data needed to update a OAuthToken.
+     */
+    data: XOR<OAuthTokenUpdateInput, OAuthTokenUncheckedUpdateInput>
+    /**
+     * Choose, which OAuthToken to update.
+     */
+    where: OAuthTokenWhereUniqueInput
+  }
+
+  /**
+   * OAuthToken updateMany
+   */
+  export type OAuthTokenUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update OAuthTokens.
+     */
+    data: XOR<OAuthTokenUpdateManyMutationInput, OAuthTokenUncheckedUpdateManyInput>
+    /**
+     * Filter which OAuthTokens to update
+     */
+    where?: OAuthTokenWhereInput
+    /**
+     * Limit how many OAuthTokens to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * OAuthToken updateManyAndReturn
+   */
+  export type OAuthTokenUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * The data used to update OAuthTokens.
+     */
+    data: XOR<OAuthTokenUpdateManyMutationInput, OAuthTokenUncheckedUpdateManyInput>
+    /**
+     * Filter which OAuthTokens to update
+     */
+    where?: OAuthTokenWhereInput
+    /**
+     * Limit how many OAuthTokens to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * OAuthToken upsert
+   */
+  export type OAuthTokenUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenInclude<ExtArgs> | null
+    /**
+     * The filter to search for the OAuthToken to update in case it exists.
+     */
+    where: OAuthTokenWhereUniqueInput
+    /**
+     * In case the OAuthToken found by the `where` argument doesn't exist, create a new OAuthToken with this data.
+     */
+    create: XOR<OAuthTokenCreateInput, OAuthTokenUncheckedCreateInput>
+    /**
+     * In case the OAuthToken was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<OAuthTokenUpdateInput, OAuthTokenUncheckedUpdateInput>
+  }
+
+  /**
+   * OAuthToken delete
+   */
+  export type OAuthTokenDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenInclude<ExtArgs> | null
+    /**
+     * Filter which OAuthToken to delete.
+     */
+    where: OAuthTokenWhereUniqueInput
+  }
+
+  /**
+   * OAuthToken deleteMany
+   */
+  export type OAuthTokenDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which OAuthTokens to delete
+     */
+    where?: OAuthTokenWhereInput
+    /**
+     * Limit how many OAuthTokens to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * OAuthToken.site
+   */
+  export type OAuthToken$siteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteInclude<ExtArgs> | null
+    where?: SiteWhereInput
+  }
+
+  /**
+   * OAuthToken without action
+   */
+  export type OAuthTokenDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model SearchAnalyticsDay
+   */
+
+  export type AggregateSearchAnalyticsDay = {
+    _count: SearchAnalyticsDayCountAggregateOutputType | null
+    _avg: SearchAnalyticsDayAvgAggregateOutputType | null
+    _sum: SearchAnalyticsDaySumAggregateOutputType | null
+    _min: SearchAnalyticsDayMinAggregateOutputType | null
+    _max: SearchAnalyticsDayMaxAggregateOutputType | null
+  }
+
+  export type SearchAnalyticsDayAvgAggregateOutputType = {
+    clicks: number | null
+    impressions: number | null
+    ctr: number | null
+    position: number | null
+  }
+
+  export type SearchAnalyticsDaySumAggregateOutputType = {
+    clicks: number | null
+    impressions: number | null
+    ctr: number | null
+    position: number | null
+  }
+
+  export type SearchAnalyticsDayMinAggregateOutputType = {
+    id: string | null
+    siteUrl: string | null
+    siteId: string | null
+    date: Date | null
+    clicks: number | null
+    impressions: number | null
+    ctr: number | null
+    position: number | null
+  }
+
+  export type SearchAnalyticsDayMaxAggregateOutputType = {
+    id: string | null
+    siteUrl: string | null
+    siteId: string | null
+    date: Date | null
+    clicks: number | null
+    impressions: number | null
+    ctr: number | null
+    position: number | null
+  }
+
+  export type SearchAnalyticsDayCountAggregateOutputType = {
+    id: number
+    siteUrl: number
+    siteId: number
+    date: number
+    clicks: number
+    impressions: number
+    ctr: number
+    position: number
+    _all: number
+  }
+
+
+  export type SearchAnalyticsDayAvgAggregateInputType = {
+    clicks?: true
+    impressions?: true
+    ctr?: true
+    position?: true
+  }
+
+  export type SearchAnalyticsDaySumAggregateInputType = {
+    clicks?: true
+    impressions?: true
+    ctr?: true
+    position?: true
+  }
+
+  export type SearchAnalyticsDayMinAggregateInputType = {
+    id?: true
+    siteUrl?: true
+    siteId?: true
+    date?: true
+    clicks?: true
+    impressions?: true
+    ctr?: true
+    position?: true
+  }
+
+  export type SearchAnalyticsDayMaxAggregateInputType = {
+    id?: true
+    siteUrl?: true
+    siteId?: true
+    date?: true
+    clicks?: true
+    impressions?: true
+    ctr?: true
+    position?: true
+  }
+
+  export type SearchAnalyticsDayCountAggregateInputType = {
+    id?: true
+    siteUrl?: true
+    siteId?: true
+    date?: true
+    clicks?: true
+    impressions?: true
+    ctr?: true
+    position?: true
+    _all?: true
+  }
+
+  export type SearchAnalyticsDayAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which SearchAnalyticsDay to aggregate.
+     */
+    where?: SearchAnalyticsDayWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SearchAnalyticsDays to fetch.
+     */
+    orderBy?: SearchAnalyticsDayOrderByWithRelationInput | SearchAnalyticsDayOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: SearchAnalyticsDayWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SearchAnalyticsDays from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SearchAnalyticsDays.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned SearchAnalyticsDays
+    **/
+    _count?: true | SearchAnalyticsDayCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: SearchAnalyticsDayAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: SearchAnalyticsDaySumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: SearchAnalyticsDayMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: SearchAnalyticsDayMaxAggregateInputType
+  }
+
+  export type GetSearchAnalyticsDayAggregateType<T extends SearchAnalyticsDayAggregateArgs> = {
+        [P in keyof T & keyof AggregateSearchAnalyticsDay]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateSearchAnalyticsDay[P]>
+      : GetScalarType<T[P], AggregateSearchAnalyticsDay[P]>
+  }
+
+
+
+
+  export type SearchAnalyticsDayGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SearchAnalyticsDayWhereInput
+    orderBy?: SearchAnalyticsDayOrderByWithAggregationInput | SearchAnalyticsDayOrderByWithAggregationInput[]
+    by: SearchAnalyticsDayScalarFieldEnum[] | SearchAnalyticsDayScalarFieldEnum
+    having?: SearchAnalyticsDayScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: SearchAnalyticsDayCountAggregateInputType | true
+    _avg?: SearchAnalyticsDayAvgAggregateInputType
+    _sum?: SearchAnalyticsDaySumAggregateInputType
+    _min?: SearchAnalyticsDayMinAggregateInputType
+    _max?: SearchAnalyticsDayMaxAggregateInputType
+  }
+
+  export type SearchAnalyticsDayGroupByOutputType = {
+    id: string
+    siteUrl: string
+    siteId: string | null
+    date: Date
+    clicks: number
+    impressions: number
+    ctr: number
+    position: number
+    _count: SearchAnalyticsDayCountAggregateOutputType | null
+    _avg: SearchAnalyticsDayAvgAggregateOutputType | null
+    _sum: SearchAnalyticsDaySumAggregateOutputType | null
+    _min: SearchAnalyticsDayMinAggregateOutputType | null
+    _max: SearchAnalyticsDayMaxAggregateOutputType | null
+  }
+
+  type GetSearchAnalyticsDayGroupByPayload<T extends SearchAnalyticsDayGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<SearchAnalyticsDayGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof SearchAnalyticsDayGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], SearchAnalyticsDayGroupByOutputType[P]>
+            : GetScalarType<T[P], SearchAnalyticsDayGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type SearchAnalyticsDaySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    siteUrl?: boolean
+    siteId?: boolean
+    date?: boolean
+    clicks?: boolean
+    impressions?: boolean
+    ctr?: boolean
+    position?: boolean
+    site?: boolean | SearchAnalyticsDay$siteArgs<ExtArgs>
+  }, ExtArgs["result"]["searchAnalyticsDay"]>
+
+  export type SearchAnalyticsDaySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    siteUrl?: boolean
+    siteId?: boolean
+    date?: boolean
+    clicks?: boolean
+    impressions?: boolean
+    ctr?: boolean
+    position?: boolean
+    site?: boolean | SearchAnalyticsDay$siteArgs<ExtArgs>
+  }, ExtArgs["result"]["searchAnalyticsDay"]>
+
+  export type SearchAnalyticsDaySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    siteUrl?: boolean
+    siteId?: boolean
+    date?: boolean
+    clicks?: boolean
+    impressions?: boolean
+    ctr?: boolean
+    position?: boolean
+    site?: boolean | SearchAnalyticsDay$siteArgs<ExtArgs>
+  }, ExtArgs["result"]["searchAnalyticsDay"]>
+
+  export type SearchAnalyticsDaySelectScalar = {
+    id?: boolean
+    siteUrl?: boolean
+    siteId?: boolean
+    date?: boolean
+    clicks?: boolean
+    impressions?: boolean
+    ctr?: boolean
+    position?: boolean
+  }
+
+  export type SearchAnalyticsDayOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "siteUrl" | "siteId" | "date" | "clicks" | "impressions" | "ctr" | "position", ExtArgs["result"]["searchAnalyticsDay"]>
+  export type SearchAnalyticsDayInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    site?: boolean | SearchAnalyticsDay$siteArgs<ExtArgs>
+  }
+  export type SearchAnalyticsDayIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    site?: boolean | SearchAnalyticsDay$siteArgs<ExtArgs>
+  }
+  export type SearchAnalyticsDayIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    site?: boolean | SearchAnalyticsDay$siteArgs<ExtArgs>
+  }
+
+  export type $SearchAnalyticsDayPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "SearchAnalyticsDay"
+    objects: {
+      site: Prisma.$SitePayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      siteUrl: string
+      siteId: string | null
+      date: Date
+      clicks: number
+      impressions: number
+      ctr: number
+      position: number
+    }, ExtArgs["result"]["searchAnalyticsDay"]>
+    composites: {}
+  }
+
+  type SearchAnalyticsDayGetPayload<S extends boolean | null | undefined | SearchAnalyticsDayDefaultArgs> = $Result.GetResult<Prisma.$SearchAnalyticsDayPayload, S>
+
+  type SearchAnalyticsDayCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<SearchAnalyticsDayFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: SearchAnalyticsDayCountAggregateInputType | true
+    }
+
+  export interface SearchAnalyticsDayDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['SearchAnalyticsDay'], meta: { name: 'SearchAnalyticsDay' } }
+    /**
+     * Find zero or one SearchAnalyticsDay that matches the filter.
+     * @param {SearchAnalyticsDayFindUniqueArgs} args - Arguments to find a SearchAnalyticsDay
+     * @example
+     * // Get one SearchAnalyticsDay
+     * const searchAnalyticsDay = await prisma.searchAnalyticsDay.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends SearchAnalyticsDayFindUniqueArgs>(args: SelectSubset<T, SearchAnalyticsDayFindUniqueArgs<ExtArgs>>): Prisma__SearchAnalyticsDayClient<$Result.GetResult<Prisma.$SearchAnalyticsDayPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one SearchAnalyticsDay that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {SearchAnalyticsDayFindUniqueOrThrowArgs} args - Arguments to find a SearchAnalyticsDay
+     * @example
+     * // Get one SearchAnalyticsDay
+     * const searchAnalyticsDay = await prisma.searchAnalyticsDay.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends SearchAnalyticsDayFindUniqueOrThrowArgs>(args: SelectSubset<T, SearchAnalyticsDayFindUniqueOrThrowArgs<ExtArgs>>): Prisma__SearchAnalyticsDayClient<$Result.GetResult<Prisma.$SearchAnalyticsDayPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first SearchAnalyticsDay that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchAnalyticsDayFindFirstArgs} args - Arguments to find a SearchAnalyticsDay
+     * @example
+     * // Get one SearchAnalyticsDay
+     * const searchAnalyticsDay = await prisma.searchAnalyticsDay.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends SearchAnalyticsDayFindFirstArgs>(args?: SelectSubset<T, SearchAnalyticsDayFindFirstArgs<ExtArgs>>): Prisma__SearchAnalyticsDayClient<$Result.GetResult<Prisma.$SearchAnalyticsDayPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first SearchAnalyticsDay that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchAnalyticsDayFindFirstOrThrowArgs} args - Arguments to find a SearchAnalyticsDay
+     * @example
+     * // Get one SearchAnalyticsDay
+     * const searchAnalyticsDay = await prisma.searchAnalyticsDay.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends SearchAnalyticsDayFindFirstOrThrowArgs>(args?: SelectSubset<T, SearchAnalyticsDayFindFirstOrThrowArgs<ExtArgs>>): Prisma__SearchAnalyticsDayClient<$Result.GetResult<Prisma.$SearchAnalyticsDayPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more SearchAnalyticsDays that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchAnalyticsDayFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all SearchAnalyticsDays
+     * const searchAnalyticsDays = await prisma.searchAnalyticsDay.findMany()
+     * 
+     * // Get first 10 SearchAnalyticsDays
+     * const searchAnalyticsDays = await prisma.searchAnalyticsDay.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const searchAnalyticsDayWithIdOnly = await prisma.searchAnalyticsDay.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends SearchAnalyticsDayFindManyArgs>(args?: SelectSubset<T, SearchAnalyticsDayFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SearchAnalyticsDayPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a SearchAnalyticsDay.
+     * @param {SearchAnalyticsDayCreateArgs} args - Arguments to create a SearchAnalyticsDay.
+     * @example
+     * // Create one SearchAnalyticsDay
+     * const SearchAnalyticsDay = await prisma.searchAnalyticsDay.create({
+     *   data: {
+     *     // ... data to create a SearchAnalyticsDay
+     *   }
+     * })
+     * 
+     */
+    create<T extends SearchAnalyticsDayCreateArgs>(args: SelectSubset<T, SearchAnalyticsDayCreateArgs<ExtArgs>>): Prisma__SearchAnalyticsDayClient<$Result.GetResult<Prisma.$SearchAnalyticsDayPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many SearchAnalyticsDays.
+     * @param {SearchAnalyticsDayCreateManyArgs} args - Arguments to create many SearchAnalyticsDays.
+     * @example
+     * // Create many SearchAnalyticsDays
+     * const searchAnalyticsDay = await prisma.searchAnalyticsDay.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends SearchAnalyticsDayCreateManyArgs>(args?: SelectSubset<T, SearchAnalyticsDayCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many SearchAnalyticsDays and returns the data saved in the database.
+     * @param {SearchAnalyticsDayCreateManyAndReturnArgs} args - Arguments to create many SearchAnalyticsDays.
+     * @example
+     * // Create many SearchAnalyticsDays
+     * const searchAnalyticsDay = await prisma.searchAnalyticsDay.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many SearchAnalyticsDays and only return the `id`
+     * const searchAnalyticsDayWithIdOnly = await prisma.searchAnalyticsDay.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SearchAnalyticsDayCreateManyAndReturnArgs>(args?: SelectSubset<T, SearchAnalyticsDayCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SearchAnalyticsDayPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a SearchAnalyticsDay.
+     * @param {SearchAnalyticsDayDeleteArgs} args - Arguments to delete one SearchAnalyticsDay.
+     * @example
+     * // Delete one SearchAnalyticsDay
+     * const SearchAnalyticsDay = await prisma.searchAnalyticsDay.delete({
+     *   where: {
+     *     // ... filter to delete one SearchAnalyticsDay
+     *   }
+     * })
+     * 
+     */
+    delete<T extends SearchAnalyticsDayDeleteArgs>(args: SelectSubset<T, SearchAnalyticsDayDeleteArgs<ExtArgs>>): Prisma__SearchAnalyticsDayClient<$Result.GetResult<Prisma.$SearchAnalyticsDayPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one SearchAnalyticsDay.
+     * @param {SearchAnalyticsDayUpdateArgs} args - Arguments to update one SearchAnalyticsDay.
+     * @example
+     * // Update one SearchAnalyticsDay
+     * const searchAnalyticsDay = await prisma.searchAnalyticsDay.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends SearchAnalyticsDayUpdateArgs>(args: SelectSubset<T, SearchAnalyticsDayUpdateArgs<ExtArgs>>): Prisma__SearchAnalyticsDayClient<$Result.GetResult<Prisma.$SearchAnalyticsDayPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more SearchAnalyticsDays.
+     * @param {SearchAnalyticsDayDeleteManyArgs} args - Arguments to filter SearchAnalyticsDays to delete.
+     * @example
+     * // Delete a few SearchAnalyticsDays
+     * const { count } = await prisma.searchAnalyticsDay.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends SearchAnalyticsDayDeleteManyArgs>(args?: SelectSubset<T, SearchAnalyticsDayDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SearchAnalyticsDays.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchAnalyticsDayUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many SearchAnalyticsDays
+     * const searchAnalyticsDay = await prisma.searchAnalyticsDay.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends SearchAnalyticsDayUpdateManyArgs>(args: SelectSubset<T, SearchAnalyticsDayUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SearchAnalyticsDays and returns the data updated in the database.
+     * @param {SearchAnalyticsDayUpdateManyAndReturnArgs} args - Arguments to update many SearchAnalyticsDays.
+     * @example
+     * // Update many SearchAnalyticsDays
+     * const searchAnalyticsDay = await prisma.searchAnalyticsDay.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more SearchAnalyticsDays and only return the `id`
+     * const searchAnalyticsDayWithIdOnly = await prisma.searchAnalyticsDay.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SearchAnalyticsDayUpdateManyAndReturnArgs>(args: SelectSubset<T, SearchAnalyticsDayUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SearchAnalyticsDayPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one SearchAnalyticsDay.
+     * @param {SearchAnalyticsDayUpsertArgs} args - Arguments to update or create a SearchAnalyticsDay.
+     * @example
+     * // Update or create a SearchAnalyticsDay
+     * const searchAnalyticsDay = await prisma.searchAnalyticsDay.upsert({
+     *   create: {
+     *     // ... data to create a SearchAnalyticsDay
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the SearchAnalyticsDay we want to update
+     *   }
+     * })
+     */
+    upsert<T extends SearchAnalyticsDayUpsertArgs>(args: SelectSubset<T, SearchAnalyticsDayUpsertArgs<ExtArgs>>): Prisma__SearchAnalyticsDayClient<$Result.GetResult<Prisma.$SearchAnalyticsDayPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of SearchAnalyticsDays.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchAnalyticsDayCountArgs} args - Arguments to filter SearchAnalyticsDays to count.
+     * @example
+     * // Count the number of SearchAnalyticsDays
+     * const count = await prisma.searchAnalyticsDay.count({
+     *   where: {
+     *     // ... the filter for the SearchAnalyticsDays we want to count
+     *   }
+     * })
+    **/
+    count<T extends SearchAnalyticsDayCountArgs>(
+      args?: Subset<T, SearchAnalyticsDayCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], SearchAnalyticsDayCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a SearchAnalyticsDay.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchAnalyticsDayAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends SearchAnalyticsDayAggregateArgs>(args: Subset<T, SearchAnalyticsDayAggregateArgs>): Prisma.PrismaPromise<GetSearchAnalyticsDayAggregateType<T>>
+
+    /**
+     * Group by SearchAnalyticsDay.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchAnalyticsDayGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends SearchAnalyticsDayGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: SearchAnalyticsDayGroupByArgs['orderBy'] }
+        : { orderBy?: SearchAnalyticsDayGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, SearchAnalyticsDayGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSearchAnalyticsDayGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the SearchAnalyticsDay model
+   */
+  readonly fields: SearchAnalyticsDayFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for SearchAnalyticsDay.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__SearchAnalyticsDayClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    site<T extends SearchAnalyticsDay$siteArgs<ExtArgs> = {}>(args?: Subset<T, SearchAnalyticsDay$siteArgs<ExtArgs>>): Prisma__SiteClient<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the SearchAnalyticsDay model
+   */
+  interface SearchAnalyticsDayFieldRefs {
+    readonly id: FieldRef<"SearchAnalyticsDay", 'String'>
+    readonly siteUrl: FieldRef<"SearchAnalyticsDay", 'String'>
+    readonly siteId: FieldRef<"SearchAnalyticsDay", 'String'>
+    readonly date: FieldRef<"SearchAnalyticsDay", 'DateTime'>
+    readonly clicks: FieldRef<"SearchAnalyticsDay", 'Int'>
+    readonly impressions: FieldRef<"SearchAnalyticsDay", 'Int'>
+    readonly ctr: FieldRef<"SearchAnalyticsDay", 'Float'>
+    readonly position: FieldRef<"SearchAnalyticsDay", 'Float'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * SearchAnalyticsDay findUnique
+   */
+  export type SearchAnalyticsDayFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchAnalyticsDay
+     */
+    select?: SearchAnalyticsDaySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SearchAnalyticsDay
+     */
+    omit?: SearchAnalyticsDayOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SearchAnalyticsDayInclude<ExtArgs> | null
+    /**
+     * Filter, which SearchAnalyticsDay to fetch.
+     */
+    where: SearchAnalyticsDayWhereUniqueInput
+  }
+
+  /**
+   * SearchAnalyticsDay findUniqueOrThrow
+   */
+  export type SearchAnalyticsDayFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchAnalyticsDay
+     */
+    select?: SearchAnalyticsDaySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SearchAnalyticsDay
+     */
+    omit?: SearchAnalyticsDayOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SearchAnalyticsDayInclude<ExtArgs> | null
+    /**
+     * Filter, which SearchAnalyticsDay to fetch.
+     */
+    where: SearchAnalyticsDayWhereUniqueInput
+  }
+
+  /**
+   * SearchAnalyticsDay findFirst
+   */
+  export type SearchAnalyticsDayFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchAnalyticsDay
+     */
+    select?: SearchAnalyticsDaySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SearchAnalyticsDay
+     */
+    omit?: SearchAnalyticsDayOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SearchAnalyticsDayInclude<ExtArgs> | null
+    /**
+     * Filter, which SearchAnalyticsDay to fetch.
+     */
+    where?: SearchAnalyticsDayWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SearchAnalyticsDays to fetch.
+     */
+    orderBy?: SearchAnalyticsDayOrderByWithRelationInput | SearchAnalyticsDayOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for SearchAnalyticsDays.
+     */
+    cursor?: SearchAnalyticsDayWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SearchAnalyticsDays from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SearchAnalyticsDays.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of SearchAnalyticsDays.
+     */
+    distinct?: SearchAnalyticsDayScalarFieldEnum | SearchAnalyticsDayScalarFieldEnum[]
+  }
+
+  /**
+   * SearchAnalyticsDay findFirstOrThrow
+   */
+  export type SearchAnalyticsDayFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchAnalyticsDay
+     */
+    select?: SearchAnalyticsDaySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SearchAnalyticsDay
+     */
+    omit?: SearchAnalyticsDayOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SearchAnalyticsDayInclude<ExtArgs> | null
+    /**
+     * Filter, which SearchAnalyticsDay to fetch.
+     */
+    where?: SearchAnalyticsDayWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SearchAnalyticsDays to fetch.
+     */
+    orderBy?: SearchAnalyticsDayOrderByWithRelationInput | SearchAnalyticsDayOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for SearchAnalyticsDays.
+     */
+    cursor?: SearchAnalyticsDayWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SearchAnalyticsDays from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SearchAnalyticsDays.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of SearchAnalyticsDays.
+     */
+    distinct?: SearchAnalyticsDayScalarFieldEnum | SearchAnalyticsDayScalarFieldEnum[]
+  }
+
+  /**
+   * SearchAnalyticsDay findMany
+   */
+  export type SearchAnalyticsDayFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchAnalyticsDay
+     */
+    select?: SearchAnalyticsDaySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SearchAnalyticsDay
+     */
+    omit?: SearchAnalyticsDayOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SearchAnalyticsDayInclude<ExtArgs> | null
+    /**
+     * Filter, which SearchAnalyticsDays to fetch.
+     */
+    where?: SearchAnalyticsDayWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SearchAnalyticsDays to fetch.
+     */
+    orderBy?: SearchAnalyticsDayOrderByWithRelationInput | SearchAnalyticsDayOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing SearchAnalyticsDays.
+     */
+    cursor?: SearchAnalyticsDayWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SearchAnalyticsDays from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SearchAnalyticsDays.
+     */
+    skip?: number
+    distinct?: SearchAnalyticsDayScalarFieldEnum | SearchAnalyticsDayScalarFieldEnum[]
+  }
+
+  /**
+   * SearchAnalyticsDay create
+   */
+  export type SearchAnalyticsDayCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchAnalyticsDay
+     */
+    select?: SearchAnalyticsDaySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SearchAnalyticsDay
+     */
+    omit?: SearchAnalyticsDayOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SearchAnalyticsDayInclude<ExtArgs> | null
+    /**
+     * The data needed to create a SearchAnalyticsDay.
+     */
+    data: XOR<SearchAnalyticsDayCreateInput, SearchAnalyticsDayUncheckedCreateInput>
+  }
+
+  /**
+   * SearchAnalyticsDay createMany
+   */
+  export type SearchAnalyticsDayCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many SearchAnalyticsDays.
+     */
+    data: SearchAnalyticsDayCreateManyInput | SearchAnalyticsDayCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * SearchAnalyticsDay createManyAndReturn
+   */
+  export type SearchAnalyticsDayCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchAnalyticsDay
+     */
+    select?: SearchAnalyticsDaySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SearchAnalyticsDay
+     */
+    omit?: SearchAnalyticsDayOmit<ExtArgs> | null
+    /**
+     * The data used to create many SearchAnalyticsDays.
+     */
+    data: SearchAnalyticsDayCreateManyInput | SearchAnalyticsDayCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SearchAnalyticsDayIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * SearchAnalyticsDay update
+   */
+  export type SearchAnalyticsDayUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchAnalyticsDay
+     */
+    select?: SearchAnalyticsDaySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SearchAnalyticsDay
+     */
+    omit?: SearchAnalyticsDayOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SearchAnalyticsDayInclude<ExtArgs> | null
+    /**
+     * The data needed to update a SearchAnalyticsDay.
+     */
+    data: XOR<SearchAnalyticsDayUpdateInput, SearchAnalyticsDayUncheckedUpdateInput>
+    /**
+     * Choose, which SearchAnalyticsDay to update.
+     */
+    where: SearchAnalyticsDayWhereUniqueInput
+  }
+
+  /**
+   * SearchAnalyticsDay updateMany
+   */
+  export type SearchAnalyticsDayUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update SearchAnalyticsDays.
+     */
+    data: XOR<SearchAnalyticsDayUpdateManyMutationInput, SearchAnalyticsDayUncheckedUpdateManyInput>
+    /**
+     * Filter which SearchAnalyticsDays to update
+     */
+    where?: SearchAnalyticsDayWhereInput
+    /**
+     * Limit how many SearchAnalyticsDays to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * SearchAnalyticsDay updateManyAndReturn
+   */
+  export type SearchAnalyticsDayUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchAnalyticsDay
+     */
+    select?: SearchAnalyticsDaySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the SearchAnalyticsDay
+     */
+    omit?: SearchAnalyticsDayOmit<ExtArgs> | null
+    /**
+     * The data used to update SearchAnalyticsDays.
+     */
+    data: XOR<SearchAnalyticsDayUpdateManyMutationInput, SearchAnalyticsDayUncheckedUpdateManyInput>
+    /**
+     * Filter which SearchAnalyticsDays to update
+     */
+    where?: SearchAnalyticsDayWhereInput
+    /**
+     * Limit how many SearchAnalyticsDays to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SearchAnalyticsDayIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * SearchAnalyticsDay upsert
+   */
+  export type SearchAnalyticsDayUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchAnalyticsDay
+     */
+    select?: SearchAnalyticsDaySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SearchAnalyticsDay
+     */
+    omit?: SearchAnalyticsDayOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SearchAnalyticsDayInclude<ExtArgs> | null
+    /**
+     * The filter to search for the SearchAnalyticsDay to update in case it exists.
+     */
+    where: SearchAnalyticsDayWhereUniqueInput
+    /**
+     * In case the SearchAnalyticsDay found by the `where` argument doesn't exist, create a new SearchAnalyticsDay with this data.
+     */
+    create: XOR<SearchAnalyticsDayCreateInput, SearchAnalyticsDayUncheckedCreateInput>
+    /**
+     * In case the SearchAnalyticsDay was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<SearchAnalyticsDayUpdateInput, SearchAnalyticsDayUncheckedUpdateInput>
+  }
+
+  /**
+   * SearchAnalyticsDay delete
+   */
+  export type SearchAnalyticsDayDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchAnalyticsDay
+     */
+    select?: SearchAnalyticsDaySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SearchAnalyticsDay
+     */
+    omit?: SearchAnalyticsDayOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SearchAnalyticsDayInclude<ExtArgs> | null
+    /**
+     * Filter which SearchAnalyticsDay to delete.
+     */
+    where: SearchAnalyticsDayWhereUniqueInput
+  }
+
+  /**
+   * SearchAnalyticsDay deleteMany
+   */
+  export type SearchAnalyticsDayDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which SearchAnalyticsDays to delete
+     */
+    where?: SearchAnalyticsDayWhereInput
+    /**
+     * Limit how many SearchAnalyticsDays to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * SearchAnalyticsDay.site
+   */
+  export type SearchAnalyticsDay$siteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteInclude<ExtArgs> | null
+    where?: SiteWhereInput
+  }
+
+  /**
+   * SearchAnalyticsDay without action
+   */
+  export type SearchAnalyticsDayDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchAnalyticsDay
+     */
+    select?: SearchAnalyticsDaySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SearchAnalyticsDay
+     */
+    omit?: SearchAnalyticsDayOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SearchAnalyticsDayInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Site
+   */
+
+  export type AggregateSite = {
+    _count: SiteCountAggregateOutputType | null
+    _min: SiteMinAggregateOutputType | null
+    _max: SiteMaxAggregateOutputType | null
+  }
+
+  export type SiteMinAggregateOutputType = {
+    id: string | null
+    url: string | null
+    userId: string | null
+    createdAt: Date | null
+  }
+
+  export type SiteMaxAggregateOutputType = {
+    id: string | null
+    url: string | null
+    userId: string | null
+    createdAt: Date | null
+  }
+
+  export type SiteCountAggregateOutputType = {
+    id: number
+    url: number
+    userId: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type SiteMinAggregateInputType = {
+    id?: true
+    url?: true
+    userId?: true
+    createdAt?: true
+  }
+
+  export type SiteMaxAggregateInputType = {
+    id?: true
+    url?: true
+    userId?: true
+    createdAt?: true
+  }
+
+  export type SiteCountAggregateInputType = {
+    id?: true
+    url?: true
+    userId?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type SiteAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Site to aggregate.
+     */
+    where?: SiteWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Sites to fetch.
+     */
+    orderBy?: SiteOrderByWithRelationInput | SiteOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: SiteWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Sites from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Sites.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Sites
+    **/
+    _count?: true | SiteCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: SiteMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: SiteMaxAggregateInputType
+  }
+
+  export type GetSiteAggregateType<T extends SiteAggregateArgs> = {
+        [P in keyof T & keyof AggregateSite]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateSite[P]>
+      : GetScalarType<T[P], AggregateSite[P]>
+  }
+
+
+
+
+  export type SiteGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SiteWhereInput
+    orderBy?: SiteOrderByWithAggregationInput | SiteOrderByWithAggregationInput[]
+    by: SiteScalarFieldEnum[] | SiteScalarFieldEnum
+    having?: SiteScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: SiteCountAggregateInputType | true
+    _min?: SiteMinAggregateInputType
+    _max?: SiteMaxAggregateInputType
+  }
+
+  export type SiteGroupByOutputType = {
+    id: string
+    url: string
+    userId: string
+    createdAt: Date
+    _count: SiteCountAggregateOutputType | null
+    _min: SiteMinAggregateOutputType | null
+    _max: SiteMaxAggregateOutputType | null
+  }
+
+  type GetSiteGroupByPayload<T extends SiteGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<SiteGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof SiteGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], SiteGroupByOutputType[P]>
+            : GetScalarType<T[P], SiteGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type SiteSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    url?: boolean
+    userId?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    tokens?: boolean | Site$tokensArgs<ExtArgs>
+    analytics?: boolean | Site$analyticsArgs<ExtArgs>
+    _count?: boolean | SiteCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["site"]>
+
+  export type SiteSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    url?: boolean
+    userId?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["site"]>
+
+  export type SiteSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    url?: boolean
+    userId?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["site"]>
+
+  export type SiteSelectScalar = {
+    id?: boolean
+    url?: boolean
+    userId?: boolean
+    createdAt?: boolean
+  }
+
+  export type SiteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "url" | "userId" | "createdAt", ExtArgs["result"]["site"]>
+  export type SiteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    tokens?: boolean | Site$tokensArgs<ExtArgs>
+    analytics?: boolean | Site$analyticsArgs<ExtArgs>
+    _count?: boolean | SiteCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type SiteIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type SiteIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $SitePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Site"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+      tokens: Prisma.$OAuthTokenPayload<ExtArgs>[]
+      analytics: Prisma.$SearchAnalyticsDayPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      url: string
+      userId: string
+      createdAt: Date
+    }, ExtArgs["result"]["site"]>
+    composites: {}
+  }
+
+  type SiteGetPayload<S extends boolean | null | undefined | SiteDefaultArgs> = $Result.GetResult<Prisma.$SitePayload, S>
+
+  type SiteCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<SiteFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: SiteCountAggregateInputType | true
+    }
+
+  export interface SiteDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Site'], meta: { name: 'Site' } }
+    /**
+     * Find zero or one Site that matches the filter.
+     * @param {SiteFindUniqueArgs} args - Arguments to find a Site
+     * @example
+     * // Get one Site
+     * const site = await prisma.site.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends SiteFindUniqueArgs>(args: SelectSubset<T, SiteFindUniqueArgs<ExtArgs>>): Prisma__SiteClient<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Site that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {SiteFindUniqueOrThrowArgs} args - Arguments to find a Site
+     * @example
+     * // Get one Site
+     * const site = await prisma.site.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends SiteFindUniqueOrThrowArgs>(args: SelectSubset<T, SiteFindUniqueOrThrowArgs<ExtArgs>>): Prisma__SiteClient<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Site that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SiteFindFirstArgs} args - Arguments to find a Site
+     * @example
+     * // Get one Site
+     * const site = await prisma.site.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends SiteFindFirstArgs>(args?: SelectSubset<T, SiteFindFirstArgs<ExtArgs>>): Prisma__SiteClient<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Site that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SiteFindFirstOrThrowArgs} args - Arguments to find a Site
+     * @example
+     * // Get one Site
+     * const site = await prisma.site.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends SiteFindFirstOrThrowArgs>(args?: SelectSubset<T, SiteFindFirstOrThrowArgs<ExtArgs>>): Prisma__SiteClient<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Sites that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SiteFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Sites
+     * const sites = await prisma.site.findMany()
+     * 
+     * // Get first 10 Sites
+     * const sites = await prisma.site.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const siteWithIdOnly = await prisma.site.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends SiteFindManyArgs>(args?: SelectSubset<T, SiteFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Site.
+     * @param {SiteCreateArgs} args - Arguments to create a Site.
+     * @example
+     * // Create one Site
+     * const Site = await prisma.site.create({
+     *   data: {
+     *     // ... data to create a Site
+     *   }
+     * })
+     * 
+     */
+    create<T extends SiteCreateArgs>(args: SelectSubset<T, SiteCreateArgs<ExtArgs>>): Prisma__SiteClient<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Sites.
+     * @param {SiteCreateManyArgs} args - Arguments to create many Sites.
+     * @example
+     * // Create many Sites
+     * const site = await prisma.site.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends SiteCreateManyArgs>(args?: SelectSubset<T, SiteCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Sites and returns the data saved in the database.
+     * @param {SiteCreateManyAndReturnArgs} args - Arguments to create many Sites.
+     * @example
+     * // Create many Sites
+     * const site = await prisma.site.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Sites and only return the `id`
+     * const siteWithIdOnly = await prisma.site.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends SiteCreateManyAndReturnArgs>(args?: SelectSubset<T, SiteCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Site.
+     * @param {SiteDeleteArgs} args - Arguments to delete one Site.
+     * @example
+     * // Delete one Site
+     * const Site = await prisma.site.delete({
+     *   where: {
+     *     // ... filter to delete one Site
+     *   }
+     * })
+     * 
+     */
+    delete<T extends SiteDeleteArgs>(args: SelectSubset<T, SiteDeleteArgs<ExtArgs>>): Prisma__SiteClient<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Site.
+     * @param {SiteUpdateArgs} args - Arguments to update one Site.
+     * @example
+     * // Update one Site
+     * const site = await prisma.site.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends SiteUpdateArgs>(args: SelectSubset<T, SiteUpdateArgs<ExtArgs>>): Prisma__SiteClient<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Sites.
+     * @param {SiteDeleteManyArgs} args - Arguments to filter Sites to delete.
+     * @example
+     * // Delete a few Sites
+     * const { count } = await prisma.site.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends SiteDeleteManyArgs>(args?: SelectSubset<T, SiteDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Sites.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SiteUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Sites
+     * const site = await prisma.site.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends SiteUpdateManyArgs>(args: SelectSubset<T, SiteUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Sites and returns the data updated in the database.
+     * @param {SiteUpdateManyAndReturnArgs} args - Arguments to update many Sites.
+     * @example
+     * // Update many Sites
+     * const site = await prisma.site.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Sites and only return the `id`
+     * const siteWithIdOnly = await prisma.site.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends SiteUpdateManyAndReturnArgs>(args: SelectSubset<T, SiteUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Site.
+     * @param {SiteUpsertArgs} args - Arguments to update or create a Site.
+     * @example
+     * // Update or create a Site
+     * const site = await prisma.site.upsert({
+     *   create: {
+     *     // ... data to create a Site
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Site we want to update
+     *   }
+     * })
+     */
+    upsert<T extends SiteUpsertArgs>(args: SelectSubset<T, SiteUpsertArgs<ExtArgs>>): Prisma__SiteClient<$Result.GetResult<Prisma.$SitePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Sites.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SiteCountArgs} args - Arguments to filter Sites to count.
+     * @example
+     * // Count the number of Sites
+     * const count = await prisma.site.count({
+     *   where: {
+     *     // ... the filter for the Sites we want to count
+     *   }
+     * })
+    **/
+    count<T extends SiteCountArgs>(
+      args?: Subset<T, SiteCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], SiteCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Site.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SiteAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends SiteAggregateArgs>(args: Subset<T, SiteAggregateArgs>): Prisma.PrismaPromise<GetSiteAggregateType<T>>
+
+    /**
+     * Group by Site.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SiteGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends SiteGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: SiteGroupByArgs['orderBy'] }
+        : { orderBy?: SiteGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, SiteGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSiteGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Site model
+   */
+  readonly fields: SiteFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Site.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__SiteClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    tokens<T extends Site$tokensArgs<ExtArgs> = {}>(args?: Subset<T, Site$tokensArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OAuthTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    analytics<T extends Site$analyticsArgs<ExtArgs> = {}>(args?: Subset<T, Site$analyticsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SearchAnalyticsDayPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Site model
+   */
+  interface SiteFieldRefs {
+    readonly id: FieldRef<"Site", 'String'>
+    readonly url: FieldRef<"Site", 'String'>
+    readonly userId: FieldRef<"Site", 'String'>
+    readonly createdAt: FieldRef<"Site", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Site findUnique
+   */
+  export type SiteFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteInclude<ExtArgs> | null
+    /**
+     * Filter, which Site to fetch.
+     */
+    where: SiteWhereUniqueInput
+  }
+
+  /**
+   * Site findUniqueOrThrow
+   */
+  export type SiteFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteInclude<ExtArgs> | null
+    /**
+     * Filter, which Site to fetch.
+     */
+    where: SiteWhereUniqueInput
+  }
+
+  /**
+   * Site findFirst
+   */
+  export type SiteFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteInclude<ExtArgs> | null
+    /**
+     * Filter, which Site to fetch.
+     */
+    where?: SiteWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Sites to fetch.
+     */
+    orderBy?: SiteOrderByWithRelationInput | SiteOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Sites.
+     */
+    cursor?: SiteWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Sites from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Sites.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Sites.
+     */
+    distinct?: SiteScalarFieldEnum | SiteScalarFieldEnum[]
+  }
+
+  /**
+   * Site findFirstOrThrow
+   */
+  export type SiteFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteInclude<ExtArgs> | null
+    /**
+     * Filter, which Site to fetch.
+     */
+    where?: SiteWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Sites to fetch.
+     */
+    orderBy?: SiteOrderByWithRelationInput | SiteOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Sites.
+     */
+    cursor?: SiteWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Sites from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Sites.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Sites.
+     */
+    distinct?: SiteScalarFieldEnum | SiteScalarFieldEnum[]
+  }
+
+  /**
+   * Site findMany
+   */
+  export type SiteFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteInclude<ExtArgs> | null
+    /**
+     * Filter, which Sites to fetch.
+     */
+    where?: SiteWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Sites to fetch.
+     */
+    orderBy?: SiteOrderByWithRelationInput | SiteOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Sites.
+     */
+    cursor?: SiteWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Sites from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Sites.
+     */
+    skip?: number
+    distinct?: SiteScalarFieldEnum | SiteScalarFieldEnum[]
+  }
+
+  /**
+   * Site create
+   */
+  export type SiteCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Site.
+     */
+    data: XOR<SiteCreateInput, SiteUncheckedCreateInput>
+  }
+
+  /**
+   * Site createMany
+   */
+  export type SiteCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Sites.
+     */
+    data: SiteCreateManyInput | SiteCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Site createManyAndReturn
+   */
+  export type SiteCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * The data used to create many Sites.
+     */
+    data: SiteCreateManyInput | SiteCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Site update
+   */
+  export type SiteUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Site.
+     */
+    data: XOR<SiteUpdateInput, SiteUncheckedUpdateInput>
+    /**
+     * Choose, which Site to update.
+     */
+    where: SiteWhereUniqueInput
+  }
+
+  /**
+   * Site updateMany
+   */
+  export type SiteUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Sites.
+     */
+    data: XOR<SiteUpdateManyMutationInput, SiteUncheckedUpdateManyInput>
+    /**
+     * Filter which Sites to update
+     */
+    where?: SiteWhereInput
+    /**
+     * Limit how many Sites to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Site updateManyAndReturn
+   */
+  export type SiteUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * The data used to update Sites.
+     */
+    data: XOR<SiteUpdateManyMutationInput, SiteUncheckedUpdateManyInput>
+    /**
+     * Filter which Sites to update
+     */
+    where?: SiteWhereInput
+    /**
+     * Limit how many Sites to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Site upsert
+   */
+  export type SiteUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Site to update in case it exists.
+     */
+    where: SiteWhereUniqueInput
+    /**
+     * In case the Site found by the `where` argument doesn't exist, create a new Site with this data.
+     */
+    create: XOR<SiteCreateInput, SiteUncheckedCreateInput>
+    /**
+     * In case the Site was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<SiteUpdateInput, SiteUncheckedUpdateInput>
+  }
+
+  /**
+   * Site delete
+   */
+  export type SiteDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteInclude<ExtArgs> | null
+    /**
+     * Filter which Site to delete.
+     */
+    where: SiteWhereUniqueInput
+  }
+
+  /**
+   * Site deleteMany
+   */
+  export type SiteDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Sites to delete
+     */
+    where?: SiteWhereInput
+    /**
+     * Limit how many Sites to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Site.tokens
+   */
+  export type Site$tokensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OAuthToken
+     */
+    select?: OAuthTokenSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the OAuthToken
+     */
+    omit?: OAuthTokenOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OAuthTokenInclude<ExtArgs> | null
+    where?: OAuthTokenWhereInput
+    orderBy?: OAuthTokenOrderByWithRelationInput | OAuthTokenOrderByWithRelationInput[]
+    cursor?: OAuthTokenWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: OAuthTokenScalarFieldEnum | OAuthTokenScalarFieldEnum[]
+  }
+
+  /**
+   * Site.analytics
+   */
+  export type Site$analyticsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchAnalyticsDay
+     */
+    select?: SearchAnalyticsDaySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the SearchAnalyticsDay
+     */
+    omit?: SearchAnalyticsDayOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SearchAnalyticsDayInclude<ExtArgs> | null
+    where?: SearchAnalyticsDayWhereInput
+    orderBy?: SearchAnalyticsDayOrderByWithRelationInput | SearchAnalyticsDayOrderByWithRelationInput[]
+    cursor?: SearchAnalyticsDayWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: SearchAnalyticsDayScalarFieldEnum | SearchAnalyticsDayScalarFieldEnum[]
+  }
+
+  /**
+   * Site without action
+   */
+  export type SiteDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Site
+     */
+    select?: SiteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Site
+     */
+    omit?: SiteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: SiteInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -9509,6 +13311,46 @@ export namespace Prisma {
   };
 
   export type QuestionnaireScalarFieldEnum = (typeof QuestionnaireScalarFieldEnum)[keyof typeof QuestionnaireScalarFieldEnum]
+
+
+  export const OAuthTokenScalarFieldEnum: {
+    id: 'id',
+    provider: 'provider',
+    accessToken: 'accessToken',
+    refreshToken: 'refreshToken',
+    scope: 'scope',
+    expiresAt: 'expiresAt',
+    userId: 'userId',
+    siteId: 'siteId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type OAuthTokenScalarFieldEnum = (typeof OAuthTokenScalarFieldEnum)[keyof typeof OAuthTokenScalarFieldEnum]
+
+
+  export const SearchAnalyticsDayScalarFieldEnum: {
+    id: 'id',
+    siteUrl: 'siteUrl',
+    siteId: 'siteId',
+    date: 'date',
+    clicks: 'clicks',
+    impressions: 'impressions',
+    ctr: 'ctr',
+    position: 'position'
+  };
+
+  export type SearchAnalyticsDayScalarFieldEnum = (typeof SearchAnalyticsDayScalarFieldEnum)[keyof typeof SearchAnalyticsDayScalarFieldEnum]
+
+
+  export const SiteScalarFieldEnum: {
+    id: 'id',
+    url: 'url',
+    userId: 'userId',
+    createdAt: 'createdAt'
+  };
+
+  export type SiteScalarFieldEnum = (typeof SiteScalarFieldEnum)[keyof typeof SiteScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -9651,6 +13493,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorListRelationFilter
     subscription?: XOR<SubscriptionNullableScalarRelationFilter, SubscriptionWhereInput> | null
     questionnaires?: QuestionnaireListRelationFilter
+    tokens?: OAuthTokenListRelationFilter
+    sites?: SiteListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -9667,6 +13511,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorOrderByRelationAggregateInput
     subscription?: SubscriptionOrderByWithRelationInput
     questionnaires?: QuestionnaireOrderByRelationAggregateInput
+    tokens?: OAuthTokenOrderByRelationAggregateInput
+    sites?: SiteOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -9686,6 +13532,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorListRelationFilter
     subscription?: XOR<SubscriptionNullableScalarRelationFilter, SubscriptionWhereInput> | null
     questionnaires?: QuestionnaireListRelationFilter
+    tokens?: OAuthTokenListRelationFilter
+    sites?: SiteListRelationFilter
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -10165,6 +14013,220 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"Questionnaire"> | Date | string
   }
 
+  export type OAuthTokenWhereInput = {
+    AND?: OAuthTokenWhereInput | OAuthTokenWhereInput[]
+    OR?: OAuthTokenWhereInput[]
+    NOT?: OAuthTokenWhereInput | OAuthTokenWhereInput[]
+    id?: StringFilter<"OAuthToken"> | string
+    provider?: StringFilter<"OAuthToken"> | string
+    accessToken?: StringFilter<"OAuthToken"> | string
+    refreshToken?: StringFilter<"OAuthToken"> | string
+    scope?: StringFilter<"OAuthToken"> | string
+    expiresAt?: DateTimeFilter<"OAuthToken"> | Date | string
+    userId?: StringFilter<"OAuthToken"> | string
+    siteId?: StringNullableFilter<"OAuthToken"> | string | null
+    createdAt?: DateTimeFilter<"OAuthToken"> | Date | string
+    updatedAt?: DateTimeFilter<"OAuthToken"> | Date | string
+    site?: XOR<SiteNullableScalarRelationFilter, SiteWhereInput> | null
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }
+
+  export type OAuthTokenOrderByWithRelationInput = {
+    id?: SortOrder
+    provider?: SortOrder
+    accessToken?: SortOrder
+    refreshToken?: SortOrder
+    scope?: SortOrder
+    expiresAt?: SortOrder
+    userId?: SortOrder
+    siteId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    site?: SiteOrderByWithRelationInput
+    user?: UserOrderByWithRelationInput
+  }
+
+  export type OAuthTokenWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    userId_provider?: OAuthTokenUserIdProviderCompoundUniqueInput
+    AND?: OAuthTokenWhereInput | OAuthTokenWhereInput[]
+    OR?: OAuthTokenWhereInput[]
+    NOT?: OAuthTokenWhereInput | OAuthTokenWhereInput[]
+    provider?: StringFilter<"OAuthToken"> | string
+    accessToken?: StringFilter<"OAuthToken"> | string
+    refreshToken?: StringFilter<"OAuthToken"> | string
+    scope?: StringFilter<"OAuthToken"> | string
+    expiresAt?: DateTimeFilter<"OAuthToken"> | Date | string
+    userId?: StringFilter<"OAuthToken"> | string
+    siteId?: StringNullableFilter<"OAuthToken"> | string | null
+    createdAt?: DateTimeFilter<"OAuthToken"> | Date | string
+    updatedAt?: DateTimeFilter<"OAuthToken"> | Date | string
+    site?: XOR<SiteNullableScalarRelationFilter, SiteWhereInput> | null
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }, "id" | "userId_provider">
+
+  export type OAuthTokenOrderByWithAggregationInput = {
+    id?: SortOrder
+    provider?: SortOrder
+    accessToken?: SortOrder
+    refreshToken?: SortOrder
+    scope?: SortOrder
+    expiresAt?: SortOrder
+    userId?: SortOrder
+    siteId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: OAuthTokenCountOrderByAggregateInput
+    _max?: OAuthTokenMaxOrderByAggregateInput
+    _min?: OAuthTokenMinOrderByAggregateInput
+  }
+
+  export type OAuthTokenScalarWhereWithAggregatesInput = {
+    AND?: OAuthTokenScalarWhereWithAggregatesInput | OAuthTokenScalarWhereWithAggregatesInput[]
+    OR?: OAuthTokenScalarWhereWithAggregatesInput[]
+    NOT?: OAuthTokenScalarWhereWithAggregatesInput | OAuthTokenScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"OAuthToken"> | string
+    provider?: StringWithAggregatesFilter<"OAuthToken"> | string
+    accessToken?: StringWithAggregatesFilter<"OAuthToken"> | string
+    refreshToken?: StringWithAggregatesFilter<"OAuthToken"> | string
+    scope?: StringWithAggregatesFilter<"OAuthToken"> | string
+    expiresAt?: DateTimeWithAggregatesFilter<"OAuthToken"> | Date | string
+    userId?: StringWithAggregatesFilter<"OAuthToken"> | string
+    siteId?: StringNullableWithAggregatesFilter<"OAuthToken"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"OAuthToken"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"OAuthToken"> | Date | string
+  }
+
+  export type SearchAnalyticsDayWhereInput = {
+    AND?: SearchAnalyticsDayWhereInput | SearchAnalyticsDayWhereInput[]
+    OR?: SearchAnalyticsDayWhereInput[]
+    NOT?: SearchAnalyticsDayWhereInput | SearchAnalyticsDayWhereInput[]
+    id?: StringFilter<"SearchAnalyticsDay"> | string
+    siteUrl?: StringFilter<"SearchAnalyticsDay"> | string
+    siteId?: StringNullableFilter<"SearchAnalyticsDay"> | string | null
+    date?: DateTimeFilter<"SearchAnalyticsDay"> | Date | string
+    clicks?: IntFilter<"SearchAnalyticsDay"> | number
+    impressions?: IntFilter<"SearchAnalyticsDay"> | number
+    ctr?: FloatFilter<"SearchAnalyticsDay"> | number
+    position?: FloatFilter<"SearchAnalyticsDay"> | number
+    site?: XOR<SiteNullableScalarRelationFilter, SiteWhereInput> | null
+  }
+
+  export type SearchAnalyticsDayOrderByWithRelationInput = {
+    id?: SortOrder
+    siteUrl?: SortOrder
+    siteId?: SortOrderInput | SortOrder
+    date?: SortOrder
+    clicks?: SortOrder
+    impressions?: SortOrder
+    ctr?: SortOrder
+    position?: SortOrder
+    site?: SiteOrderByWithRelationInput
+  }
+
+  export type SearchAnalyticsDayWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    siteUrl_date?: SearchAnalyticsDaySiteUrlDateCompoundUniqueInput
+    AND?: SearchAnalyticsDayWhereInput | SearchAnalyticsDayWhereInput[]
+    OR?: SearchAnalyticsDayWhereInput[]
+    NOT?: SearchAnalyticsDayWhereInput | SearchAnalyticsDayWhereInput[]
+    siteUrl?: StringFilter<"SearchAnalyticsDay"> | string
+    siteId?: StringNullableFilter<"SearchAnalyticsDay"> | string | null
+    date?: DateTimeFilter<"SearchAnalyticsDay"> | Date | string
+    clicks?: IntFilter<"SearchAnalyticsDay"> | number
+    impressions?: IntFilter<"SearchAnalyticsDay"> | number
+    ctr?: FloatFilter<"SearchAnalyticsDay"> | number
+    position?: FloatFilter<"SearchAnalyticsDay"> | number
+    site?: XOR<SiteNullableScalarRelationFilter, SiteWhereInput> | null
+  }, "id" | "siteUrl_date">
+
+  export type SearchAnalyticsDayOrderByWithAggregationInput = {
+    id?: SortOrder
+    siteUrl?: SortOrder
+    siteId?: SortOrderInput | SortOrder
+    date?: SortOrder
+    clicks?: SortOrder
+    impressions?: SortOrder
+    ctr?: SortOrder
+    position?: SortOrder
+    _count?: SearchAnalyticsDayCountOrderByAggregateInput
+    _avg?: SearchAnalyticsDayAvgOrderByAggregateInput
+    _max?: SearchAnalyticsDayMaxOrderByAggregateInput
+    _min?: SearchAnalyticsDayMinOrderByAggregateInput
+    _sum?: SearchAnalyticsDaySumOrderByAggregateInput
+  }
+
+  export type SearchAnalyticsDayScalarWhereWithAggregatesInput = {
+    AND?: SearchAnalyticsDayScalarWhereWithAggregatesInput | SearchAnalyticsDayScalarWhereWithAggregatesInput[]
+    OR?: SearchAnalyticsDayScalarWhereWithAggregatesInput[]
+    NOT?: SearchAnalyticsDayScalarWhereWithAggregatesInput | SearchAnalyticsDayScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"SearchAnalyticsDay"> | string
+    siteUrl?: StringWithAggregatesFilter<"SearchAnalyticsDay"> | string
+    siteId?: StringNullableWithAggregatesFilter<"SearchAnalyticsDay"> | string | null
+    date?: DateTimeWithAggregatesFilter<"SearchAnalyticsDay"> | Date | string
+    clicks?: IntWithAggregatesFilter<"SearchAnalyticsDay"> | number
+    impressions?: IntWithAggregatesFilter<"SearchAnalyticsDay"> | number
+    ctr?: FloatWithAggregatesFilter<"SearchAnalyticsDay"> | number
+    position?: FloatWithAggregatesFilter<"SearchAnalyticsDay"> | number
+  }
+
+  export type SiteWhereInput = {
+    AND?: SiteWhereInput | SiteWhereInput[]
+    OR?: SiteWhereInput[]
+    NOT?: SiteWhereInput | SiteWhereInput[]
+    id?: StringFilter<"Site"> | string
+    url?: StringFilter<"Site"> | string
+    userId?: StringFilter<"Site"> | string
+    createdAt?: DateTimeFilter<"Site"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    tokens?: OAuthTokenListRelationFilter
+    analytics?: SearchAnalyticsDayListRelationFilter
+  }
+
+  export type SiteOrderByWithRelationInput = {
+    id?: SortOrder
+    url?: SortOrder
+    userId?: SortOrder
+    createdAt?: SortOrder
+    user?: UserOrderByWithRelationInput
+    tokens?: OAuthTokenOrderByRelationAggregateInput
+    analytics?: SearchAnalyticsDayOrderByRelationAggregateInput
+  }
+
+  export type SiteWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    url?: string
+    url_userId?: SiteUrlUserIdCompoundUniqueInput
+    AND?: SiteWhereInput | SiteWhereInput[]
+    OR?: SiteWhereInput[]
+    NOT?: SiteWhereInput | SiteWhereInput[]
+    userId?: StringFilter<"Site"> | string
+    createdAt?: DateTimeFilter<"Site"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    tokens?: OAuthTokenListRelationFilter
+    analytics?: SearchAnalyticsDayListRelationFilter
+  }, "id" | "url" | "url_userId">
+
+  export type SiteOrderByWithAggregationInput = {
+    id?: SortOrder
+    url?: SortOrder
+    userId?: SortOrder
+    createdAt?: SortOrder
+    _count?: SiteCountOrderByAggregateInput
+    _max?: SiteMaxOrderByAggregateInput
+    _min?: SiteMinOrderByAggregateInput
+  }
+
+  export type SiteScalarWhereWithAggregatesInput = {
+    AND?: SiteScalarWhereWithAggregatesInput | SiteScalarWhereWithAggregatesInput[]
+    OR?: SiteScalarWhereWithAggregatesInput[]
+    NOT?: SiteScalarWhereWithAggregatesInput | SiteScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Site"> | string
+    url?: StringWithAggregatesFilter<"Site"> | string
+    userId?: StringWithAggregatesFilter<"Site"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Site"> | Date | string
+  }
+
   export type UserCreateInput = {
     id?: string
     name?: string | null
@@ -10179,6 +14241,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorCreateNestedManyWithoutUserInput
     subscription?: SubscriptionCreateNestedOneWithoutUserInput
     questionnaires?: QuestionnaireCreateNestedManyWithoutUserInput
+    tokens?: OAuthTokenCreateNestedManyWithoutUserInput
+    sites?: SiteCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -10195,6 +14259,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorUncheckedCreateNestedManyWithoutUserInput
     subscription?: SubscriptionUncheckedCreateNestedOneWithoutUserInput
     questionnaires?: QuestionnaireUncheckedCreateNestedManyWithoutUserInput
+    tokens?: OAuthTokenUncheckedCreateNestedManyWithoutUserInput
+    sites?: SiteUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -10211,6 +14277,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUpdateOneWithoutUserNestedInput
     questionnaires?: QuestionnaireUpdateManyWithoutUserNestedInput
+    tokens?: OAuthTokenUpdateManyWithoutUserNestedInput
+    sites?: SiteUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -10227,6 +14295,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorUncheckedUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUncheckedUpdateOneWithoutUserNestedInput
     questionnaires?: QuestionnaireUncheckedUpdateManyWithoutUserNestedInput
+    tokens?: OAuthTokenUncheckedUpdateManyWithoutUserNestedInput
+    sites?: SiteUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -10754,6 +14824,227 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type OAuthTokenCreateInput = {
+    id?: string
+    provider: string
+    accessToken: string
+    refreshToken: string
+    scope: string
+    expiresAt: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    site?: SiteCreateNestedOneWithoutTokensInput
+    user: UserCreateNestedOneWithoutTokensInput
+  }
+
+  export type OAuthTokenUncheckedCreateInput = {
+    id?: string
+    provider: string
+    accessToken: string
+    refreshToken: string
+    scope: string
+    expiresAt: Date | string
+    userId: string
+    siteId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type OAuthTokenUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    accessToken?: StringFieldUpdateOperationsInput | string
+    refreshToken?: StringFieldUpdateOperationsInput | string
+    scope?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    site?: SiteUpdateOneWithoutTokensNestedInput
+    user?: UserUpdateOneRequiredWithoutTokensNestedInput
+  }
+
+  export type OAuthTokenUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    accessToken?: StringFieldUpdateOperationsInput | string
+    refreshToken?: StringFieldUpdateOperationsInput | string
+    scope?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    siteId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type OAuthTokenCreateManyInput = {
+    id?: string
+    provider: string
+    accessToken: string
+    refreshToken: string
+    scope: string
+    expiresAt: Date | string
+    userId: string
+    siteId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type OAuthTokenUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    accessToken?: StringFieldUpdateOperationsInput | string
+    refreshToken?: StringFieldUpdateOperationsInput | string
+    scope?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type OAuthTokenUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    accessToken?: StringFieldUpdateOperationsInput | string
+    refreshToken?: StringFieldUpdateOperationsInput | string
+    scope?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    siteId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SearchAnalyticsDayCreateInput = {
+    id?: string
+    siteUrl: string
+    date: Date | string
+    clicks: number
+    impressions: number
+    ctr: number
+    position: number
+    site?: SiteCreateNestedOneWithoutAnalyticsInput
+  }
+
+  export type SearchAnalyticsDayUncheckedCreateInput = {
+    id?: string
+    siteUrl: string
+    siteId?: string | null
+    date: Date | string
+    clicks: number
+    impressions: number
+    ctr: number
+    position: number
+  }
+
+  export type SearchAnalyticsDayUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    siteUrl?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    clicks?: IntFieldUpdateOperationsInput | number
+    impressions?: IntFieldUpdateOperationsInput | number
+    ctr?: FloatFieldUpdateOperationsInput | number
+    position?: FloatFieldUpdateOperationsInput | number
+    site?: SiteUpdateOneWithoutAnalyticsNestedInput
+  }
+
+  export type SearchAnalyticsDayUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    siteUrl?: StringFieldUpdateOperationsInput | string
+    siteId?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    clicks?: IntFieldUpdateOperationsInput | number
+    impressions?: IntFieldUpdateOperationsInput | number
+    ctr?: FloatFieldUpdateOperationsInput | number
+    position?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type SearchAnalyticsDayCreateManyInput = {
+    id?: string
+    siteUrl: string
+    siteId?: string | null
+    date: Date | string
+    clicks: number
+    impressions: number
+    ctr: number
+    position: number
+  }
+
+  export type SearchAnalyticsDayUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    siteUrl?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    clicks?: IntFieldUpdateOperationsInput | number
+    impressions?: IntFieldUpdateOperationsInput | number
+    ctr?: FloatFieldUpdateOperationsInput | number
+    position?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type SearchAnalyticsDayUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    siteUrl?: StringFieldUpdateOperationsInput | string
+    siteId?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    clicks?: IntFieldUpdateOperationsInput | number
+    impressions?: IntFieldUpdateOperationsInput | number
+    ctr?: FloatFieldUpdateOperationsInput | number
+    position?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type SiteCreateInput = {
+    id?: string
+    url: string
+    createdAt?: Date | string
+    user: UserCreateNestedOneWithoutSitesInput
+    tokens?: OAuthTokenCreateNestedManyWithoutSiteInput
+    analytics?: SearchAnalyticsDayCreateNestedManyWithoutSiteInput
+  }
+
+  export type SiteUncheckedCreateInput = {
+    id?: string
+    url: string
+    userId: string
+    createdAt?: Date | string
+    tokens?: OAuthTokenUncheckedCreateNestedManyWithoutSiteInput
+    analytics?: SearchAnalyticsDayUncheckedCreateNestedManyWithoutSiteInput
+  }
+
+  export type SiteUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutSitesNestedInput
+    tokens?: OAuthTokenUpdateManyWithoutSiteNestedInput
+    analytics?: SearchAnalyticsDayUpdateManyWithoutSiteNestedInput
+  }
+
+  export type SiteUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    tokens?: OAuthTokenUncheckedUpdateManyWithoutSiteNestedInput
+    analytics?: SearchAnalyticsDayUncheckedUpdateManyWithoutSiteNestedInput
+  }
+
+  export type SiteCreateManyInput = {
+    id?: string
+    url: string
+    userId: string
+    createdAt?: Date | string
+  }
+
+  export type SiteUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SiteUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -10835,6 +15126,18 @@ export namespace Prisma {
     none?: QuestionnaireWhereInput
   }
 
+  export type OAuthTokenListRelationFilter = {
+    every?: OAuthTokenWhereInput
+    some?: OAuthTokenWhereInput
+    none?: OAuthTokenWhereInput
+  }
+
+  export type SiteListRelationFilter = {
+    every?: SiteWhereInput
+    some?: SiteWhereInput
+    none?: SiteWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -10853,6 +15156,14 @@ export namespace Prisma {
   }
 
   export type QuestionnaireOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type OAuthTokenOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type SiteOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -11314,6 +15625,170 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
+  export type SiteNullableScalarRelationFilter = {
+    is?: SiteWhereInput | null
+    isNot?: SiteWhereInput | null
+  }
+
+  export type OAuthTokenUserIdProviderCompoundUniqueInput = {
+    userId: string
+    provider: string
+  }
+
+  export type OAuthTokenCountOrderByAggregateInput = {
+    id?: SortOrder
+    provider?: SortOrder
+    accessToken?: SortOrder
+    refreshToken?: SortOrder
+    scope?: SortOrder
+    expiresAt?: SortOrder
+    userId?: SortOrder
+    siteId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type OAuthTokenMaxOrderByAggregateInput = {
+    id?: SortOrder
+    provider?: SortOrder
+    accessToken?: SortOrder
+    refreshToken?: SortOrder
+    scope?: SortOrder
+    expiresAt?: SortOrder
+    userId?: SortOrder
+    siteId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type OAuthTokenMinOrderByAggregateInput = {
+    id?: SortOrder
+    provider?: SortOrder
+    accessToken?: SortOrder
+    refreshToken?: SortOrder
+    scope?: SortOrder
+    expiresAt?: SortOrder
+    userId?: SortOrder
+    siteId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type FloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type SearchAnalyticsDaySiteUrlDateCompoundUniqueInput = {
+    siteUrl: string
+    date: Date | string
+  }
+
+  export type SearchAnalyticsDayCountOrderByAggregateInput = {
+    id?: SortOrder
+    siteUrl?: SortOrder
+    siteId?: SortOrder
+    date?: SortOrder
+    clicks?: SortOrder
+    impressions?: SortOrder
+    ctr?: SortOrder
+    position?: SortOrder
+  }
+
+  export type SearchAnalyticsDayAvgOrderByAggregateInput = {
+    clicks?: SortOrder
+    impressions?: SortOrder
+    ctr?: SortOrder
+    position?: SortOrder
+  }
+
+  export type SearchAnalyticsDayMaxOrderByAggregateInput = {
+    id?: SortOrder
+    siteUrl?: SortOrder
+    siteId?: SortOrder
+    date?: SortOrder
+    clicks?: SortOrder
+    impressions?: SortOrder
+    ctr?: SortOrder
+    position?: SortOrder
+  }
+
+  export type SearchAnalyticsDayMinOrderByAggregateInput = {
+    id?: SortOrder
+    siteUrl?: SortOrder
+    siteId?: SortOrder
+    date?: SortOrder
+    clicks?: SortOrder
+    impressions?: SortOrder
+    ctr?: SortOrder
+    position?: SortOrder
+  }
+
+  export type SearchAnalyticsDaySumOrderByAggregateInput = {
+    clicks?: SortOrder
+    impressions?: SortOrder
+    ctr?: SortOrder
+    position?: SortOrder
+  }
+
+  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type SearchAnalyticsDayListRelationFilter = {
+    every?: SearchAnalyticsDayWhereInput
+    some?: SearchAnalyticsDayWhereInput
+    none?: SearchAnalyticsDayWhereInput
+  }
+
+  export type SearchAnalyticsDayOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type SiteUrlUserIdCompoundUniqueInput = {
+    url: string
+    userId: string
+  }
+
+  export type SiteCountOrderByAggregateInput = {
+    id?: SortOrder
+    url?: SortOrder
+    userId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type SiteMaxOrderByAggregateInput = {
+    id?: SortOrder
+    url?: SortOrder
+    userId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type SiteMinOrderByAggregateInput = {
+    id?: SortOrder
+    url?: SortOrder
+    userId?: SortOrder
+    createdAt?: SortOrder
+  }
+
   export type AccountCreateNestedManyWithoutUserInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -11348,6 +15823,20 @@ export namespace Prisma {
     connect?: QuestionnaireWhereUniqueInput | QuestionnaireWhereUniqueInput[]
   }
 
+  export type OAuthTokenCreateNestedManyWithoutUserInput = {
+    create?: XOR<OAuthTokenCreateWithoutUserInput, OAuthTokenUncheckedCreateWithoutUserInput> | OAuthTokenCreateWithoutUserInput[] | OAuthTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: OAuthTokenCreateOrConnectWithoutUserInput | OAuthTokenCreateOrConnectWithoutUserInput[]
+    createMany?: OAuthTokenCreateManyUserInputEnvelope
+    connect?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+  }
+
+  export type SiteCreateNestedManyWithoutUserInput = {
+    create?: XOR<SiteCreateWithoutUserInput, SiteUncheckedCreateWithoutUserInput> | SiteCreateWithoutUserInput[] | SiteUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: SiteCreateOrConnectWithoutUserInput | SiteCreateOrConnectWithoutUserInput[]
+    createMany?: SiteCreateManyUserInputEnvelope
+    connect?: SiteWhereUniqueInput | SiteWhereUniqueInput[]
+  }
+
   export type AccountUncheckedCreateNestedManyWithoutUserInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -11380,6 +15869,20 @@ export namespace Prisma {
     connectOrCreate?: QuestionnaireCreateOrConnectWithoutUserInput | QuestionnaireCreateOrConnectWithoutUserInput[]
     createMany?: QuestionnaireCreateManyUserInputEnvelope
     connect?: QuestionnaireWhereUniqueInput | QuestionnaireWhereUniqueInput[]
+  }
+
+  export type OAuthTokenUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<OAuthTokenCreateWithoutUserInput, OAuthTokenUncheckedCreateWithoutUserInput> | OAuthTokenCreateWithoutUserInput[] | OAuthTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: OAuthTokenCreateOrConnectWithoutUserInput | OAuthTokenCreateOrConnectWithoutUserInput[]
+    createMany?: OAuthTokenCreateManyUserInputEnvelope
+    connect?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+  }
+
+  export type SiteUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<SiteCreateWithoutUserInput, SiteUncheckedCreateWithoutUserInput> | SiteCreateWithoutUserInput[] | SiteUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: SiteCreateOrConnectWithoutUserInput | SiteCreateOrConnectWithoutUserInput[]
+    createMany?: SiteCreateManyUserInputEnvelope
+    connect?: SiteWhereUniqueInput | SiteWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -11464,6 +15967,34 @@ export namespace Prisma {
     deleteMany?: QuestionnaireScalarWhereInput | QuestionnaireScalarWhereInput[]
   }
 
+  export type OAuthTokenUpdateManyWithoutUserNestedInput = {
+    create?: XOR<OAuthTokenCreateWithoutUserInput, OAuthTokenUncheckedCreateWithoutUserInput> | OAuthTokenCreateWithoutUserInput[] | OAuthTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: OAuthTokenCreateOrConnectWithoutUserInput | OAuthTokenCreateOrConnectWithoutUserInput[]
+    upsert?: OAuthTokenUpsertWithWhereUniqueWithoutUserInput | OAuthTokenUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: OAuthTokenCreateManyUserInputEnvelope
+    set?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    disconnect?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    delete?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    connect?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    update?: OAuthTokenUpdateWithWhereUniqueWithoutUserInput | OAuthTokenUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: OAuthTokenUpdateManyWithWhereWithoutUserInput | OAuthTokenUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: OAuthTokenScalarWhereInput | OAuthTokenScalarWhereInput[]
+  }
+
+  export type SiteUpdateManyWithoutUserNestedInput = {
+    create?: XOR<SiteCreateWithoutUserInput, SiteUncheckedCreateWithoutUserInput> | SiteCreateWithoutUserInput[] | SiteUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: SiteCreateOrConnectWithoutUserInput | SiteCreateOrConnectWithoutUserInput[]
+    upsert?: SiteUpsertWithWhereUniqueWithoutUserInput | SiteUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: SiteCreateManyUserInputEnvelope
+    set?: SiteWhereUniqueInput | SiteWhereUniqueInput[]
+    disconnect?: SiteWhereUniqueInput | SiteWhereUniqueInput[]
+    delete?: SiteWhereUniqueInput | SiteWhereUniqueInput[]
+    connect?: SiteWhereUniqueInput | SiteWhereUniqueInput[]
+    update?: SiteUpdateWithWhereUniqueWithoutUserInput | SiteUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: SiteUpdateManyWithWhereWithoutUserInput | SiteUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: SiteScalarWhereInput | SiteScalarWhereInput[]
+  }
+
   export type AccountUncheckedUpdateManyWithoutUserNestedInput = {
     create?: XOR<AccountCreateWithoutUserInput, AccountUncheckedCreateWithoutUserInput> | AccountCreateWithoutUserInput[] | AccountUncheckedCreateWithoutUserInput[]
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
@@ -11528,6 +16059,34 @@ export namespace Prisma {
     update?: QuestionnaireUpdateWithWhereUniqueWithoutUserInput | QuestionnaireUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: QuestionnaireUpdateManyWithWhereWithoutUserInput | QuestionnaireUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: QuestionnaireScalarWhereInput | QuestionnaireScalarWhereInput[]
+  }
+
+  export type OAuthTokenUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<OAuthTokenCreateWithoutUserInput, OAuthTokenUncheckedCreateWithoutUserInput> | OAuthTokenCreateWithoutUserInput[] | OAuthTokenUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: OAuthTokenCreateOrConnectWithoutUserInput | OAuthTokenCreateOrConnectWithoutUserInput[]
+    upsert?: OAuthTokenUpsertWithWhereUniqueWithoutUserInput | OAuthTokenUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: OAuthTokenCreateManyUserInputEnvelope
+    set?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    disconnect?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    delete?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    connect?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    update?: OAuthTokenUpdateWithWhereUniqueWithoutUserInput | OAuthTokenUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: OAuthTokenUpdateManyWithWhereWithoutUserInput | OAuthTokenUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: OAuthTokenScalarWhereInput | OAuthTokenScalarWhereInput[]
+  }
+
+  export type SiteUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<SiteCreateWithoutUserInput, SiteUncheckedCreateWithoutUserInput> | SiteCreateWithoutUserInput[] | SiteUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: SiteCreateOrConnectWithoutUserInput | SiteCreateOrConnectWithoutUserInput[]
+    upsert?: SiteUpsertWithWhereUniqueWithoutUserInput | SiteUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: SiteCreateManyUserInputEnvelope
+    set?: SiteWhereUniqueInput | SiteWhereUniqueInput[]
+    disconnect?: SiteWhereUniqueInput | SiteWhereUniqueInput[]
+    delete?: SiteWhereUniqueInput | SiteWhereUniqueInput[]
+    connect?: SiteWhereUniqueInput | SiteWhereUniqueInput[]
+    update?: SiteUpdateWithWhereUniqueWithoutUserInput | SiteUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: SiteUpdateManyWithWhereWithoutUserInput | SiteUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: SiteScalarWhereInput | SiteScalarWhereInput[]
   }
 
   export type UserCreateNestedOneWithoutAccountsInput = {
@@ -11637,6 +16196,158 @@ export namespace Prisma {
     delete?: UserWhereInput | boolean
     connect?: UserWhereUniqueInput
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutQuestionnairesInput, UserUpdateWithoutQuestionnairesInput>, UserUncheckedUpdateWithoutQuestionnairesInput>
+  }
+
+  export type SiteCreateNestedOneWithoutTokensInput = {
+    create?: XOR<SiteCreateWithoutTokensInput, SiteUncheckedCreateWithoutTokensInput>
+    connectOrCreate?: SiteCreateOrConnectWithoutTokensInput
+    connect?: SiteWhereUniqueInput
+  }
+
+  export type UserCreateNestedOneWithoutTokensInput = {
+    create?: XOR<UserCreateWithoutTokensInput, UserUncheckedCreateWithoutTokensInput>
+    connectOrCreate?: UserCreateOrConnectWithoutTokensInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type SiteUpdateOneWithoutTokensNestedInput = {
+    create?: XOR<SiteCreateWithoutTokensInput, SiteUncheckedCreateWithoutTokensInput>
+    connectOrCreate?: SiteCreateOrConnectWithoutTokensInput
+    upsert?: SiteUpsertWithoutTokensInput
+    disconnect?: SiteWhereInput | boolean
+    delete?: SiteWhereInput | boolean
+    connect?: SiteWhereUniqueInput
+    update?: XOR<XOR<SiteUpdateToOneWithWhereWithoutTokensInput, SiteUpdateWithoutTokensInput>, SiteUncheckedUpdateWithoutTokensInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutTokensNestedInput = {
+    create?: XOR<UserCreateWithoutTokensInput, UserUncheckedCreateWithoutTokensInput>
+    connectOrCreate?: UserCreateOrConnectWithoutTokensInput
+    upsert?: UserUpsertWithoutTokensInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutTokensInput, UserUpdateWithoutTokensInput>, UserUncheckedUpdateWithoutTokensInput>
+  }
+
+  export type SiteCreateNestedOneWithoutAnalyticsInput = {
+    create?: XOR<SiteCreateWithoutAnalyticsInput, SiteUncheckedCreateWithoutAnalyticsInput>
+    connectOrCreate?: SiteCreateOrConnectWithoutAnalyticsInput
+    connect?: SiteWhereUniqueInput
+  }
+
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type SiteUpdateOneWithoutAnalyticsNestedInput = {
+    create?: XOR<SiteCreateWithoutAnalyticsInput, SiteUncheckedCreateWithoutAnalyticsInput>
+    connectOrCreate?: SiteCreateOrConnectWithoutAnalyticsInput
+    upsert?: SiteUpsertWithoutAnalyticsInput
+    disconnect?: SiteWhereInput | boolean
+    delete?: SiteWhereInput | boolean
+    connect?: SiteWhereUniqueInput
+    update?: XOR<XOR<SiteUpdateToOneWithWhereWithoutAnalyticsInput, SiteUpdateWithoutAnalyticsInput>, SiteUncheckedUpdateWithoutAnalyticsInput>
+  }
+
+  export type UserCreateNestedOneWithoutSitesInput = {
+    create?: XOR<UserCreateWithoutSitesInput, UserUncheckedCreateWithoutSitesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutSitesInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type OAuthTokenCreateNestedManyWithoutSiteInput = {
+    create?: XOR<OAuthTokenCreateWithoutSiteInput, OAuthTokenUncheckedCreateWithoutSiteInput> | OAuthTokenCreateWithoutSiteInput[] | OAuthTokenUncheckedCreateWithoutSiteInput[]
+    connectOrCreate?: OAuthTokenCreateOrConnectWithoutSiteInput | OAuthTokenCreateOrConnectWithoutSiteInput[]
+    createMany?: OAuthTokenCreateManySiteInputEnvelope
+    connect?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+  }
+
+  export type SearchAnalyticsDayCreateNestedManyWithoutSiteInput = {
+    create?: XOR<SearchAnalyticsDayCreateWithoutSiteInput, SearchAnalyticsDayUncheckedCreateWithoutSiteInput> | SearchAnalyticsDayCreateWithoutSiteInput[] | SearchAnalyticsDayUncheckedCreateWithoutSiteInput[]
+    connectOrCreate?: SearchAnalyticsDayCreateOrConnectWithoutSiteInput | SearchAnalyticsDayCreateOrConnectWithoutSiteInput[]
+    createMany?: SearchAnalyticsDayCreateManySiteInputEnvelope
+    connect?: SearchAnalyticsDayWhereUniqueInput | SearchAnalyticsDayWhereUniqueInput[]
+  }
+
+  export type OAuthTokenUncheckedCreateNestedManyWithoutSiteInput = {
+    create?: XOR<OAuthTokenCreateWithoutSiteInput, OAuthTokenUncheckedCreateWithoutSiteInput> | OAuthTokenCreateWithoutSiteInput[] | OAuthTokenUncheckedCreateWithoutSiteInput[]
+    connectOrCreate?: OAuthTokenCreateOrConnectWithoutSiteInput | OAuthTokenCreateOrConnectWithoutSiteInput[]
+    createMany?: OAuthTokenCreateManySiteInputEnvelope
+    connect?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+  }
+
+  export type SearchAnalyticsDayUncheckedCreateNestedManyWithoutSiteInput = {
+    create?: XOR<SearchAnalyticsDayCreateWithoutSiteInput, SearchAnalyticsDayUncheckedCreateWithoutSiteInput> | SearchAnalyticsDayCreateWithoutSiteInput[] | SearchAnalyticsDayUncheckedCreateWithoutSiteInput[]
+    connectOrCreate?: SearchAnalyticsDayCreateOrConnectWithoutSiteInput | SearchAnalyticsDayCreateOrConnectWithoutSiteInput[]
+    createMany?: SearchAnalyticsDayCreateManySiteInputEnvelope
+    connect?: SearchAnalyticsDayWhereUniqueInput | SearchAnalyticsDayWhereUniqueInput[]
+  }
+
+  export type UserUpdateOneRequiredWithoutSitesNestedInput = {
+    create?: XOR<UserCreateWithoutSitesInput, UserUncheckedCreateWithoutSitesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutSitesInput
+    upsert?: UserUpsertWithoutSitesInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutSitesInput, UserUpdateWithoutSitesInput>, UserUncheckedUpdateWithoutSitesInput>
+  }
+
+  export type OAuthTokenUpdateManyWithoutSiteNestedInput = {
+    create?: XOR<OAuthTokenCreateWithoutSiteInput, OAuthTokenUncheckedCreateWithoutSiteInput> | OAuthTokenCreateWithoutSiteInput[] | OAuthTokenUncheckedCreateWithoutSiteInput[]
+    connectOrCreate?: OAuthTokenCreateOrConnectWithoutSiteInput | OAuthTokenCreateOrConnectWithoutSiteInput[]
+    upsert?: OAuthTokenUpsertWithWhereUniqueWithoutSiteInput | OAuthTokenUpsertWithWhereUniqueWithoutSiteInput[]
+    createMany?: OAuthTokenCreateManySiteInputEnvelope
+    set?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    disconnect?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    delete?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    connect?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    update?: OAuthTokenUpdateWithWhereUniqueWithoutSiteInput | OAuthTokenUpdateWithWhereUniqueWithoutSiteInput[]
+    updateMany?: OAuthTokenUpdateManyWithWhereWithoutSiteInput | OAuthTokenUpdateManyWithWhereWithoutSiteInput[]
+    deleteMany?: OAuthTokenScalarWhereInput | OAuthTokenScalarWhereInput[]
+  }
+
+  export type SearchAnalyticsDayUpdateManyWithoutSiteNestedInput = {
+    create?: XOR<SearchAnalyticsDayCreateWithoutSiteInput, SearchAnalyticsDayUncheckedCreateWithoutSiteInput> | SearchAnalyticsDayCreateWithoutSiteInput[] | SearchAnalyticsDayUncheckedCreateWithoutSiteInput[]
+    connectOrCreate?: SearchAnalyticsDayCreateOrConnectWithoutSiteInput | SearchAnalyticsDayCreateOrConnectWithoutSiteInput[]
+    upsert?: SearchAnalyticsDayUpsertWithWhereUniqueWithoutSiteInput | SearchAnalyticsDayUpsertWithWhereUniqueWithoutSiteInput[]
+    createMany?: SearchAnalyticsDayCreateManySiteInputEnvelope
+    set?: SearchAnalyticsDayWhereUniqueInput | SearchAnalyticsDayWhereUniqueInput[]
+    disconnect?: SearchAnalyticsDayWhereUniqueInput | SearchAnalyticsDayWhereUniqueInput[]
+    delete?: SearchAnalyticsDayWhereUniqueInput | SearchAnalyticsDayWhereUniqueInput[]
+    connect?: SearchAnalyticsDayWhereUniqueInput | SearchAnalyticsDayWhereUniqueInput[]
+    update?: SearchAnalyticsDayUpdateWithWhereUniqueWithoutSiteInput | SearchAnalyticsDayUpdateWithWhereUniqueWithoutSiteInput[]
+    updateMany?: SearchAnalyticsDayUpdateManyWithWhereWithoutSiteInput | SearchAnalyticsDayUpdateManyWithWhereWithoutSiteInput[]
+    deleteMany?: SearchAnalyticsDayScalarWhereInput | SearchAnalyticsDayScalarWhereInput[]
+  }
+
+  export type OAuthTokenUncheckedUpdateManyWithoutSiteNestedInput = {
+    create?: XOR<OAuthTokenCreateWithoutSiteInput, OAuthTokenUncheckedCreateWithoutSiteInput> | OAuthTokenCreateWithoutSiteInput[] | OAuthTokenUncheckedCreateWithoutSiteInput[]
+    connectOrCreate?: OAuthTokenCreateOrConnectWithoutSiteInput | OAuthTokenCreateOrConnectWithoutSiteInput[]
+    upsert?: OAuthTokenUpsertWithWhereUniqueWithoutSiteInput | OAuthTokenUpsertWithWhereUniqueWithoutSiteInput[]
+    createMany?: OAuthTokenCreateManySiteInputEnvelope
+    set?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    disconnect?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    delete?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    connect?: OAuthTokenWhereUniqueInput | OAuthTokenWhereUniqueInput[]
+    update?: OAuthTokenUpdateWithWhereUniqueWithoutSiteInput | OAuthTokenUpdateWithWhereUniqueWithoutSiteInput[]
+    updateMany?: OAuthTokenUpdateManyWithWhereWithoutSiteInput | OAuthTokenUpdateManyWithWhereWithoutSiteInput[]
+    deleteMany?: OAuthTokenScalarWhereInput | OAuthTokenScalarWhereInput[]
+  }
+
+  export type SearchAnalyticsDayUncheckedUpdateManyWithoutSiteNestedInput = {
+    create?: XOR<SearchAnalyticsDayCreateWithoutSiteInput, SearchAnalyticsDayUncheckedCreateWithoutSiteInput> | SearchAnalyticsDayCreateWithoutSiteInput[] | SearchAnalyticsDayUncheckedCreateWithoutSiteInput[]
+    connectOrCreate?: SearchAnalyticsDayCreateOrConnectWithoutSiteInput | SearchAnalyticsDayCreateOrConnectWithoutSiteInput[]
+    upsert?: SearchAnalyticsDayUpsertWithWhereUniqueWithoutSiteInput | SearchAnalyticsDayUpsertWithWhereUniqueWithoutSiteInput[]
+    createMany?: SearchAnalyticsDayCreateManySiteInputEnvelope
+    set?: SearchAnalyticsDayWhereUniqueInput | SearchAnalyticsDayWhereUniqueInput[]
+    disconnect?: SearchAnalyticsDayWhereUniqueInput | SearchAnalyticsDayWhereUniqueInput[]
+    delete?: SearchAnalyticsDayWhereUniqueInput | SearchAnalyticsDayWhereUniqueInput[]
+    connect?: SearchAnalyticsDayWhereUniqueInput | SearchAnalyticsDayWhereUniqueInput[]
+    update?: SearchAnalyticsDayUpdateWithWhereUniqueWithoutSiteInput | SearchAnalyticsDayUpdateWithWhereUniqueWithoutSiteInput[]
+    updateMany?: SearchAnalyticsDayUpdateManyWithWhereWithoutSiteInput | SearchAnalyticsDayUpdateManyWithWhereWithoutSiteInput[]
+    deleteMany?: SearchAnalyticsDayScalarWhereInput | SearchAnalyticsDayScalarWhereInput[]
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -11874,6 +16585,22 @@ export namespace Prisma {
     _max?: NestedEnumSubscriptionStatusFilter<$PrismaModel>
   }
 
+  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
   export type AccountCreateWithoutUserInput = {
     type: string
     provider: string
@@ -12039,6 +16766,66 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type OAuthTokenCreateWithoutUserInput = {
+    id?: string
+    provider: string
+    accessToken: string
+    refreshToken: string
+    scope: string
+    expiresAt: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    site?: SiteCreateNestedOneWithoutTokensInput
+  }
+
+  export type OAuthTokenUncheckedCreateWithoutUserInput = {
+    id?: string
+    provider: string
+    accessToken: string
+    refreshToken: string
+    scope: string
+    expiresAt: Date | string
+    siteId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type OAuthTokenCreateOrConnectWithoutUserInput = {
+    where: OAuthTokenWhereUniqueInput
+    create: XOR<OAuthTokenCreateWithoutUserInput, OAuthTokenUncheckedCreateWithoutUserInput>
+  }
+
+  export type OAuthTokenCreateManyUserInputEnvelope = {
+    data: OAuthTokenCreateManyUserInput | OAuthTokenCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type SiteCreateWithoutUserInput = {
+    id?: string
+    url: string
+    createdAt?: Date | string
+    tokens?: OAuthTokenCreateNestedManyWithoutSiteInput
+    analytics?: SearchAnalyticsDayCreateNestedManyWithoutSiteInput
+  }
+
+  export type SiteUncheckedCreateWithoutUserInput = {
+    id?: string
+    url: string
+    createdAt?: Date | string
+    tokens?: OAuthTokenUncheckedCreateNestedManyWithoutSiteInput
+    analytics?: SearchAnalyticsDayUncheckedCreateNestedManyWithoutSiteInput
+  }
+
+  export type SiteCreateOrConnectWithoutUserInput = {
+    where: SiteWhereUniqueInput
+    create: XOR<SiteCreateWithoutUserInput, SiteUncheckedCreateWithoutUserInput>
+  }
+
+  export type SiteCreateManyUserInputEnvelope = {
+    data: SiteCreateManyUserInput | SiteCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
   export type AccountUpsertWithWhereUniqueWithoutUserInput = {
     where: AccountWhereUniqueInput
     update: XOR<AccountUpdateWithoutUserInput, AccountUncheckedUpdateWithoutUserInput>
@@ -12201,6 +16988,64 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Questionnaire"> | Date | string
   }
 
+  export type OAuthTokenUpsertWithWhereUniqueWithoutUserInput = {
+    where: OAuthTokenWhereUniqueInput
+    update: XOR<OAuthTokenUpdateWithoutUserInput, OAuthTokenUncheckedUpdateWithoutUserInput>
+    create: XOR<OAuthTokenCreateWithoutUserInput, OAuthTokenUncheckedCreateWithoutUserInput>
+  }
+
+  export type OAuthTokenUpdateWithWhereUniqueWithoutUserInput = {
+    where: OAuthTokenWhereUniqueInput
+    data: XOR<OAuthTokenUpdateWithoutUserInput, OAuthTokenUncheckedUpdateWithoutUserInput>
+  }
+
+  export type OAuthTokenUpdateManyWithWhereWithoutUserInput = {
+    where: OAuthTokenScalarWhereInput
+    data: XOR<OAuthTokenUpdateManyMutationInput, OAuthTokenUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type OAuthTokenScalarWhereInput = {
+    AND?: OAuthTokenScalarWhereInput | OAuthTokenScalarWhereInput[]
+    OR?: OAuthTokenScalarWhereInput[]
+    NOT?: OAuthTokenScalarWhereInput | OAuthTokenScalarWhereInput[]
+    id?: StringFilter<"OAuthToken"> | string
+    provider?: StringFilter<"OAuthToken"> | string
+    accessToken?: StringFilter<"OAuthToken"> | string
+    refreshToken?: StringFilter<"OAuthToken"> | string
+    scope?: StringFilter<"OAuthToken"> | string
+    expiresAt?: DateTimeFilter<"OAuthToken"> | Date | string
+    userId?: StringFilter<"OAuthToken"> | string
+    siteId?: StringNullableFilter<"OAuthToken"> | string | null
+    createdAt?: DateTimeFilter<"OAuthToken"> | Date | string
+    updatedAt?: DateTimeFilter<"OAuthToken"> | Date | string
+  }
+
+  export type SiteUpsertWithWhereUniqueWithoutUserInput = {
+    where: SiteWhereUniqueInput
+    update: XOR<SiteUpdateWithoutUserInput, SiteUncheckedUpdateWithoutUserInput>
+    create: XOR<SiteCreateWithoutUserInput, SiteUncheckedCreateWithoutUserInput>
+  }
+
+  export type SiteUpdateWithWhereUniqueWithoutUserInput = {
+    where: SiteWhereUniqueInput
+    data: XOR<SiteUpdateWithoutUserInput, SiteUncheckedUpdateWithoutUserInput>
+  }
+
+  export type SiteUpdateManyWithWhereWithoutUserInput = {
+    where: SiteScalarWhereInput
+    data: XOR<SiteUpdateManyMutationInput, SiteUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type SiteScalarWhereInput = {
+    AND?: SiteScalarWhereInput | SiteScalarWhereInput[]
+    OR?: SiteScalarWhereInput[]
+    NOT?: SiteScalarWhereInput | SiteScalarWhereInput[]
+    id?: StringFilter<"Site"> | string
+    url?: StringFilter<"Site"> | string
+    userId?: StringFilter<"Site"> | string
+    createdAt?: DateTimeFilter<"Site"> | Date | string
+  }
+
   export type UserCreateWithoutAccountsInput = {
     id?: string
     name?: string | null
@@ -12214,6 +17059,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorCreateNestedManyWithoutUserInput
     subscription?: SubscriptionCreateNestedOneWithoutUserInput
     questionnaires?: QuestionnaireCreateNestedManyWithoutUserInput
+    tokens?: OAuthTokenCreateNestedManyWithoutUserInput
+    sites?: SiteCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutAccountsInput = {
@@ -12229,6 +17076,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorUncheckedCreateNestedManyWithoutUserInput
     subscription?: SubscriptionUncheckedCreateNestedOneWithoutUserInput
     questionnaires?: QuestionnaireUncheckedCreateNestedManyWithoutUserInput
+    tokens?: OAuthTokenUncheckedCreateNestedManyWithoutUserInput
+    sites?: SiteUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutAccountsInput = {
@@ -12260,6 +17109,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUpdateOneWithoutUserNestedInput
     questionnaires?: QuestionnaireUpdateManyWithoutUserNestedInput
+    tokens?: OAuthTokenUpdateManyWithoutUserNestedInput
+    sites?: SiteUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -12275,6 +17126,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorUncheckedUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUncheckedUpdateOneWithoutUserNestedInput
     questionnaires?: QuestionnaireUncheckedUpdateManyWithoutUserNestedInput
+    tokens?: OAuthTokenUncheckedUpdateManyWithoutUserNestedInput
+    sites?: SiteUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutSessionsInput = {
@@ -12290,6 +17143,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorCreateNestedManyWithoutUserInput
     subscription?: SubscriptionCreateNestedOneWithoutUserInput
     questionnaires?: QuestionnaireCreateNestedManyWithoutUserInput
+    tokens?: OAuthTokenCreateNestedManyWithoutUserInput
+    sites?: SiteCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutSessionsInput = {
@@ -12305,6 +17160,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorUncheckedCreateNestedManyWithoutUserInput
     subscription?: SubscriptionUncheckedCreateNestedOneWithoutUserInput
     questionnaires?: QuestionnaireUncheckedCreateNestedManyWithoutUserInput
+    tokens?: OAuthTokenUncheckedCreateNestedManyWithoutUserInput
+    sites?: SiteUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutSessionsInput = {
@@ -12336,6 +17193,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUpdateOneWithoutUserNestedInput
     questionnaires?: QuestionnaireUpdateManyWithoutUserNestedInput
+    tokens?: OAuthTokenUpdateManyWithoutUserNestedInput
+    sites?: SiteUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -12351,6 +17210,8 @@ export namespace Prisma {
     Authenticator?: AuthenticatorUncheckedUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUncheckedUpdateOneWithoutUserNestedInput
     questionnaires?: QuestionnaireUncheckedUpdateManyWithoutUserNestedInput
+    tokens?: OAuthTokenUncheckedUpdateManyWithoutUserNestedInput
+    sites?: SiteUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutAuthenticatorInput = {
@@ -12366,6 +17227,8 @@ export namespace Prisma {
     sessions?: SessionCreateNestedManyWithoutUserInput
     subscription?: SubscriptionCreateNestedOneWithoutUserInput
     questionnaires?: QuestionnaireCreateNestedManyWithoutUserInput
+    tokens?: OAuthTokenCreateNestedManyWithoutUserInput
+    sites?: SiteCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutAuthenticatorInput = {
@@ -12381,6 +17244,8 @@ export namespace Prisma {
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
     subscription?: SubscriptionUncheckedCreateNestedOneWithoutUserInput
     questionnaires?: QuestionnaireUncheckedCreateNestedManyWithoutUserInput
+    tokens?: OAuthTokenUncheckedCreateNestedManyWithoutUserInput
+    sites?: SiteUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutAuthenticatorInput = {
@@ -12412,6 +17277,8 @@ export namespace Prisma {
     sessions?: SessionUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUpdateOneWithoutUserNestedInput
     questionnaires?: QuestionnaireUpdateManyWithoutUserNestedInput
+    tokens?: OAuthTokenUpdateManyWithoutUserNestedInput
+    sites?: SiteUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutAuthenticatorInput = {
@@ -12427,6 +17294,8 @@ export namespace Prisma {
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUncheckedUpdateOneWithoutUserNestedInput
     questionnaires?: QuestionnaireUncheckedUpdateManyWithoutUserNestedInput
+    tokens?: OAuthTokenUncheckedUpdateManyWithoutUserNestedInput
+    sites?: SiteUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutSubscriptionInput = {
@@ -12442,6 +17311,8 @@ export namespace Prisma {
     sessions?: SessionCreateNestedManyWithoutUserInput
     Authenticator?: AuthenticatorCreateNestedManyWithoutUserInput
     questionnaires?: QuestionnaireCreateNestedManyWithoutUserInput
+    tokens?: OAuthTokenCreateNestedManyWithoutUserInput
+    sites?: SiteCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutSubscriptionInput = {
@@ -12457,6 +17328,8 @@ export namespace Prisma {
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
     Authenticator?: AuthenticatorUncheckedCreateNestedManyWithoutUserInput
     questionnaires?: QuestionnaireUncheckedCreateNestedManyWithoutUserInput
+    tokens?: OAuthTokenUncheckedCreateNestedManyWithoutUserInput
+    sites?: SiteUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutSubscriptionInput = {
@@ -12488,6 +17361,8 @@ export namespace Prisma {
     sessions?: SessionUpdateManyWithoutUserNestedInput
     Authenticator?: AuthenticatorUpdateManyWithoutUserNestedInput
     questionnaires?: QuestionnaireUpdateManyWithoutUserNestedInput
+    tokens?: OAuthTokenUpdateManyWithoutUserNestedInput
+    sites?: SiteUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSubscriptionInput = {
@@ -12503,6 +17378,8 @@ export namespace Prisma {
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
     Authenticator?: AuthenticatorUncheckedUpdateManyWithoutUserNestedInput
     questionnaires?: QuestionnaireUncheckedUpdateManyWithoutUserNestedInput
+    tokens?: OAuthTokenUncheckedUpdateManyWithoutUserNestedInput
+    sites?: SiteUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutQuestionnairesInput = {
@@ -12518,6 +17395,8 @@ export namespace Prisma {
     sessions?: SessionCreateNestedManyWithoutUserInput
     Authenticator?: AuthenticatorCreateNestedManyWithoutUserInput
     subscription?: SubscriptionCreateNestedOneWithoutUserInput
+    tokens?: OAuthTokenCreateNestedManyWithoutUserInput
+    sites?: SiteCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutQuestionnairesInput = {
@@ -12533,6 +17412,8 @@ export namespace Prisma {
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
     Authenticator?: AuthenticatorUncheckedCreateNestedManyWithoutUserInput
     subscription?: SubscriptionUncheckedCreateNestedOneWithoutUserInput
+    tokens?: OAuthTokenUncheckedCreateNestedManyWithoutUserInput
+    sites?: SiteUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutQuestionnairesInput = {
@@ -12564,6 +17445,8 @@ export namespace Prisma {
     sessions?: SessionUpdateManyWithoutUserNestedInput
     Authenticator?: AuthenticatorUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUpdateOneWithoutUserNestedInput
+    tokens?: OAuthTokenUpdateManyWithoutUserNestedInput
+    sites?: SiteUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutQuestionnairesInput = {
@@ -12579,6 +17462,382 @@ export namespace Prisma {
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
     Authenticator?: AuthenticatorUncheckedUpdateManyWithoutUserNestedInput
     subscription?: SubscriptionUncheckedUpdateOneWithoutUserNestedInput
+    tokens?: OAuthTokenUncheckedUpdateManyWithoutUserNestedInput
+    sites?: SiteUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type SiteCreateWithoutTokensInput = {
+    id?: string
+    url: string
+    createdAt?: Date | string
+    user: UserCreateNestedOneWithoutSitesInput
+    analytics?: SearchAnalyticsDayCreateNestedManyWithoutSiteInput
+  }
+
+  export type SiteUncheckedCreateWithoutTokensInput = {
+    id?: string
+    url: string
+    userId: string
+    createdAt?: Date | string
+    analytics?: SearchAnalyticsDayUncheckedCreateNestedManyWithoutSiteInput
+  }
+
+  export type SiteCreateOrConnectWithoutTokensInput = {
+    where: SiteWhereUniqueInput
+    create: XOR<SiteCreateWithoutTokensInput, SiteUncheckedCreateWithoutTokensInput>
+  }
+
+  export type UserCreateWithoutTokensInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    image?: string | null
+    password?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    accounts?: AccountCreateNestedManyWithoutUserInput
+    sessions?: SessionCreateNestedManyWithoutUserInput
+    Authenticator?: AuthenticatorCreateNestedManyWithoutUserInput
+    subscription?: SubscriptionCreateNestedOneWithoutUserInput
+    questionnaires?: QuestionnaireCreateNestedManyWithoutUserInput
+    sites?: SiteCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutTokensInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    image?: string | null
+    password?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    Authenticator?: AuthenticatorUncheckedCreateNestedManyWithoutUserInput
+    subscription?: SubscriptionUncheckedCreateNestedOneWithoutUserInput
+    questionnaires?: QuestionnaireUncheckedCreateNestedManyWithoutUserInput
+    sites?: SiteUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutTokensInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutTokensInput, UserUncheckedCreateWithoutTokensInput>
+  }
+
+  export type SiteUpsertWithoutTokensInput = {
+    update: XOR<SiteUpdateWithoutTokensInput, SiteUncheckedUpdateWithoutTokensInput>
+    create: XOR<SiteCreateWithoutTokensInput, SiteUncheckedCreateWithoutTokensInput>
+    where?: SiteWhereInput
+  }
+
+  export type SiteUpdateToOneWithWhereWithoutTokensInput = {
+    where?: SiteWhereInput
+    data: XOR<SiteUpdateWithoutTokensInput, SiteUncheckedUpdateWithoutTokensInput>
+  }
+
+  export type SiteUpdateWithoutTokensInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutSitesNestedInput
+    analytics?: SearchAnalyticsDayUpdateManyWithoutSiteNestedInput
+  }
+
+  export type SiteUncheckedUpdateWithoutTokensInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    analytics?: SearchAnalyticsDayUncheckedUpdateManyWithoutSiteNestedInput
+  }
+
+  export type UserUpsertWithoutTokensInput = {
+    update: XOR<UserUpdateWithoutTokensInput, UserUncheckedUpdateWithoutTokensInput>
+    create: XOR<UserCreateWithoutTokensInput, UserUncheckedCreateWithoutTokensInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutTokensInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutTokensInput, UserUncheckedUpdateWithoutTokensInput>
+  }
+
+  export type UserUpdateWithoutTokensInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    accounts?: AccountUpdateManyWithoutUserNestedInput
+    sessions?: SessionUpdateManyWithoutUserNestedInput
+    Authenticator?: AuthenticatorUpdateManyWithoutUserNestedInput
+    subscription?: SubscriptionUpdateOneWithoutUserNestedInput
+    questionnaires?: QuestionnaireUpdateManyWithoutUserNestedInput
+    sites?: SiteUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutTokensInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    Authenticator?: AuthenticatorUncheckedUpdateManyWithoutUserNestedInput
+    subscription?: SubscriptionUncheckedUpdateOneWithoutUserNestedInput
+    questionnaires?: QuestionnaireUncheckedUpdateManyWithoutUserNestedInput
+    sites?: SiteUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type SiteCreateWithoutAnalyticsInput = {
+    id?: string
+    url: string
+    createdAt?: Date | string
+    user: UserCreateNestedOneWithoutSitesInput
+    tokens?: OAuthTokenCreateNestedManyWithoutSiteInput
+  }
+
+  export type SiteUncheckedCreateWithoutAnalyticsInput = {
+    id?: string
+    url: string
+    userId: string
+    createdAt?: Date | string
+    tokens?: OAuthTokenUncheckedCreateNestedManyWithoutSiteInput
+  }
+
+  export type SiteCreateOrConnectWithoutAnalyticsInput = {
+    where: SiteWhereUniqueInput
+    create: XOR<SiteCreateWithoutAnalyticsInput, SiteUncheckedCreateWithoutAnalyticsInput>
+  }
+
+  export type SiteUpsertWithoutAnalyticsInput = {
+    update: XOR<SiteUpdateWithoutAnalyticsInput, SiteUncheckedUpdateWithoutAnalyticsInput>
+    create: XOR<SiteCreateWithoutAnalyticsInput, SiteUncheckedCreateWithoutAnalyticsInput>
+    where?: SiteWhereInput
+  }
+
+  export type SiteUpdateToOneWithWhereWithoutAnalyticsInput = {
+    where?: SiteWhereInput
+    data: XOR<SiteUpdateWithoutAnalyticsInput, SiteUncheckedUpdateWithoutAnalyticsInput>
+  }
+
+  export type SiteUpdateWithoutAnalyticsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutSitesNestedInput
+    tokens?: OAuthTokenUpdateManyWithoutSiteNestedInput
+  }
+
+  export type SiteUncheckedUpdateWithoutAnalyticsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    tokens?: OAuthTokenUncheckedUpdateManyWithoutSiteNestedInput
+  }
+
+  export type UserCreateWithoutSitesInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    image?: string | null
+    password?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    accounts?: AccountCreateNestedManyWithoutUserInput
+    sessions?: SessionCreateNestedManyWithoutUserInput
+    Authenticator?: AuthenticatorCreateNestedManyWithoutUserInput
+    subscription?: SubscriptionCreateNestedOneWithoutUserInput
+    questionnaires?: QuestionnaireCreateNestedManyWithoutUserInput
+    tokens?: OAuthTokenCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutSitesInput = {
+    id?: string
+    name?: string | null
+    email: string
+    emailVerified?: Date | string | null
+    image?: string | null
+    password?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    Authenticator?: AuthenticatorUncheckedCreateNestedManyWithoutUserInput
+    subscription?: SubscriptionUncheckedCreateNestedOneWithoutUserInput
+    questionnaires?: QuestionnaireUncheckedCreateNestedManyWithoutUserInput
+    tokens?: OAuthTokenUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutSitesInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutSitesInput, UserUncheckedCreateWithoutSitesInput>
+  }
+
+  export type OAuthTokenCreateWithoutSiteInput = {
+    id?: string
+    provider: string
+    accessToken: string
+    refreshToken: string
+    scope: string
+    expiresAt: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    user: UserCreateNestedOneWithoutTokensInput
+  }
+
+  export type OAuthTokenUncheckedCreateWithoutSiteInput = {
+    id?: string
+    provider: string
+    accessToken: string
+    refreshToken: string
+    scope: string
+    expiresAt: Date | string
+    userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type OAuthTokenCreateOrConnectWithoutSiteInput = {
+    where: OAuthTokenWhereUniqueInput
+    create: XOR<OAuthTokenCreateWithoutSiteInput, OAuthTokenUncheckedCreateWithoutSiteInput>
+  }
+
+  export type OAuthTokenCreateManySiteInputEnvelope = {
+    data: OAuthTokenCreateManySiteInput | OAuthTokenCreateManySiteInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type SearchAnalyticsDayCreateWithoutSiteInput = {
+    id?: string
+    siteUrl: string
+    date: Date | string
+    clicks: number
+    impressions: number
+    ctr: number
+    position: number
+  }
+
+  export type SearchAnalyticsDayUncheckedCreateWithoutSiteInput = {
+    id?: string
+    siteUrl: string
+    date: Date | string
+    clicks: number
+    impressions: number
+    ctr: number
+    position: number
+  }
+
+  export type SearchAnalyticsDayCreateOrConnectWithoutSiteInput = {
+    where: SearchAnalyticsDayWhereUniqueInput
+    create: XOR<SearchAnalyticsDayCreateWithoutSiteInput, SearchAnalyticsDayUncheckedCreateWithoutSiteInput>
+  }
+
+  export type SearchAnalyticsDayCreateManySiteInputEnvelope = {
+    data: SearchAnalyticsDayCreateManySiteInput | SearchAnalyticsDayCreateManySiteInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type UserUpsertWithoutSitesInput = {
+    update: XOR<UserUpdateWithoutSitesInput, UserUncheckedUpdateWithoutSitesInput>
+    create: XOR<UserCreateWithoutSitesInput, UserUncheckedCreateWithoutSitesInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutSitesInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutSitesInput, UserUncheckedUpdateWithoutSitesInput>
+  }
+
+  export type UserUpdateWithoutSitesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    accounts?: AccountUpdateManyWithoutUserNestedInput
+    sessions?: SessionUpdateManyWithoutUserNestedInput
+    Authenticator?: AuthenticatorUpdateManyWithoutUserNestedInput
+    subscription?: SubscriptionUpdateOneWithoutUserNestedInput
+    questionnaires?: QuestionnaireUpdateManyWithoutUserNestedInput
+    tokens?: OAuthTokenUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutSitesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    Authenticator?: AuthenticatorUncheckedUpdateManyWithoutUserNestedInput
+    subscription?: SubscriptionUncheckedUpdateOneWithoutUserNestedInput
+    questionnaires?: QuestionnaireUncheckedUpdateManyWithoutUserNestedInput
+    tokens?: OAuthTokenUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type OAuthTokenUpsertWithWhereUniqueWithoutSiteInput = {
+    where: OAuthTokenWhereUniqueInput
+    update: XOR<OAuthTokenUpdateWithoutSiteInput, OAuthTokenUncheckedUpdateWithoutSiteInput>
+    create: XOR<OAuthTokenCreateWithoutSiteInput, OAuthTokenUncheckedCreateWithoutSiteInput>
+  }
+
+  export type OAuthTokenUpdateWithWhereUniqueWithoutSiteInput = {
+    where: OAuthTokenWhereUniqueInput
+    data: XOR<OAuthTokenUpdateWithoutSiteInput, OAuthTokenUncheckedUpdateWithoutSiteInput>
+  }
+
+  export type OAuthTokenUpdateManyWithWhereWithoutSiteInput = {
+    where: OAuthTokenScalarWhereInput
+    data: XOR<OAuthTokenUpdateManyMutationInput, OAuthTokenUncheckedUpdateManyWithoutSiteInput>
+  }
+
+  export type SearchAnalyticsDayUpsertWithWhereUniqueWithoutSiteInput = {
+    where: SearchAnalyticsDayWhereUniqueInput
+    update: XOR<SearchAnalyticsDayUpdateWithoutSiteInput, SearchAnalyticsDayUncheckedUpdateWithoutSiteInput>
+    create: XOR<SearchAnalyticsDayCreateWithoutSiteInput, SearchAnalyticsDayUncheckedCreateWithoutSiteInput>
+  }
+
+  export type SearchAnalyticsDayUpdateWithWhereUniqueWithoutSiteInput = {
+    where: SearchAnalyticsDayWhereUniqueInput
+    data: XOR<SearchAnalyticsDayUpdateWithoutSiteInput, SearchAnalyticsDayUncheckedUpdateWithoutSiteInput>
+  }
+
+  export type SearchAnalyticsDayUpdateManyWithWhereWithoutSiteInput = {
+    where: SearchAnalyticsDayScalarWhereInput
+    data: XOR<SearchAnalyticsDayUpdateManyMutationInput, SearchAnalyticsDayUncheckedUpdateManyWithoutSiteInput>
+  }
+
+  export type SearchAnalyticsDayScalarWhereInput = {
+    AND?: SearchAnalyticsDayScalarWhereInput | SearchAnalyticsDayScalarWhereInput[]
+    OR?: SearchAnalyticsDayScalarWhereInput[]
+    NOT?: SearchAnalyticsDayScalarWhereInput | SearchAnalyticsDayScalarWhereInput[]
+    id?: StringFilter<"SearchAnalyticsDay"> | string
+    siteUrl?: StringFilter<"SearchAnalyticsDay"> | string
+    siteId?: StringNullableFilter<"SearchAnalyticsDay"> | string | null
+    date?: DateTimeFilter<"SearchAnalyticsDay"> | Date | string
+    clicks?: IntFilter<"SearchAnalyticsDay"> | number
+    impressions?: IntFilter<"SearchAnalyticsDay"> | number
+    ctr?: FloatFilter<"SearchAnalyticsDay"> | number
+    position?: FloatFilter<"SearchAnalyticsDay"> | number
   }
 
   export type AccountCreateManyUserInput = {
@@ -12628,6 +17887,24 @@ export namespace Prisma {
     autresInformations?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
+  }
+
+  export type OAuthTokenCreateManyUserInput = {
+    id?: string
+    provider: string
+    accessToken: string
+    refreshToken: string
+    scope: string
+    expiresAt: Date | string
+    siteId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SiteCreateManyUserInput = {
+    id?: string
+    url: string
+    createdAt?: Date | string
   }
 
   export type AccountUpdateWithoutUserInput = {
@@ -12775,6 +18052,152 @@ export namespace Prisma {
     autresInformations?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type OAuthTokenUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    accessToken?: StringFieldUpdateOperationsInput | string
+    refreshToken?: StringFieldUpdateOperationsInput | string
+    scope?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    site?: SiteUpdateOneWithoutTokensNestedInput
+  }
+
+  export type OAuthTokenUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    accessToken?: StringFieldUpdateOperationsInput | string
+    refreshToken?: StringFieldUpdateOperationsInput | string
+    scope?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    siteId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type OAuthTokenUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    accessToken?: StringFieldUpdateOperationsInput | string
+    refreshToken?: StringFieldUpdateOperationsInput | string
+    scope?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    siteId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SiteUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    tokens?: OAuthTokenUpdateManyWithoutSiteNestedInput
+    analytics?: SearchAnalyticsDayUpdateManyWithoutSiteNestedInput
+  }
+
+  export type SiteUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    tokens?: OAuthTokenUncheckedUpdateManyWithoutSiteNestedInput
+    analytics?: SearchAnalyticsDayUncheckedUpdateManyWithoutSiteNestedInput
+  }
+
+  export type SiteUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type OAuthTokenCreateManySiteInput = {
+    id?: string
+    provider: string
+    accessToken: string
+    refreshToken: string
+    scope: string
+    expiresAt: Date | string
+    userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type SearchAnalyticsDayCreateManySiteInput = {
+    id?: string
+    siteUrl: string
+    date: Date | string
+    clicks: number
+    impressions: number
+    ctr: number
+    position: number
+  }
+
+  export type OAuthTokenUpdateWithoutSiteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    accessToken?: StringFieldUpdateOperationsInput | string
+    refreshToken?: StringFieldUpdateOperationsInput | string
+    scope?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutTokensNestedInput
+  }
+
+  export type OAuthTokenUncheckedUpdateWithoutSiteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    accessToken?: StringFieldUpdateOperationsInput | string
+    refreshToken?: StringFieldUpdateOperationsInput | string
+    scope?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type OAuthTokenUncheckedUpdateManyWithoutSiteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    provider?: StringFieldUpdateOperationsInput | string
+    accessToken?: StringFieldUpdateOperationsInput | string
+    refreshToken?: StringFieldUpdateOperationsInput | string
+    scope?: StringFieldUpdateOperationsInput | string
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type SearchAnalyticsDayUpdateWithoutSiteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    siteUrl?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    clicks?: IntFieldUpdateOperationsInput | number
+    impressions?: IntFieldUpdateOperationsInput | number
+    ctr?: FloatFieldUpdateOperationsInput | number
+    position?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type SearchAnalyticsDayUncheckedUpdateWithoutSiteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    siteUrl?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    clicks?: IntFieldUpdateOperationsInput | number
+    impressions?: IntFieldUpdateOperationsInput | number
+    ctr?: FloatFieldUpdateOperationsInput | number
+    position?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type SearchAnalyticsDayUncheckedUpdateManyWithoutSiteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    siteUrl?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    clicks?: IntFieldUpdateOperationsInput | number
+    impressions?: IntFieldUpdateOperationsInput | number
+    ctr?: FloatFieldUpdateOperationsInput | number
+    position?: FloatFieldUpdateOperationsInput | number
   }
 
 

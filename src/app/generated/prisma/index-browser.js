@@ -202,6 +202,37 @@ exports.Prisma.QuestionnaireScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.OAuthTokenScalarFieldEnum = {
+  id: 'id',
+  provider: 'provider',
+  accessToken: 'accessToken',
+  refreshToken: 'refreshToken',
+  scope: 'scope',
+  expiresAt: 'expiresAt',
+  userId: 'userId',
+  siteId: 'siteId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.SearchAnalyticsDayScalarFieldEnum = {
+  id: 'id',
+  siteUrl: 'siteUrl',
+  siteId: 'siteId',
+  date: 'date',
+  clicks: 'clicks',
+  impressions: 'impressions',
+  ctr: 'ctr',
+  position: 'position'
+};
+
+exports.Prisma.SiteScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  userId: 'userId',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -239,7 +270,10 @@ exports.Prisma.ModelName = {
   VerificationToken: 'VerificationToken',
   Authenticator: 'Authenticator',
   Subscription: 'Subscription',
-  Questionnaire: 'Questionnaire'
+  Questionnaire: 'Questionnaire',
+  OAuthToken: 'OAuthToken',
+  SearchAnalyticsDay: 'SearchAnalyticsDay',
+  Site: 'Site'
 };
 
 /**

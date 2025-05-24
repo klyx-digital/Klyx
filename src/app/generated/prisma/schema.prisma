@@ -46,6 +46,8 @@ model User {
   Authenticator  Authenticator[]
   subscription   Subscription?   @relation("UserSubscription")
   questionnaires Questionnaire[]
+  tokens         OAuthToken[]
+  sites          Site[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -144,4 +146,50 @@ model Questionnaire {
 
   @@index([email])
   @@index([userId])
+}
+
+model OAuthToken {
+  id           String   @id @default(cuid())
+  provider     String
+  accessToken  String
+  refreshToken String
+  scope        String
+  expiresAt    DateTime
+  userId       String
+  siteId       String?
+  site         Site?    @relation(fields: [siteId], references: [id])
+  user         User     @relation(fields: [userId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([userId, provider])
+  @@index([userId, provider])
+}
+
+model SearchAnalyticsDay {
+  id          String   @id @default(cuid())
+  siteUrl     String
+  siteId      String?
+  site        Site?    @relation(fields: [siteId], references: [id])
+  date        DateTime
+  clicks      Int
+  impressions Int
+  ctr         Float
+  position    Float
+
+  @@unique([siteUrl, date])
+  @@index([siteUrl])
+}
+
+model Site {
+  id        String               @id @default(cuid())
+  url       String               @unique // https://www.exemple.com/ ou sc-domain:exemple.com
+  userId    String
+  user      User                 @relation(fields: [userId], references: [id])
+  tokens    OAuthToken[] // token GSC lié à ce site
+  analytics SearchAnalyticsDay[]
+
+  createdAt DateTime @default(now())
+
+  @@unique([url, userId])
 }
